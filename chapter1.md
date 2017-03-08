@@ -16,7 +16,7 @@ Security.framework
 注意事项：CoreSpotlight.framework必须标记为可选
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
-1. 在Podfile文件中添加
+1. 在Podfile文件中添加  
 取IDFA版(取IDFA为了广告效果检测,和统计相关,强烈建议集成带IDFA版本)
 [集成IDFA版但是app中没有广告审核问题	](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/blob/master/IDFA_Audit.md)							
 ```
@@ -61,7 +61,7 @@ CoreSpotlight.framework必须标记为可选。
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
 
-```
+
 {% codetabs name="Objective-C", type="c" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
@@ -118,7 +118,7 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   }
 }
 {%- endcodetabs %}
-```
+
 
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
