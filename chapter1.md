@@ -60,8 +60,9 @@ CoreSpotlight.framework必须标记为可选。
 ## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
+
 ```
-{% codetabs name="Objective-C", type="py" -%}
+{% codetabs name="Objective-C", type="c" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
   if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
@@ -91,11 +92,8 @@ CoreSpotlight.framework必须标记为可选。
     return [[LinkedME getInstance] handleDeepLink:url];
   }
   return YES;
-}Swift
-{%- language name="JavaScript", type="js" -%}
-var msg = "Hello World";
-console.log(msg);
-{%- language name="Swift", type="html" -%}
+}
+{%- language name="Swift", type="js" -%}
 //URI Scheme 实现深度链接技术
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
   //判断是否是通过LinkedME的UrlScheme唤起App
