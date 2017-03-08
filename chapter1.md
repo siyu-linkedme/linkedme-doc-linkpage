@@ -120,15 +120,7 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 {%- endcodetabs %}
 
 
-{% codetabs name="Python", type="py" -%}
-msg = "Hello World"
-print msg
-{%- language name="JavaScript", type="js" -%}
-var msg = "Hello World";
-console.log(msg);
-{%- language name="HTML", type="html" -%}
-<b>Hello World</b>
-{%- endcodetabs %}
+
 
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
@@ -186,3 +178,15 @@ Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个�
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
 ## Spotlight 索引
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
+
+
+{% codetabs name="Python", type="py" -%}
+msg = "Hello World"
+print msg
+{%- language name="JavaScript", type="js" -%}
+var msg = "Hello World";
+console.log(msg);
+{%- language name="HTML", type="html" -%}
+<b>Hello World</b>
+{%- endcodetabs %}
+
