@@ -62,7 +62,7 @@ CoreSpotlight.framework必须标记为可选。
 在Appdelegate中实现下列方法
 
 
-{% codetabs name="Objective-C", type="c" -%}
+{% codetabs name="Objective-C", type="Objective-C" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
   if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
@@ -93,7 +93,7 @@ CoreSpotlight.framework必须标记为可选。
   }
   return YES;
 }
-{%- language name="Swift", type="js" -%}
+{%- language name="Swift", type="Swift" -%}
 //URI Scheme 实现深度链接技术
 func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
   //判断是否是通过LinkedME的UrlScheme唤起App
@@ -119,6 +119,16 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 }
 {%- endcodetabs %}
 
+
+{% codetabs name="Python", type="py" -%}
+msg = "Hello World"
+print msg
+{%- language name="JavaScript", type="js" -%}
+var msg = "Hello World";
+console.log(msg);
+{%- language name="HTML", type="html" -%}
+<b>Hello World</b>
+{%- endcodetabs %}
 
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
