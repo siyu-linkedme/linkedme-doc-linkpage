@@ -30,7 +30,7 @@ print msg
 
 
 
-{% codetabs name="Objective-C", type="Objective-C" -%}
+{% codetabs name="Objective-C", type="C" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
   if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
