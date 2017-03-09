@@ -63,6 +63,11 @@ CoreSpotlight.framework必须标记为可选。
 
 
 
+
+
+
+
+
 {% codetabs name="Objective-C", type="C" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
