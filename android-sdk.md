@@ -46,6 +46,7 @@ allprojects {
     }
 }
 ```
+
 * 在项目Module层的build.gradle中添加依赖，如下所示：
 
 ```
@@ -54,10 +55,14 @@ compile fileTree(include: ['*.jar'], dir: 'libs')
 compile "cc.linkedme.deeplinks:link-page:1.0.9"
 }
 ```
+
+
 # 基本配置
 ## 配置AndroidManifest.xml
 
 ### 添加LinkedME Key
+
+
 ```
 <application
   android:name=".activity.LinkedMEDemoApp">
@@ -67,6 +72,8 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
     android:value="替换为后台设置页面中的LinkedME Key" />
 </application>
 ```
+
+
 ### 添加访问权限
 集成LinkedME SDK需要开启的访问权限，权限说明如下表格所示：
 
@@ -80,6 +87,8 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 |android.permission.BLUETOOTH	|获取设备名称|
 
 添加代码如下：
+
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -92,6 +101,8 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
   <uses-permission android:name="android.permission.BLUETOOTH" />
 </manifest>
 ```
+
+
 ### 添加URI Scheme和App Links支持
 添加URI Scheme和App Links支持后，才能够通过这两种方式跳转到APP内
 在工程主页的Activity中添加`android:launchMode="singleTask"`属性。
@@ -101,6 +112,8 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 1. 修改android:scheme；请在后台“设置”->“链接”中查看Android下的URI Scheme的值；
 2. 修改android:pathPrefix；请在后台“设置”->“概览”中查看LinkedME App ID的值；
 LinkedME-Android-Deep-Linking-Demo代码如下所示：
+
+
 ```
 <application android:name=".activity.LinkedMEDemoApp">
   <activity
@@ -150,8 +163,12 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
   </activity>
 </application>
 ```
+
+
 ## 初始化LinkedME实例
 在自定义Application类中的onCreate()方法中，添加初始化LinkedME实例的代码。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
+
+
 ```
 public class LinkedMEDemoApp extends Application {
   @Override
@@ -185,7 +202,11 @@ public class LinkedMEDemoApp extends Application {
   
 }
 ```
+
+
 若应用需要向前兼容到Android 4.0以下版本，请在基类（如：BaseActivity）中添加如下代码以便管理Session：
+
+
 ```
 public class BaseActivity extends AppCompatActivity {
 
@@ -232,9 +253,13 @@ public class BaseActivity extends AppCompatActivity {
     }
 }
 ```
+
+
 ## 配置URI Scheme唤起的Activity页面(例如：MainActivity)
 此配置保证APP能正常跳转到特定详情页面。
 若在自定义Application中初始化LinkedME时未禁用自动跳转功能，则只需添加以下代码：
+
+
 ```
  // 添加此处目的是针对后台APP通过uri scheme唤起的情况，
     // 注意：即使不区分用户是否登录也需要添加此设置，也可以添加到基类中
@@ -243,7 +268,11 @@ public class BaseActivity extends AppCompatActivity {
         setIntent(intent);
     }
 ```
+
+
 若在自定义Application中初始化LinkedME时禁用自动跳转功能，则还需要在onCreate()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
+
+
 ```
  @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -252,6 +281,8 @@ public class BaseActivity extends AppCompatActivity {
         LinkedME.getInstance().setImmediate(true);
     }
 ```
+
+
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
 ## 创建深度链接
@@ -266,6 +297,8 @@ LinkedME SDK创建深度链接，必须传入链接的参数，用于区分App�
 |Tags|标签|表示深度链接的标签特性，自定义任何值；|
 |Stage|阶段|表示深度链接的阶段特性，比如第一版产品发布，第二版本测试等等；|
 示例代码如下：
+
+
 ```
 public class ShareActivity extends BaseActivity {
 
@@ -322,6 +355,8 @@ public class ShareActivity extends BaseActivity {
   }
 }
 ```
+
+
 ## 解析深度链接
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
 新建一个Activity(例如：MiddleActivity)，用于接收SDK回传的参数，并根据业务要求进行跳转
@@ -329,6 +364,8 @@ public class ShareActivity extends BaseActivity {
     1. 添加属性：`android:noHistory="true"`，目的是不显现该页面也不让其放入栈中，只进行页面逻辑跳转；
     2. 添加配置，`<meta-data android:name="linkedme.sdk.auto_link_keys" android:value="linkedme"/>`，目的是为了让SDK可以将参数回传给该页面(请不要更改value值！);
 LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的示例代码如下所示：
+
+
 ```
 <activity
       android:name=".activity.MiddleActivity"
@@ -337,9 +374,13 @@ LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的�
       <meta-data android:name="linkedme.sdk.auto_link_keys" android:value="linkedme"/>
   </activity>
 ```
+
+
 * 其次，在MiddleActivity的onCreate()方法中编写跳转逻辑
     1. 通过getIntent().getParcelableExtra(LinkedME.LM_LINKPROPERTIES)获取跳转参数
 LinkedME-Android-Deep-Linking-Demo的MiddleActivity示例代码如下所示：
+
+
 ```
 public class MiddleActivity extends AppCompatActivity {
     // ...
@@ -382,6 +423,8 @@ public class MiddleActivity extends AppCompatActivity {
     // ...
     }
 ```
+
+
 # 用户行为追踪
 Track是追踪用户APP内行为的工具，这里的用户行为既可以是APP内页面浏览的次数，也可以是启动APP的次数，还可以是用户在APP内的任何点击行为，例如图片下载、音乐播放、文章分享等，甚至是APP内某种逻辑的判断，都可以通过Track来追踪。
 针对不同行为，您还可以添加具体的特征描述，例如下载图片的类型，播放音乐的流派，分享文章的作者等。
@@ -400,37 +443,54 @@ Track功能适用于Android 2.3及以上操作系统的设备。系统提供三�
 1. 注册
 
 用户帐号注册成功后调用LMTracking的onRegister()方法
+
+
 ```
  public static void onRegister(String account)
 ```
+
 
 |参数|类型|描述|
 |---|---|---|
 |Account|NSString|用户账号|
 示例代码 :
+
+
 ```
 LMTracking.onRegister("Your_userId");
 ```
+
+
 2. 登录
 
-在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法。
+在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
+
+
 ```
 public static void onLogin(String account)
 ```
+
 
 |参数|类型|描述|
 |---|---|---|
 |Account|NSString|用户账号|
 示例代码：
+
+
 ```
 LMTracking.onLogin("Your_userId");
 ```
+
+
 3. 订单支付
 
-用户在提交订单时调用LMTracking的onPay接口。
+用户在提交订单时调用LMTracking的onPay接口：
+
+
 ```
 public static void onPay(String pay_account, String order_id, JSONObject order_detail, String order_amount, String account) 
 ```
+
 
 |参数|类型|描述|
 |---|---|---|
@@ -440,6 +500,8 @@ public static void onPay(String pay_account, String order_id, JSONObject order_d
 |order_amount|String|支付总金额|
 |account|String|账号名称|
 示例代码：
+
+
 ```
 JSONObject orderObject = new JSONObject();
  try {
@@ -450,18 +512,26 @@ JSONObject orderObject = new JSONObject();
  }
  LMTracking.onPay("LinkedME001", "132456789", orderObject, "123", "LinkedME");
  ```
+ 
+ 
 4. 自定义效果点
 
 在需要的时候调用LMTracking的onCustEvent()方法
+
+
 ```
 public static void onCustEvent(String point_name, JSONObject point_properties, String account) 
 ```
+
+
 |参数|类型|描述|
 |---|---|---|
 |point_name|String|自定义效果点名称|
 |point_properties|JSONObject|效果点自定义KV， json格式, eg:{"名称":"名称","年龄":14}|
 |account|String|账号名称|
 示例代码：
+
+
 ```
 JSONObject eventObject = new JSONObject();
  try {
@@ -472,9 +542,12 @@ JSONObject eventObject = new JSONObject();
  }
  LMTracking.onCustEvent("自定义事件一", eventObject, "LinkedME");
 ```
+
+
 * 验证接口
 
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
+
 
 ```
 2016-11-10 12:18:12.990 LinkedME:Start sending data.
