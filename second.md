@@ -10,6 +10,8 @@ console.log(msg);
 
 
 
+{{ 'hello/world' | melchior('Python', 'JavaScript', 'HTML') }}
+
 
 
 
