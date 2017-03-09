@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs"],
+    "plugins": [ "theme-api","copy-code-button","codetabs","melchior@1.1.0"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -14,6 +14,8 @@
                 }
             ]
         }
-       
+       "melchior": {
+      "includes": "_includes"
+    } 
     }
 }
