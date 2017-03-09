@@ -121,6 +121,8 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 
 
 
+
+
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
 ## 创建深度链接
