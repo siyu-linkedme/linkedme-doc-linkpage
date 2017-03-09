@@ -13,14 +13,10 @@ console.log(msg);
 
 
 
-、、、
-{% codetabs name="Python", type="py" -%}
+
+{% codetabs name="Objective-c", type="Objective-c" -%}
 msg = "Hello World"
 print msg
-{%- language name="JavaScript", type="js" -%}
-var msg = "Hello World";
-console.log(msg);
-{%- language name="HTML", type="html" -%}
+{%- language name="Swift", type="Swift" -%}
 <b>Hello World</b>
 {%- endcodetabs %}
-、、、
