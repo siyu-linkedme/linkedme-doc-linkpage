@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs","melchior@1.1.0"],
+    "plugins": [ "theme-api","copy-code-button","codetabs","melchior"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
