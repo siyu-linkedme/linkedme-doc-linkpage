@@ -61,7 +61,9 @@ CoreSpotlight.framework必须标记为可选。
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
 
-{% codetabs name="Objective-C", type="Objective-C" -%}
+
+
+{% codetabs name="Objective-C", type="C" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
   if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
@@ -117,6 +119,11 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   }
 }
 {%- endcodetabs %}
+
+
+
+
+
 
 
 
