@@ -1,5 +1,7 @@
 # iOS SDK及Demo下载
-LinkedME-iOS-Deep-Linking-SDK 
+[SDK下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
+[Demo下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
+ 
 # iOS SDK更新日志
 ## 版本V1.3.3
 发布日期：2016年12月09日  
@@ -22,6 +24,7 @@ LinkedME-iOS-Deep-Linking-SDK
 * 添加Debug模式，方便开发者提供调试SDK；
 * 添加Retry Number和Timeout接口，方便开发者设置连接次数和网络请求超时；
 * 添加Spotlight搜索功能；  
+
 **改善**  
 * 修改网络请求的消息队列机制，处理异步请求和同步请求，降低网络包的大小；
 * 搭建Restful接口，添加Mcq消息队列机制、Mysql动态扩容、优化Redis和MC缓存等技术方案；
