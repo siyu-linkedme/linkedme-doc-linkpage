@@ -14,57 +14,55 @@ SystemConfiguration.framework
 Security.framework
 ```								
 <font color="red">注意事项：CoreSpotlight.framework必须标记为可选</font>
+
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
 * 在Podfile文件中添加  
-取IDFA版(取IDFA为了广告效果检测,和统计相关,强烈建议集成带IDFA版本)
-[集成IDFA版但是app中没有广告审核问题	](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/blob/master/IDFA_Audit.md)							
+**取IDFA版**(取IDFA为了广告效果检测,和统计相关,强烈建议集成带IDFA版本)
+[集成IDFA版但是app中没有广告审核问题	](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/blob/master/IDFA_Audit.md)
+							
 ```
 pod 'LinkedME-iOS-Deep-Linking-Demo_Pod_IDFA',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
-```								
-不取IDFA版								
+```	
+							
+**不取IDFA版**								
 ```
 pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
-```								
-2. 运行 pod instal
-3. 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
+```	
+							
+* 运行 pod instal
+* 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
 # 基本配置
 ## 添加系统Framework
-1. CoreSpotlight.framework(status:Optional)
-2. SystemConfiguration.framework
-3. Security.framework
-注意事项：
-CoreSpotlight.framework必须标记为可选。
+* CoreSpotlight.framework(status:Optional)
+* SystemConfiguration.framework
+* Security.framework
+<font color="red">注意事项：CoreSpotlight.framework必须标记为可选。</font>
 ![](https://www.linkedme.cc/docs/images/4.1.4.jpg)
 ## 配置linkedme_key
-1. 打开info.plist文件
-2. 在列表中点击右键选择add row添加一个分组
-3. 创建一个新的item名称为linkedme_key类型为Dictionary
-4. 在linkedme_key新增一个字符串类型的item, live字段，到后台“设置”->“应用”中进行查看
+* 打开info.plist文件
+* 在列表中点击右键选择add row添加一个分组
+* 创建一个新的item名称为linkedme_key类型为Dictionary
+* 在linkedme_key新增一个字符串类型的item, live字段，到后台“设置”->“应用”中进行查看
 ![](https://www.linkedme.cc/docs/images/4.1.7.jpg)
 ## 配置URL Scheme
 配置URL Scheme，以便通过URL Scheme来唤起APP
-1. 打开info.plist
-2. 找到URL Types（如果没有就右键add row添加一个）
-3. 添加"you app"(你的app的唯一标识字符串)
+* 打开info.plist
+* 找到URL Types（如果没有就右键add row添加一个）
+* 添加"you app"(你的app的唯一标识字符串)
 ![](https://www.linkedme.cc/docs/images/4.1.5.jpg)
 ## 配置Universal Link支持 (仅支持iOS 9)
 配置Universal Link，使得iOS9中可以通过Universal Link来唤起APP
-1. 在左侧导航器中点击您的项目
-2. 选择'Capabilities'标签
-3. 打开'Associated Domains'开关
-4. 添加applinks:lkme.cc和applinks:www.lkme.cc
+* 在左侧导航器中点击您的项目
+* 选择'Capabilities'标签
+* 打开'Associated Domains'开关
+* 添加applinks:lkme.cc和applinks:www.lkme.cc
 ![](https://www.linkedme.cc/docs/images/4.1.6.jpg)
 ## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
-
-
-
-
-
 
 
 
@@ -129,16 +127,10 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 
 
 
-
-
-
-
-
-
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
 ## 创建深度链接
-温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。
+<font color="red">温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。</font>  
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面
 
 

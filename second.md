@@ -24,7 +24,8 @@ print msg
 
 
 
-
+在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
+在Appdelegate中实现下列方法
 
 
 
@@ -84,6 +85,10 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   }
 }
 {%- endcodetabs %}
+
+
+
+
 
 
 
