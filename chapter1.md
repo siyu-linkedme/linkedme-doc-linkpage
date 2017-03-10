@@ -140,6 +140,8 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 ## 创建深度链接
 温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面
+
+
 ```
 //创建短链
 -(void)addPara{
@@ -169,6 +171,8 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   }];
 }
 ```
+
+
 |参数名称|含义|功能|
 |---|---|---|
 |Channel|渠道|表示深度链接的渠道，方便统计分析和追踪，例如微信、微博，百度等等；|
@@ -177,17 +181,119 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 |Stage|阶段|表示深度链接的阶段特性，比如第一版产品发布，第二版本测试等等；|
 ## 解析深度链接
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
+
+
+
 # 用户行为追踪
 Track是追踪用户APP内行为的工具，这里的用户行为既可以是APP内页面浏览的次数，也可以是启动APP的次数，还可以是用户在APP内的任何点击行为，例如图片下载、音乐播放、文章分享等，甚至是APP内某种逻辑的判断，都可以通过Track来追踪。
 针对不同行为，您还可以添加具体的特征描述，例如下载图片的类型，播放音乐的流派，分享文章的作者等。
 ## 使用Track功能
 Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个标准效果点，如果不能满足您的监测需求，还可以自定义效果点
 
+- 激活用户  
+</br>LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设备。 激活用户，指下载、安装并首次启动应用成功的用户
+- 注册用户
+</br>在应用中，通过提交信息，注册成功的用户。
+- 自定义效果点
+</br>指用户在应用中进行了特定的操作或达成了特定的条件。 例如：用户点击了广告栏、用户打通了某个关卡等。 自定义效果点用于收集任意您期望跟踪的数据
+
+  1. 注册
+  
+  在用户帐号注册成功的时候调用LMTracking的onRegister方法：
+  
+```
++ (void)onRegister:(NSString *)account;
+
+```
+
+|参数|类型|描述|
+|---|---|---|
+|Account|NSString|用户账号|
+
+示例代码：
+
+```
+[LMTracking onRegister:@"Your_userId"];
+```
+
+  2. 登录
+  
+  在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法:
+
+```
++ (void)onLogin:(NSString *)account;
+```
+
+|参数|类型|描述|
+|---|---|---|
+|Account|NSString|用户账号|
+
+
+示例代码：
+```
+[LMTracking onLogin:@"Your_userId"];
+```
+
+  3. 应用内支付
+  
+  在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
+
+```
++ (void)onPay:(NSString *)payAccount withOrderId:(NSString *)orderId orderDetail:(NSDictionary *)orderDetail withAmount:(int)amount withAccount:(NSString *)account;
+```
+
+|参数|类型|描述|
+|---|---|---|
+|payAccount|NSString|支付帐号|
+|orderId|NSString|订单ID，最多64个字符，全局唯一，由开发者提供并维护（此ID很重要，如果不清楚集成时咨询客服）。用于唯一标识一次交易，以及后期系统之间对账使用；*如果多次充值成功的orderID重复，将只计算首次成功的数据，其他数据会认为重复数据丢弃。|
+|amount|int|订单金额，单位为所选货币的分。比如:600分或100美分，币种以后面的currrencyType为标准。|
+|orderDetail|NSDictionary|订单详情，自定义字段字典，如： @{@"name":@"iPhone",@"color":@"Black"}|
+|account|NSString|用户账号|
+
+示例代码：
+```
+NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
+[LMTracking onPay:@"user001" withOrderId:@"30012" orderDetail:dict withAmount:88 withAccount:@"user"];
+```
+
+  4. 添加自定义效果
+  
+  自定义效果点，在需要的时候调用`LMTracking的+ (void)onCustEvent:(NSString *)eventName;` 方法：
+
+```
++ (void)onCustEvent:(NSString *)pointName pointProperties:(NSDictionary *)pointProperties userAccount:(NSString *)account;
+```
+
+|参数|类型|描述|
+|---|---|---|
+|pointName|NSString|自定义效果点名称|
+|pointProperties|NSDictionary|自定义字段字典，自定义字段的字典格式，如： @{@"custom_info":@"xxx",@"upgrade":@"1"}|
+|account|NSString|用户名|
+
+示例代码：
+
+```
+NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
+[LMTracking onCustEvent:@"custom1" pointProperties:dict userAccount:@"LKME.CC"];
+```
+
+5. 验证接口
+
+当SDK成功向服务器传输数据时，会有类似下边的日志输出：
+```
+2016-11-10 12:18:12.990 LinkedMEiOSExample[38392:1830193] LMTrackingDataSDK:Start sending data. 2016-11-10 12:18:13.089 LinkedMEiOSExample[38392:1855022] LMTrackingDataSDK:Send data success!
+```
 
 # 其他功能
 ## Debug模式
 在Debug模式下会打印日志
 ## 测试模式
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
+
+- 在后台(Dashboard)中-设置-测试-添加测试设备
+
+OC：通过[LinkedME getTestID]获取设备ID,去后台中添加设备
+Swift：通过LinkedME.getTestID()获取设备ID,去后台中添加设备
+
 ## Spotlight 索引
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
