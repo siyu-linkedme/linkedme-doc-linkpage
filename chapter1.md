@@ -383,6 +383,12 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 # 其他功能
 ## Debug模式
 在Debug模式下会打印日志
+{% codetabs name="Objective-c", type="C" -%}
+[linkedme setDebug];
+{%- language name="Swift", type="Swift" -%}
+linkedme.setDebug();
+{%- endcodetabs %}
+
 ## 测试模式
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
 
