@@ -15,4 +15,8 @@
 * [功能介绍](feature.md)
     * [行为追踪](track.md)
 * [常见问题](qa.md)
+    *[产品问题](qa-product.md)
+    *[iOS](qa-ios.md)
+    *[Android](qa-android.md)
+    *[其他问题](qa-other.md)
 
