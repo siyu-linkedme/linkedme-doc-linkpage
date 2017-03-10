@@ -1,6 +1,6 @@
 # 准备工作
 ## 获取LinkedME_Key
-新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
+新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。  
 老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 ## 获取LinkedME iOS SDK及Demo
 到官方网站下载LinkedME-iOS-Deep-Linking-SDK，下载[Demo工程](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
@@ -13,7 +13,7 @@ CoreSpotlight.framework (status:Optional)
 SystemConfiguration.framework
 Security.framework
 ```								
-注意事项：CoreSpotlight.framework必须标记为可选
+<font colro="red">注意事项：CoreSpotlight.framework必须标记为可选</font>
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
 * 在Podfile文件中添加  
