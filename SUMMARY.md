@@ -6,7 +6,6 @@
     * [iOS SDK](ios-sdk-download.md)
     * [Android SDK](android-sdk-download.md)
     * [Html SDK](html-sdk-download.md)
-* [Second](second.md)
 * [LinkPage 集成文档](LinkPage-Integration.md)
     * [iOS SDK](chapter1.md)
     * [Android SDK](android-sdk.md)
