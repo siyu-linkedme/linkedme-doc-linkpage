@@ -136,4 +136,4 @@
 # 其他功能
 ## 测试模式
 若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。  
-<font color="red">注意：上线后务必设置  `data.type = "live"`;   否则将影响APP线上数据的查看。</font>
+<font color="red">注意：上线后务必设置  `data.type = "live"` ;   否则将影响APP线上数据的查看。</font>
