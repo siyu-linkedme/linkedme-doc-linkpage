@@ -395,3 +395,78 @@ Swift：通过LinkedME.getTestID()获取设备ID,去后台中添加设备
 
 ## Spotlight 索引
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
+
+### 创建Spotlight索引
+{% codetabs name="Objective-c", type="C" -%}
+[[LinkedME getInstance] createDiscoverableContentWithTitle:@"LinkedME 国内第一家企业级深度链接"
+			description:@"让APP不再是信息孤岛!"
+			thumbnailUrl:[NSURL URLWithString:@"http://7xq8b0.com1.z0.glb.clouddn.com/logo.png"]
+			linkParams:dict
+			type:@""
+			publiclyIndexable:NO keywords:set5
+			expirationDate:nil
+			spotlightIdentifier:@"bbcc"
+			spotlightCallback:^(NSString *url, NSString *spotlightIdentifier, NSError *error) {
+
+			}];
+{%- language name="Swift", type="Swift" -%}
+LinkedME.getInstance().createDiscoverableContentWithTitle("LinkedME 国内第一家企业级深度链接",
+			description: "让APP不再是信息孤岛!",
+			thumbnailUrl: NSURL.init(string: "http://7xq8b0.com1.z0.glb.clouddn.com/logo.png"),
+			linkParams: dic,
+			type: nil,
+			publiclyIndexable: false,
+			keywords: keyWord as NSSet as Set,
+				expirationDate: nil,
+				spotlightIdentifier: "linkedme") { (url, spotlightID, error) in
+		}
+{%- endcodetabs %}
+
+**设置关键字**
+
+{% codetabs name="Objective-c", type="C" -%}
+NSSet *keyWord = [NSSet setWithObjects:@"linkedme", nil];
+{%- language name="Swift", type="Swift" -%}
+let keyWord = NSSet.init(array: ["linkedme","hellolkm"])
+{%- endcodetabs %}
+
+**需要传递的参数**
+
+{% codetabs name="Objective-c", type="C" -%}
+NSSet *set5 = [NSSet    setWithObjects:@"linkedme",@"linked",@"深度链接", nil];
+{%- language name="Swift", type="Swift" -%}
+let dic = ["url":"http://linkedme.cc"]
+{%- endcodetabs %}
+
+**关键字详解**
+
+|title|标题|
+|---|---|
+|description|描述|
+|publiclyIndexable|是否公开|
+|type|类型|
+|thumbnailUrl|缩略图Url|
+|keywords|关键字|
+|userInfo|用户详情|
+|expirationDate|失效日期,设置失效日期会自动删除索引|
+|identifier|标志符|
+|callback|回调|
+|spotlightCallback|Spotlight回调|
+
+
+### 删除索引
+
+**删除所有索引**
+{% codetabs name="Objective-c", type="C" -%}
+[LinkedME removeAllSearchItems];
+{%- language name="Swift", type="Swift" -%}
+LinkedME.removeAllSearchItems();
+{%- endcodetabs %}
+
+**通过spotlightIdentifier删除索引**
+{% codetabs name="Objective-c", type="C" -%}
+[LinkedME removeSearchItemWith:@[@"linkedme"]];
+{%- language name="Swift", type="Swift" -%}
+LinkedME.removeSearchItemWith(["linkedme"]);
+{%- endcodetabs %}
+
