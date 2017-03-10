@@ -14,6 +14,7 @@
 # 基本配置
 ## 初始化LinkedME全局对象
 <font color="red">注意：请在服务器环境下测试，本地打开存在跨域问题</font>
+
 ```	
 /* 
   接口名称: init(linkedme_key, data, callback)
@@ -29,6 +30,7 @@
   linkedme.init("linkedme_key", null, null);
 </script>
 ```
+
 示例代码2：
 ```
 <script>
@@ -43,6 +45,7 @@
   });
 </script>
 ```
+
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现“基本配置”中的内容
 # 创建深度链接
@@ -56,6 +59,7 @@
     autoSelect ：生成深度链接之后是否自动打开深度链接，默认值为false 【可选】
 */
 ```
+
 示例代码：
 ```
 <script>
