@@ -197,7 +197,7 @@ Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个�
 - 自定义效果点
 </br>指用户在应用中进行了特定的操作或达成了特定的条件。 例如：用户点击了广告栏、用户打通了某个关卡等。 自定义效果点用于收集任意您期望跟踪的数据
 
-  1. 注册
+### 注册
   
   在用户帐号注册成功的时候调用LMTracking的onRegister方法：
   
@@ -216,7 +216,7 @@ Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个�
 [LMTracking onRegister:@"Your_userId"];
 ```
 
-  2. 登录
+### 登录
   
   在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法:
 
@@ -234,7 +234,7 @@ Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个�
 [LMTracking onLogin:@"Your_userId"];
 ```
 
-  3. 应用内支付
+### 应用内支付
   
   在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
 
@@ -256,7 +256,7 @@ NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
 [LMTracking onPay:@"user001" withOrderId:@"30012" orderDetail:dict withAmount:88 withAccount:@"user"];
 ```
 
-  4. 添加自定义效果
+### 添加自定义效果
   
   自定义效果点，在需要的时候调用`LMTracking的+ (void)onCustEvent:(NSString *)eventName;` 方法：
 
@@ -277,7 +277,7 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 [LMTracking onCustEvent:@"custom1" pointProperties:dict userAccount:@"LKME.CC"];
 ```
 
-5. 验证接口
+### 验证接口
 
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
 ```
@@ -292,7 +292,7 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 
 - 在后台(Dashboard)中-设置-测试-添加测试设备
 
-OC：通过[LinkedME getTestID]获取设备ID,去后台中添加设备
+OC：通过[LinkedME getTestID]获取设备ID,去后台中添加设备  
 Swift：通过LinkedME.getTestID()获取设备ID,去后台中添加设备
 
 ## Spotlight 索引
