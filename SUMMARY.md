@@ -13,5 +13,6 @@
     * [Html SDK](html.md)
 * [数据指标](metrics.md)
 * [功能介绍](feature.md)
+    * [行为追踪](track.md)
 * [常见问题](qa.md)
 
