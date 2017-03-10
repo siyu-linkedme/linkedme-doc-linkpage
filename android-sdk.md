@@ -8,6 +8,7 @@
 # 导入SDK
 ## 导入LinkedME Android SDK
 支持两种方式添加支持库引用：
+
 **方式一：下载jar包并导入**
 把下载的LinkedME-Android-Deep-Linking-SDK-V1.0.*.jar文件放到项目libs文件夹下，并添加到项目Module层的build.gradle依赖中,如下所示:
 ```
@@ -17,6 +18,7 @@ dependencies {
 }
 
 ```
+
 **方式二：添加maven仓库引用导入**
 * 在工程根节点的build.gradle中添加maven仓库地址，如下所示:
 
@@ -106,8 +108,10 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 ### 添加URI Scheme和App Links支持
 添加URI Scheme和App Links支持后，才能够通过这两种方式跳转到APP内
 在工程主页的Activity中添加`android:launchMode="singleTask"`属性。
-*. URI Scheme方式；
-*. App Links方式；  
+
+* URI Scheme方式；
+* App Links方式；  
+
 注意事项：
 1. 修改android:scheme；请在后台“设置”->“链接”中查看Android下的URI Scheme的值；
 2. 修改android:pathPrefix；请在后台“设置”->“概览”中查看LinkedME App ID的值；
@@ -286,7 +290,8 @@ public class BaseActivity extends AppCompatActivity {
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
 ## 创建深度链接
-温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。
+温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。  
+
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面。
 LinkedME SDK创建深度链接，必须传入链接的参数，用于区分App内不同的页面。比如唯品会商品详情页面的唯一标识为productId=230453452
 
