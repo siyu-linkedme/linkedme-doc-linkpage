@@ -23,7 +23,14 @@ print msg
 
 
 
-
+## 配置Universal Link支持 (仅支持iOS 9)
+配置Universal Link，使得iOS9中可以通过Universal Link来唤起APP
+* 在左侧导航器中点击您的项目
+* 选择'Capabilities'标签
+* 打开'Associated Domains'开关
+* 添加applinks:lkme.cc和applinks:www.lkme.cc
+![](https://www.linkedme.cc/docs/images/4.1.6.jpg)
+## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
 
@@ -85,6 +92,16 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   }
 }
 {%- endcodetabs %}
+
+
+
+
+
+# 深度链接功能
+本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
+## 创建深度链接
+<font color="red">温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。</font>  
+通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面
 
 
 
