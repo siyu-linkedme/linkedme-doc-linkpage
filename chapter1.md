@@ -16,7 +16,7 @@ Security.framework
 注意事项：CoreSpotlight.framework必须标记为可选
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
-1. 在Podfile文件中添加  
+* 在Podfile文件中添加  
 取IDFA版(取IDFA为了广告效果检测,和统计相关,强烈建议集成带IDFA版本)
 [集成IDFA版但是app中没有广告审核问题	](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/blob/master/IDFA_Audit.md)							
 ```
