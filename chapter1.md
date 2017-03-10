@@ -38,7 +38,7 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 ## 添加系统Framework
 * CoreSpotlight.framework(status:Optional)
 * SystemConfiguration.framework
-* Security.framework
+* Security.framework  
 <font color="red">注意事项：CoreSpotlight.framework必须标记为可选。</font>
 ![](https://www.linkedme.cc/docs/images/4.1.4.jpg)
 ## 配置linkedme_key
@@ -63,8 +63,6 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 ## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
 在Appdelegate中实现下列方法
-
-
 
 {% codetabs name="Objective-C", type="C" -%}
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
