@@ -4,6 +4,8 @@
 老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 
 ## 获取LinkedME Web SDK
+在线链接：https://lkme.cc/js/linkedme.min.js
+
 # 导入SDK
 ## 导入LinkedME Web SDK
 在html文件的head标签里增加如下代码：
@@ -48,7 +50,7 @@
 
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现“基本配置”中的内容
-# 创建深度链接
+## 创建深度链接
 通过js创建深度链接，例如在H5页面中通过js将该页面的深度链接写到“打开APP”按钮下
 ```
 /* 
