@@ -88,6 +88,51 @@
   },false);
 </script>
 ```
+##完整代码示例
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+      linkedme.init("linkedme_key", {type: "live"}, null);
+      var data = {};
+      data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.【可选】
+      data.feature = "功能名称"; // 自定义深度链接功能，多个用逗号分隔，【可选】
+      data.stage = "阶段名称"; // 自定义深度链接阶段，多个用逗号分隔，【可选】
+      data.channel = "渠道名称"; // 自定义深度链接渠道，多个用逗号分隔，【可选】
+      data.tags = "标签名称"; // 自定义深度链接标签，多个用逗号分隔，【可选】
+      data.ios_custom_url = ""; // 自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，【可选】
+      data.android_custom_url = "";// 自定义安卓平台下App的下载地址，【可选】
+      // 下面是自定义深度链接参数，用户点击深度链接打开app之后，params参数将被带入app
+      // 比如详情页面的参数，可以写进去，这样唤起app后可直接跳转到详情页【可选】
+      var value1 = 1;
+      var value2 = 2;
+      data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
+
+	linkedme.link(data, function(err, data){
+        if(err){
+          // 生成深度链接失败，返回错误对象err
+        } else {
+          /* 
+            生成深度链接成功，深度链接可以通过data.url得到，
+            将深度链接绑定到<a>标签，这样当用户点击这
+            个深度链接，如果是在pc上，那么跳转到深度链接二维
+            码页面，用户用手机扫描该二维码就会打开app；如果
+            在移动端，深度链接直接会根据手机设备类型打开ios
+            或者安卓app 
+           */
+          document.body.innerHTML += '<a class="linkedme" href="'+data.url+'">LinkedME深度链接</a>'
+        }
+      },false);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
 # 其他功能
 ## 测试模式
 若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。  
