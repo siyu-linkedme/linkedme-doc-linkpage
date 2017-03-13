@@ -177,10 +177,12 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 
 {% codetabs name="Objective-c", type="C" -%}
 {% raw %}
+<font color="red">
 1. 在AppDelegate中引入头文件
 #import <LinkedME_iOS/LinkedME.h>
 2. 在Appdelegate里注册ViewController
 2.1 配置注册ViewController设置及跳转方式
+</font>
 {% endraw %}
 	
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -237,9 +239,9 @@ DetailViewController  *dvc=[storyBoard instantiateViewControllerWithIdentifier:@
   return YES;
 }
 {%- language name="Swift", type="Swift" -%}
-在xxxx-Bridging-Header.h中导入头文件
+1. 在xxxx-Bridging-Header.h中导入头文件
 #import <LinkedME_iOS/LinkedME.h>
-2在Appdelegate里注册ViewController
+2. 在Appdelegate里注册ViewController
 2.1 配置注册ViewController设置及跳转方式
 	
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
