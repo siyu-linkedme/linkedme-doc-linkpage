@@ -9,7 +9,7 @@
 ## 导入LinkedME Android SDK
 支持两种方式添加支持库引用：
 
-**方式一：下载jar包并导入**
+**方式一：下载jar包并导入**  
 把下载的LinkedME-Android-Deep-Linking-SDK-V1.0.*.jar文件放到项目libs文件夹下，并添加到项目Module层的build.gradle依赖中,如下所示:
 ```java
 dependencies {
