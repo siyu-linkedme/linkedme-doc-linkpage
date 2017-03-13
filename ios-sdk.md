@@ -174,14 +174,21 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 |Stage|阶段|表示深度链接的阶段特性，比如第一版产品发布，第二版本测试等等；|
 ## 解析深度链接
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
+### 配置AppDelegate
+
+Objective-C请先进行如下配置：
+1. 在AppDelegate中引入头文件`#import <LinkedME_iOS/LinkedME.h>`
+2. 在Appdelegate里注册ViewController
+
+Swift请先进行如下配置：  
+1. 在xxxx-Bridging-Header.h中导入头文件`#import <LinkedME_iOS/LinkedME.h>`
+2. 在Appdelegate里注册ViewController
+
+
+### 配置注册ViewController设置及跳转方式
 
 {% codetabs name="Objective-c", type="C" -%}
-{% raw %}
-1. 在AppDelegate中引入头文件
-#import <LinkedME_iOS/LinkedME.h>
-2. 在Appdelegate里注册ViewController
-2.1 配置注册ViewController设置及跳转方式
-{% endraw %}
+
 	
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 // Override point for customization after application launch.'
@@ -237,10 +244,6 @@ DetailViewController  *dvc=[storyBoard instantiateViewControllerWithIdentifier:@
   return YES;
 }
 {%- language name="Swift", type="Swift" -%}
-1. 在xxxx-Bridging-Header.h中导入头文件
-#import <LinkedME_iOS/LinkedME.h>
-2. 在Appdelegate里注册ViewController
-2.1 配置注册ViewController设置及跳转方式
 	
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
   // Override point for customization after application launch.
