@@ -19,4 +19,3 @@
   * [Android](qa-android.md)
   * [其他问题](qa-other.md)
 * [技术支持](support.md)
-* [test](test.org)
