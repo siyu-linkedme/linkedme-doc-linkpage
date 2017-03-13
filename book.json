@@ -41,8 +41,8 @@
     },
     
         "fontsettings": {
-            "family": 'sans',// 'serif' or 'sans',
-            "size": 3 // 1 - 4
+            "family": 'sans',
+            "size": 3
         }
     }
     
