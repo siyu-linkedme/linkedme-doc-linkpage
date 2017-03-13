@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc","page-toc-button"],
+    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -14,10 +14,7 @@
                 }
             ]
         },
-        
-        "page-toc":{
-            "position":"top"
-        },
+    
         
         "page-toc-button": {
             "maxTocDepth": 2,
