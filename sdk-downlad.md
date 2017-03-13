@@ -16,7 +16,7 @@ LinkPage SDK包括 Android/iOS SDK 和 Html SDK 两种，各 SDK 的下载及更
 <th>解析深度链接</th>
 </tr>
 <tr>
-<td>[Web SDK](/html-sdk.md#创建深度链接)</td>
+<td>Web SDK</td>
 <td rowspan="2">Android SDK / iOS SDK</td>
 </tr>
 <tr>
