@@ -3,7 +3,7 @@
 * [新手上路](README.md)
 * [注册并开始](register.md)
 
----
+-------
 
 ## LinkPage
 
