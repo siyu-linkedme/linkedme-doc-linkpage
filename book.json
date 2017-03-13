@@ -40,11 +40,10 @@
         "defineWord" : ["Gitbook Use"]
     },
     
-    "pluginsConfig": {
         "fontsettings": {
             "family": 'sans',// 'serif' or 'sans',
             "size": 3 // 1 - 4
         }
     }
-        }
+    
 }
