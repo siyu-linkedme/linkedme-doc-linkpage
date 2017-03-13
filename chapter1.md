@@ -1,7 +1,7 @@
 # 准备工作
 ## 获取LinkedME_Key
-新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。  
-老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
+<font color="red">新用户</font>：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。  
+<font color="red">老用户</font>：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 ## 获取LinkedME iOS SDK及Demo
 到官方网站下载LinkedME-iOS-Deep-Linking-SDK，下载[Demo工程](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
 # 导入SDK
@@ -46,7 +46,7 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 * 打开info.plist文件
 * 在列表中点击右键选择add row添加一个分组
 * 创建一个新的item名称为linkedme_key类型为Dictionary
-* 在linkedme_key新增一个字符串类型的item, live字段，到后台“设置”->“应用”中进行查看
+* 在linkedme_key新增一个字符串类型的item, live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
 ![](https://www.linkedme.cc/docs/images/4.1.7.jpg)
 ## 配置URL Scheme
 配置URL Scheme，以便通过URL Scheme来唤起APP
@@ -392,8 +392,8 @@ linkedme.setDebug();
 
 - 在后台(Dashboard)中-设置-测试-添加测试设备
 
-OC：通过[LinkedME getTestID]获取设备ID,去后台中添加设备  
-Swift：通过LinkedME.getTestID()获取设备ID,去后台中添加设备
+<font color="red">OC</font>：通过`[LinkedME getTestID]`获取设备ID,去后台中添加设备  
+<font color="red">Swift</font>：通过`LinkedME.getTestID()`获取设备ID,去后台中添加设备
 
 ## Spotlight 索引
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面

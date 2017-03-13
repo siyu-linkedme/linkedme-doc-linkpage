@@ -1,7 +1,7 @@
 # 准备工作
 ## 获取LinkedME Key
-新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
-老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
+<font color="red">新用户</font>：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
+<font color="red">老用户</font>：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 
 ## 获取LinkedME Android SDK及Demo
 到官方网站下载LinkedME-Android-Deep-Linking-SDK，下载 [Demo工程](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo)，获取工程libs目录下的 [LinkedME-Android-Deep-Linking-SDK-V1.0.*.jar](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/tree/master/LinkedME-Demo/libs)支持包。
@@ -170,7 +170,7 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
 
 
 ## 初始化LinkedME实例
-在自定义Application类中的onCreate()方法中，添加初始化LinkedME实例的代码。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
+在自定义Application类中的<font color="red">onCreate()</font>方法中，添加初始化LinkedME实例的代码。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
 
 
 ```
@@ -208,7 +208,7 @@ public class LinkedMEDemoApp extends Application {
 ```
 
 
-若应用需要向前兼容到Android 4.0以下版本，请在基类（如：BaseActivity）中添加如下代码以便管理Session：
+若应用需要向前兼容到Android 4.0以下版本，请在<font color="red">基类</font>（如：BaseActivity）中添加如下代码以便管理Session：
 
 
 ```
@@ -261,7 +261,7 @@ public class BaseActivity extends AppCompatActivity {
 
 ## 配置URI Scheme唤起的Activity页面(例如：MainActivity)
 此配置保证APP能正常跳转到特定详情页面。
-若在自定义Application中初始化LinkedME时未禁用自动跳转功能，则只需添加以下代码：
+若在自定义Application中初始化LinkedME时<font color="red">未禁用</font>自动跳转功能，则只需添加以下代码：
 
 
 ```
@@ -274,7 +274,7 @@ public class BaseActivity extends AppCompatActivity {
 ```
 
 
-若在自定义Application中初始化LinkedME时禁用自动跳转功能，则还需要在onCreate()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
+若在自定义Application中初始化LinkedME时<font color="red">禁用</font>自动跳转功能，则还需要在onCreate()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
 
 
 ```
