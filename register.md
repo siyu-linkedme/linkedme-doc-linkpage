@@ -1,8 +1,8 @@
 # 注册账号
 ## 注册账号
-LinkedME账号通用于我们提供的所有产品，登录官方网站进行注册。
+LinkedME账号通用于我们提供的所有产品，登录官方网站进行[注册](https://www.linkedme.cc/dashboard/index.html#/access/signup)。
 ## 开通使用
-注册成功之后，即可登录使用。
+注册成功之后，即可[登录](https://www.linkedme.cc/dashboard/index.html#/access/signin)使用。
 # 创建应用
 ## 创建应用
 成功登录后台之后，创建新应用。
@@ -19,6 +19,7 @@ LinkedME账号通用于我们提供的所有产品，登录官方网站进行注
 1. 点击修改应用名字
 2. 点击修改应用Logo
 3. 点击删除应用
+
 <font color="red">注意事项：如果误删应用后，请发邮件到support@linkedme.cc。</font>
 
 ## 链接设置
@@ -26,14 +27,14 @@ LinkedME账号通用于我们提供的所有产品，登录官方网站进行注
 
 **有iOS应用**
 ![](https://www.linkedme.cc/docs/images/2.3.2.1-1.jpg)
-1. 勾选“是否有iOS应用”项。
-2. URI Scheme，点击输入框输入您的iOS应用的URI Scheme协议，示例：linkedmedemo
+1. 勾选“<font color="red">是否有iOS应用</font>”项。
+2. <font color="red">URI Scheme，点击输入框输入您的iOS应用的URI Scheme协议，示例：linkedmedemo</font>
 3. 下载地址，可以是AppStore上的下载地址，也可以自定义
-4. Universal Links为iOS官方深度链接标准，iOS 9.0以上系统支持，可实现应用间无缝跳转。访问[苹果开发者网站](https://developer.apple.com/)，在Appid中查看Bundle ID和Apple App Prefix的值
+4. Universal Links为iOS官方深度链接标准，iOS 9.0以上系统支持，可实现应用间无缝跳转。访问[苹果开发者网站](https://developer.apple.com/)，<font color="red">在Appid中查看Bundle ID和Apple App Prefix的值</font>
 
 **无iOS应用**
 ![](https://www.linkedme.cc/docs/images/2.3.2.1-2.jpg)
-1. 不用勾选“是否有iOS应用”项。
+1. 不用勾选“<font color="red">是否有iOS应用</font>”项。
 2. iOS URL，苹果设备访问该深度链接所跳转到的地址
 
 **有Android应用**
