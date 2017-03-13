@@ -2,6 +2,11 @@
     "title": "LinkedME文档中心",
   "description": "LinkedME产品介绍及集成文档等",
   "language": "zh",
+  "links" : {
+    "sidebar" : {
+        "Home" : "http://www.linkedme.cc"
+    }
+}
     "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
         "pluginsConfig": {
             "theme-api": {
