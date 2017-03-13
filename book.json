@@ -14,10 +14,10 @@
                 }
             ]
         }
+        {
         "page-toc":[
-            {
             "position":"top"
-            }
         ]
+        }
         }
 }
