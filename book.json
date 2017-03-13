@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
+    "plugins": [ "theme-api","copy-code-button","codetabs"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -13,12 +13,7 @@
                     "name": "Go"
                 }
             ]
-        },
-        
-        "page-toc-button": {
-            "maxTocDepth": 2,
-            "minTocSize": 2
-           }
+        }
         
         }
 }
