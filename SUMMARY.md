@@ -7,7 +7,7 @@
     * [Android SDK](android-sdk-download.md)
     * [Html SDK](html-sdk-download.md)
 * [LinkPage 集成文档](LinkPage-Integration.md)
-    * [iOS SDK](chapter1.md)
+    * [iOS SDK](ios-sdk.md)
     * [Android SDK](android-sdk.md)
     * [Html SDK](html.md)
 * [数据指标](metrics.md)
