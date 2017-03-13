@@ -11,7 +11,7 @@
 
 **方式一：下载jar包并导入**
 把下载的LinkedME-Android-Deep-Linking-SDK-V1.0.*.jar文件放到项目libs文件夹下，并添加到项目Module层的build.gradle依赖中,如下所示:
-```
+```java
 dependencies {
   //注意修改jar包名,与下载的jar包名称一致
   compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.9.jar')
@@ -22,7 +22,7 @@ dependencies {
 **方式二：添加maven仓库引用导入**
 * 在工程根节点的build.gradle中添加maven仓库地址，如下所示:
 
-```
+```java
 buildscript {
     repositories {
         jcenter()
@@ -51,7 +51,7 @@ allprojects {
 
 * 在项目Module层的build.gradle中添加依赖，如下所示：
 
-```
+```java
 dependencies {
 compile fileTree(include: ['*.jar'], dir: 'libs')
 compile "cc.linkedme.deeplinks:link-page:1.0.9"
@@ -65,7 +65,7 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 ### 添加LinkedME Key
 
 
-```
+```java
 <application
   android:name=".activity.LinkedMEDemoApp">
   <!-- LinkedME官网注册应用后,从"设置"页面获取该Key -->
@@ -91,7 +91,7 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 添加代码如下：
 
 
-```
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <!--LinkedME SDK 需要开启的权限-->  <!--LinkedME SDK 需要开启的权限-->
@@ -118,7 +118,7 @@ compile "cc.linkedme.deeplinks:link-page:1.0.9"
 LinkedME-Android-Deep-Linking-Demo代码如下所示：
 
 
-```
+```java
 <application android:name=".activity.LinkedMEDemoApp">
   <activity
     android:name=".activity.MainActivity"
@@ -173,7 +173,7 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
 在自定义Application类中的<font color="red">onCreate()</font>方法中，添加初始化LinkedME实例的代码。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
 
 
-```
+```java
 public class LinkedMEDemoApp extends Application {
   @Override
   public void onCreate() {
@@ -211,7 +211,7 @@ public class LinkedMEDemoApp extends Application {
 若应用需要向前兼容到Android 4.0以下版本，请在<font color="red">基类</font>（如：BaseActivity）中添加如下代码以便管理Session：
 
 
-```
+```java
 public class BaseActivity extends AppCompatActivity {
 
     @Override
@@ -264,7 +264,7 @@ public class BaseActivity extends AppCompatActivity {
 若在自定义Application中初始化LinkedME时<font color="red">未禁用</font>自动跳转功能，则只需添加以下代码：
 
 
-```
+```java
  // 添加此处目的是针对后台APP通过uri scheme唤起的情况，
     // 注意：即使不区分用户是否登录也需要添加此设置，也可以添加到基类中
     @Override
@@ -277,7 +277,7 @@ public class BaseActivity extends AppCompatActivity {
 若在自定义Application中初始化LinkedME时<font color="red">禁用</font>自动跳转功能，则还需要在onCreate()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
 
 
-```
+```java
  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -304,7 +304,7 @@ LinkedME SDK创建深度链接，必须传入链接的参数，用于区分App�
 示例代码如下：
 
 
-```
+```java
 public class ShareActivity extends BaseActivity {
 
   public void share() {
@@ -371,7 +371,7 @@ public class ShareActivity extends BaseActivity {
 LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的示例代码如下所示：
 
 
-```
+```java
 <activity
       android:name=".activity.MiddleActivity"
       android:screenOrientation="portrait"
@@ -386,7 +386,7 @@ LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的�
 LinkedME-Android-Deep-Linking-Demo的MiddleActivity示例代码如下所示：
 
 
-```
+```java
 public class MiddleActivity extends AppCompatActivity {
     // ...
 /**
@@ -450,7 +450,7 @@ Track功能适用于Android 2.3及以上操作系统的设备。系统提供三�
 用户帐号注册成功后调用LMTracking的onRegister()方法
 
 
-```
+```java
  public static void onRegister(String account)
 ```
 
@@ -461,7 +461,7 @@ Track功能适用于Android 2.3及以上操作系统的设备。系统提供三�
 示例代码 :
 
 
-```
+```java
 LMTracking.onRegister("Your_userId");
 ```
 
@@ -471,7 +471,7 @@ LMTracking.onRegister("Your_userId");
 在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
 
 
-```
+```java
 public static void onLogin(String account)
 ```
 
@@ -482,7 +482,7 @@ public static void onLogin(String account)
 示例代码：
 
 
-```
+```java
 LMTracking.onLogin("Your_userId");
 ```
 
@@ -492,7 +492,7 @@ LMTracking.onLogin("Your_userId");
 用户在提交订单时调用LMTracking的onPay接口：
 
 
-```
+```java
 public static void onPay(String pay_account, String order_id, JSONObject order_detail, String order_amount, String account) 
 ```
 
@@ -507,7 +507,7 @@ public static void onPay(String pay_account, String order_id, JSONObject order_d
 示例代码：
 
 
-```
+```java
 JSONObject orderObject = new JSONObject();
  try {
      orderObject.putOpt("商品名称", "商品一");
@@ -524,7 +524,7 @@ JSONObject orderObject = new JSONObject();
 在需要的时候调用LMTracking的onCustEvent()方法
 
 
-```
+```java
 public static void onCustEvent(String point_name, JSONObject point_properties, String account) 
 ```
 
@@ -537,7 +537,7 @@ public static void onCustEvent(String point_name, JSONObject point_properties, S
 示例代码：
 
 
-```
+```java
 JSONObject eventObject = new JSONObject();
  try {
      eventObject.putOpt("属性1","123");
@@ -554,7 +554,7 @@ JSONObject eventObject = new JSONObject();
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
 
 
-```
+```java
 2016-11-10 12:18:12.990 LinkedME:Start sending data.
 2016-11-10 12:18:13.089 LinkedME:Send data success!
 ```

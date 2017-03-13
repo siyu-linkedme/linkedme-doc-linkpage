@@ -135,7 +135,7 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面
 
 
-```
+```java
 //创建短链
 -(void)addPara{
   self.linkedUniversalObject = [[LMUniversalObject alloc] init];
@@ -300,7 +300,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
   
   在用户帐号注册成功的时候调用LMTracking的onRegister方法：
   
-```
+```java
 + (void)onRegister:(NSString *)account;
 
 ```
@@ -311,7 +311,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
 
 示例代码：
 
-```
+```java
 [LMTracking onRegister:@"Your_userId"];
 ```
 
@@ -319,7 +319,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
   
   在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法:
 
-```
+```java
 + (void)onLogin:(NSString *)account;
 ```
 
@@ -329,7 +329,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
 
 
 示例代码：
-```
+```java
 [LMTracking onLogin:@"Your_userId"];
 ```
 
@@ -337,7 +337,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
   
   在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
 
-```
+```java
 + (void)onPay:(NSString *)payAccount withOrderId:(NSString *)orderId orderDetail:(NSDictionary *)orderDetail withAmount:(int)amount withAccount:(NSString *)account;
 ```
 
@@ -350,7 +350,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
 |account|NSString|用户账号|
 
 示例代码：
-```
+```java
 NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
 [LMTracking onPay:@"user001" withOrderId:@"30012" orderDetail:dict withAmount:88 withAccount:@"user"];
 ```
@@ -359,7 +359,7 @@ NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
   
   自定义效果点，在需要的时候调用`LMTracking的+ (void)onCustEvent:(NSString *)eventName;` 方法：
 
-```
+```java
 + (void)onCustEvent:(NSString *)pointName pointProperties:(NSDictionary *)pointProperties userAccount:(NSString *)account;
 ```
 
@@ -371,7 +371,7 @@ NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
 
 示例代码：
 
-```
+```java
 NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 [LMTracking onCustEvent:@"custom1" pointProperties:dict userAccount:@"LKME.CC"];
 ```
@@ -379,7 +379,7 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 ### 验证接口
 
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
-```
+```java
 2016-11-10 12:18:12.990 LinkedMEiOSExample[38392:1830193] LMTrackingDataSDK:Start sending data. 2016-11-10 12:18:13.089 LinkedMEiOSExample[38392:1855022] LMTrackingDataSDK:Send data success!
 ```
 
