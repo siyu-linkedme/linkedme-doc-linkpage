@@ -4,6 +4,7 @@
 * [注册并开始](register.md)
 
 ---
+
 ## LinkPage
 
 * [LinkPage SDK下载](sdk-downlad.md)
@@ -22,5 +23,7 @@
   * [iOS](qa-ios.md)
   * [Android](qa-android.md)
   * [其他问题](qa-other.md)
+  
 -----
+
 * [技术支持](support.md)
