@@ -1,4 +1,7 @@
 {
+    "title": "LinkedME文档中心",
+  "description": "LinkedME产品介绍及集成文档等",
+  "language": "zh",
     "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
         "pluginsConfig": {
             "theme-api": {
