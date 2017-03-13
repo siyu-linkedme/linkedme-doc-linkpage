@@ -1,19 +1,22 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs"],
-    "pluginsConfig": {
-        "theme-api": {
-            "languages": [
-                {
+    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
+        "pluginsConfig": {
+            "theme-api": {
+                "languages": [
+                    {
                     "lang": "js",
                     "name": "JavaScript",
                     "default": true
-                },
-                {
+                    },
+                    {
                     "lang": "go",
                     "name": "Go"
-                }
-            ]
-        }
-        
+                    }
+                ]
+            },
+            "page-toc-button": {
+                "maxTocDepth": 2,
+                "minTocSize": 2
+            }
         }
 }
