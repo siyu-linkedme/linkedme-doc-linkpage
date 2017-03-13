@@ -2,7 +2,7 @@
     "title": "LinkedME文档中心",
   "description": "LinkedME产品介绍及集成文档等",
   "language": "zh-hans",
-  "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro"],
+  "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro","packt-fontsettings"],
         "pluginsConfig": {
             "theme-api": {
                 "languages": [
@@ -38,6 +38,13 @@
         "search-pro": {
         "cutWordLib": "nodejieba",
         "defineWord" : ["Gitbook Use"]
+    },
+    
+    "pluginsConfig": {
+        "fontsettings": {
+            "family": 'sans',// 'serif' or 'sans',
+            "size": 2 // 1 - 4
+        }
     }
         }
 }
