@@ -1,5 +1,5 @@
 {
-    "plugins": [ "theme-api","copy-code-button","codetabs"],
+    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc"],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
