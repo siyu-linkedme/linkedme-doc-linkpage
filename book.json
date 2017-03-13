@@ -6,8 +6,8 @@
     "sidebar" : {
         "Home" : "http://www.linkedme.cc"
     }
-}
-    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","search-pro"],
+},
+    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","search-pro","splitter"],
         "pluginsConfig": {
             "theme-api": {
                 "languages": [
@@ -22,10 +22,12 @@
                     }
                 ]
             },
+            
             "page-toc-button": {
                 "maxTocDepth": 2,
                 "minTocSize": 2
             },
+            
             "sharing": {
             "facebook": false,
             "twitter": false,
@@ -38,6 +40,7 @@
                 "weibo", "instapaper"
             ]
         },
+        
         "search-pro": {
         "cutWordLib": "nodejieba",
         "defineWord" : ["Gitbook Use"]
