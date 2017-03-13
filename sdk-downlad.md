@@ -10,6 +10,19 @@ LinkPage SDK包括 Android/iOS SDK 和 Html SDK 两种，各 SDK 的下载及更
 ## 我该如何选择SDK？
 创建深度链接可以通过WEB SDK来创建，也可以通过原生的Android/iOS SDK来创建，解析深度链接只能通过原生的Android/iOS SDK来解析。
 
+<table>
+<tr>
+<th>创建深度链接</th>
+<th>解析深度链接</th>
+</tr>
+<tr>
+<td>Web SDK</td>
+<td rowspan="2">Android SDK / iOS SDK</td>
+</tr>
+<tr>
+<td>Android SDK / iOS SDK</td>
+</tr>
+</table>
 
 WEB SDK创建深度链接的方式相较于Android/iOS SDK来说，使用方式更加灵活，所以我们推荐您使用WEB SDK创建深度链接，那么什么样的情况用WEB SDK创建深度链接更合适？
 
