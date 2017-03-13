@@ -17,6 +17,18 @@
             "page-toc-button": {
                 "maxTocDepth": 2,
                 "minTocSize": 2
-            }
+            },
+            "sharing": {
+            "facebook": false,
+            "twitter": false,
+            "google": false,
+            "weibo": true,
+            "instapaper": false,
+            "vk": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper"
+            ]
+        }
         }
 }
