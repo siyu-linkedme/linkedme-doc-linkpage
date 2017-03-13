@@ -1,3 +1,4 @@
+# iOS平台相关问题
 #### **Q1:  为什么点击按钮可以直接从微信唤起app？**  
 A1:  使用[Universal Link](https://www.linkedme.cc/blog/square/586f15db8ecaaf415cbcc6ff)技术，可以通过链接直接唤起app。
 
