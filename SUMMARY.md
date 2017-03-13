@@ -2,7 +2,7 @@
 
 * [新手上路](README.md)
 * [注册并开始](register.md)
-### LinkPage
+## LinkPage
 * [LinkPage SDK下载](sdk-downlad.md)
   * [iOS SDK](ios-sdk-download.md)
   * [Android SDK](android-sdk-download.md)
