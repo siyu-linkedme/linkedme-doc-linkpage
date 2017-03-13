@@ -19,7 +19,7 @@ LinkedME账号通用于我们提供的所有产品，登录官方网站进行注
 1. 点击修改应用名字
 2. 点击修改应用Logo
 3. 点击删除应用
-注意事项：如果误删应用后，请发邮件到support@linkedme.cc。
+<font color="red">注意事项：如果误删应用后，请发邮件到support@linkedme.cc。</font>
 
 ## 链接设置
 为了实现不同平台的精准跳转，需要针对不同平台进行对应的链接配置。  
@@ -29,7 +29,7 @@ LinkedME账号通用于我们提供的所有产品，登录官方网站进行注
 1. 勾选“是否有iOS应用”项。
 2. URI Scheme，点击输入框输入您的iOS应用的URI Scheme协议，示例：linkedmedemo
 3. 下载地址，可以是AppStore上的下载地址，也可以自定义
-4. Universal Links为iOS官方深度链接标准，iOS 9.0以上系统支持，可实现应用间无缝跳转。访问苹果开发者网站，在Appid中查看Bundle ID和Apple App Prefix的值
+4. Universal Links为iOS官方深度链接标准，iOS 9.0以上系统支持，可实现应用间无缝跳转。访问[苹果开发者网站](https://developer.apple.com/)，在Appid中查看Bundle ID和Apple App Prefix的值
 
 **无iOS应用**
 ![](https://www.linkedme.cc/docs/images/2.3.2.1-2.jpg)
