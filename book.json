@@ -7,7 +7,7 @@
         "Home" : "http://www.linkedme.cc"
     }
 }
-    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button"],
+    "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","search-pro"],
         "pluginsConfig": {
             "theme-api": {
                 "languages": [
@@ -37,6 +37,10 @@
                 "facebook", "google", "twitter",
                 "weibo", "instapaper"
             ]
-        }
+        },
+        "search-pro": {
+        "cutWordLib": "nodejieba",
+        "defineWord" : ["Gitbook Use"]
+    }
         }
 }
