@@ -176,11 +176,12 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
 
 {% codetabs name="Objective-c", type="C" -%}
-
+{% raw %}
 1. 在AppDelegate中引入头文件
 #import <LinkedME_iOS/LinkedME.h>
 2. 在Appdelegate里注册ViewController
 2.1 配置注册ViewController设置及跳转方式
+{% endraw %}
 	
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 // Override point for customization after application launch.'
