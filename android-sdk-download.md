@@ -72,6 +72,7 @@
 * 在Android-Deep-Linking-SDK中不再获取HardwardId和Google advertising，以免触犯用户隐私；
 * 添加Debug模式，方便开发者提供调试SDK；
 * 添加Retry Number和Timeout接口，方便开发者设置连接次数和网络请求超时；  
+
 **改善**  
 * 修改网络请求的消息队列机制，处理异步请求和同步请求，降低网络包的大小；
 * 搭建Restful接口，添加Mcq消息队列机制、Mysql动态扩容、优化缓存等技术方案；
