@@ -25,13 +25,8 @@
         "search-pro": {
         "cutWordLib": "nodejieba",
         "defineWord" : ["Gitbook Use"]
-    },
+    }
     
-        "fontsettings": {
-            "theme": ["sepia", "night", "white"],
-            "family": ["serif" , "sans"],
-            "size": 2
-        }
     }
     
 }
