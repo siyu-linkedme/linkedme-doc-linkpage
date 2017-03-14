@@ -2,21 +2,8 @@
     "title": "LinkedME文档中心",
   "description": "LinkedME产品介绍及集成文档等",
   "language": "zh-hans",
-  "plugins": [ "theme-api","copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro","packt-fontsettings"],
+  "plugins": [ "copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro","packt-fontsettings"],
         "pluginsConfig": {
-            "theme-api": {
-                "languages": [
-                    {
-                    "lang": "js",
-                    "name": "JavaScript",
-                    "default": true
-                    },
-                    {
-                    "lang": "go",
-                    "name": "Go"
-                    }
-                ]
-            },
          "page-toc-button": {
                 "maxTocDepth": 2,
                 "minTocSize": 2
