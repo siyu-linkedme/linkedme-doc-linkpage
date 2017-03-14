@@ -445,7 +445,7 @@ Track功能适用于Android 2.3及以上操作系统的设备。系统提供三�
 </br>指用户在应用中进行了特定的操作或达成了特定的条件。例如：用户点击了广告栏、用户打通了某个关卡等。自定义效果点用于收集任意您期望跟踪的数据
 
 
-1. 注册
+### 注册
 
 用户帐号注册成功后调用LMTracking的onRegister()方法
 
@@ -466,7 +466,7 @@ LMTracking.onRegister("Your_userId");
 ```
 
 
-2. 登录
+### 登录
 
 在用户帐号登录成功的时候调用 LMTracking 的 onLogin 方法：
 
@@ -487,7 +487,7 @@ LMTracking.onLogin("Your_userId");
 ```
 
 
-3. 订单支付
+### 订单支付
 
 用户在提交订单时调用LMTracking的onPay接口：
 
@@ -519,7 +519,7 @@ JSONObject orderObject = new JSONObject();
  ```
  
  
-4. 自定义效果点
+### 自定义效果点
 
 在需要的时候调用LMTracking的onCustEvent()方法
 
@@ -549,7 +549,7 @@ JSONObject eventObject = new JSONObject();
 ```
 
 
-* 验证接口
+### 验证接口
 
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
 
