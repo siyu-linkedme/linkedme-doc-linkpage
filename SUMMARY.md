@@ -15,6 +15,7 @@
   * [iOS SDK](ios-sdk.md)
   * [Android SDK](android-sdk.md)
   * [Html SDK](html.md)
+  * [Html test](html-sdk.md)
 * [数据指标](metrics.md)
 * [功能介绍](feature.md)
   * [行为追踪](track.md)
