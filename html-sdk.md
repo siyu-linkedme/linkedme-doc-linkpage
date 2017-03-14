@@ -32,4 +32,29 @@
 */
 ```
 
+示例代码1：
+
+```js
+<script>
+  linkedme.init("linkedme_key", null, null);
+</script>
+```
+
+示例代码2：
+
+```js
+<script>
+  var data = {};
+  data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.
+  linkedme.init("linkedme_key", data, function(err, data){
+    if(err){
+    // 初始化失败，返回错误对象err
+    } else {
+    // 初始化成功，可以不做处理
+    }
+  });
+</script>
+```
+
+
 
