@@ -89,7 +89,7 @@
 </script>
 ```
 ##完整代码示例
-```js
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
