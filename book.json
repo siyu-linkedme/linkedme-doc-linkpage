@@ -1,32 +1,32 @@
 {
     "title": "LinkedME文档中心",
-  "description": "LinkedME产品介绍及集成文档等",
-  "language": "zh-hans",
-  "plugins": [ "copy-code-button","codetabs","anchor-navigation-ex","-search","-lunr","search-pro","ga"],
-  "links": {
-"sidebar": {
-"Home": "http://www.zhangjikai.com"
-}
-},
-        "pluginsConfig": {
-         
-             "anchor-navigation-ex": {
-            "isRewritePageTitle": true,
-            "isShowTocTitleIcon": true,
-            "tocLevel1Icon": "fa fa-hand-o-right",
-            "tocLevel2Icon": "fa fa-hand-o-right",
-            "tocLevel3Icon": "fa fa-hand-o-right"
+    "description": "LinkedME产品介绍及集成文档等",
+    "language": "zh-hans",
+    "links": {
+        "sidebar": {
+            "Home": "http://www.zhangjikai.com"
+            }
         },
+
+    "plugins": [ "copy-code-button","codetabs","anchor-navigation-ex","-search","-lunr","search-pro","ga"], 
+    "pluginsConfig": {  
+             
+             "anchor-navigation-ex": {
+                "isRewritePageTitle": true,
+                "isShowTocTitleIcon": true,
+                "tocLevel1Icon": "fa fa-hand-o-right",
+                "tocLevel2Icon": "fa fa-hand-o-right",
+                "tocLevel3Icon": "fa fa-hand-o-right"
+            },
             
             "sharing": {
-            "facebook": false,
-            "twitter": false,
-            "google": false,
-            "weibo": true,
-            "instapaper": false,
-            "vk": false,
-            
-        },
+                "facebook": false,
+                "twitter": false,
+                "google": false,
+                "weibo": true,
+                "instapaper": false,
+                "vk": false            
+            },
         
         "search-pro": {
         "cutWordLib": "nodejieba",
