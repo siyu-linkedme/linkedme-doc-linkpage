@@ -63,6 +63,43 @@
 ## 创建深度链接
 通过js创建深度链接，例如在H5页面中通过js将该页面的深度链接写到“打开APP”按钮下
 
+```js
+/* 
+  接口名称： link(data, callback, autoSelect)
+  参数说明：
+    data ：生成深度链接的请求参数【必选】
+    callback ：回调函数 【必选】
+    autoSelect ：生成深度链接之后是否自动打开深度链接，默认值为false 【可选】
+*/
+```
+
+示例代码：
+
+```js
+<script>
+  var data = {};
+  data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.【可选】
+  data.feature = "功能名称"; // 自定义深度链接功能，多个用逗号分隔，【可选】
+  data.stage = "阶段名称"; // 自定义深度链接阶段，多个用逗号分隔，【可选】
+  data.channel = "渠道名称"; // 自定义深度链接渠道，多个用逗号分隔，【可选】
+  data.tags = "标签名称"; // 自定义深度链接标签，多个用逗号分隔，【可选】
+  data.ios_custom_url = ""; // 自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，【可选】
+  data.android_custom_url = "";// 自定义安卓平台下App的下载地址，【可选】
+  // 下面是自定义深度链接参数，用户点击深度链接打开app之后，params参数将被带入app
+  // 比如详情页面的参数，可以写进去，这样唤起app后可直接跳转到详情页【可选】
+  var value1 = 1;
+  var value2 = 2;
+  data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
+  linkedme.link(data, function(err, data) {
+    if (err) {
+      // 生成深度链接失败，返回错误对象err
+    } else {
+      // 生成深度链接成功，深度链接可以通过data.url得到
+      data.url
+    }
+  },false);
+</script>
+```
 
 
 
