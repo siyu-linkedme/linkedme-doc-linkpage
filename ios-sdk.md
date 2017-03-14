@@ -18,7 +18,7 @@ CoreSpotlight.framework (status:Optional)
 SystemConfiguration.framework
 Security.framework
 ```								
-<font color="red">注意事项：CoreSpotlight.framework必须标记为可选</font>
+<font color="red">注意事项：CoreSpotlight.framework必须标记为可选</font>。
 
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
