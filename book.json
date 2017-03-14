@@ -41,8 +41,8 @@
     },
     
         "fontsettings": {
-            "theme": "sepia", "night" or "white",
-            "family": "serif" or "sans",
+            "theme": ["sepia", "night", "white"],
+            "family": ["serif" , "sans"],
             "size": 1 to 4
         }
     }
