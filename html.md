@@ -4,10 +4,12 @@
 <font color="red">老用户</font>：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 
 ## 获取LinkedME Web SDK
-在线链接：[https://lkme.cc/js/linkedme.min.js](https://lkme.cc/js/linkedme.min.js)
+在线链接：https://lkme.cc/js/linkedme.min.js
+
 
 # 导入SDK
 ## 导入LinkedME Web SDK
+
 在html文件的head标签里增加如下代码：
 
 ```js
@@ -15,11 +17,10 @@
   <script src="https://lkme.cc/js/linkedme.min.js" ></script>
 ```
 
+
 # 基本配置
 ## 初始化LinkedME全局对象
-
-注意：<font color="red"> 请在服务器环境下测试，本地打开存在跨域问题</font>。
-
+<font color="red">注意：请在服务器环境下测试，本地打开存在跨域问题</font>。
 
 ```js	
 /* 
@@ -30,7 +31,9 @@
     callback: 回调函数 【可选】
 */
 ```
+
 示例代码1：
+
 ```js
 <script>
   linkedme.init("linkedme_key", null, null);
@@ -38,6 +41,7 @@
 ```
 
 示例代码2：
+
 ```js
 <script>
   var data = {};
@@ -52,8 +56,10 @@
 </script>
 ```
 
+
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现“基本配置”中的内容
+
 ## 创建深度链接
 通过js创建深度链接，例如在H5页面中通过js将该页面的深度链接写到“打开APP”按钮下
 
@@ -141,7 +147,16 @@
 </html>
 ```
 
+
 # 其他功能
 ## 测试模式
-若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。  
-注意：<font color="red">上线后务必设置  `data.type = "live"` ;   否则将影响APP线上数据的查看。</font>
+若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。
+
+
+注意：<font color="red">上线后务必设置  `data.type = "live"` ;   否则将影响APP线上数据的查看</font>。
+
+
+
+
+
+
