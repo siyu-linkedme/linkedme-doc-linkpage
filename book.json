@@ -2,7 +2,7 @@
     "title": "LinkedME文档中心",
   "description": "LinkedME产品介绍及集成文档等",
   "language": "zh-hans",
-  "plugins": [ "copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro","packt-fontsettings"],
+  "plugins": [ "copy-code-button","codetabs","page-toc-button","-search","-lunr","search-pro"],
         "pluginsConfig": {
          "page-toc-button": {
                 "maxTocDepth": 2,
