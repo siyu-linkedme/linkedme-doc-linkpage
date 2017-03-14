@@ -9,7 +9,7 @@
 # 导入SDK
 ## 导入LinkedME Web SDK
 在html文件的head标签里增加如下代码：
-```
+```js
   <!-- 加载js -->
   <script src="https://lkme.cc/js/linkedme.min.js" ></script>
 ```
@@ -17,7 +17,7 @@
 ## 初始化LinkedME全局对象
 <font color="red">注意：请在服务器环境下测试，本地打开存在跨域问题</font>
 
-```	
+```js	
 /* 
   接口名称: init(linkedme_key, data, callback)
   参数说明：
@@ -27,14 +27,14 @@
 */
 ```
 示例代码1：
-```
+```js
 <script>
   linkedme.init("linkedme_key", null, null);
 </script>
 ```
 
 示例代码2：
-```
+```js
 <script>
   var data = {};
   data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.
@@ -52,7 +52,7 @@
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现“基本配置”中的内容
 ## 创建深度链接
 通过js创建深度链接，例如在H5页面中通过js将该页面的深度链接写到“打开APP”按钮下
-```
+```js
 /* 
   接口名称： link(data, callback, autoSelect)
   参数说明：
@@ -63,7 +63,7 @@
 ```
 
 示例代码：
-```
+```js
 <script>
   var data = {};
   data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.【可选】
@@ -89,7 +89,7 @@
 </script>
 ```
 ##完整代码示例
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
   <head>
