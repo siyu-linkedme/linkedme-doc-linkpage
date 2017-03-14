@@ -4,7 +4,7 @@
 <font color="red">老用户</font>：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 
 ## 获取LinkedME Web SDK
-在线链接：https://lkme.cc/js/linkedme.min.js
+在线链接：[https://lkme.cc/js/linkedme.min.js](https://lkme.cc/js/linkedme.min.js)
 
 # 导入SDK
 ## 导入LinkedME Web SDK
@@ -13,8 +13,10 @@
   <!-- 加载js -->
   <script src="https://lkme.cc/js/linkedme.min.js" ></script>
 ```
+
 # 基本配置
 ## 初始化LinkedME全局对象
+
 注意：<font color="red">请在服务器环境下测试，本地打开存在跨域问题</font>。
 
 ```js	
