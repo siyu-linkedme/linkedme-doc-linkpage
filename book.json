@@ -25,7 +25,8 @@
                 "google": false,
                 "weibo": true,
                 "instapaper": false,
-                "vk": false            
+                "vk": false,
+                "all": false            
             },
         
         "search-pro": {
