@@ -9,6 +9,7 @@
 # 导入SDK
 ## 导入LinkedME Web SDK
 在html文件的head标签里增加如下代码：
+
 ```js
   <!-- 加载js -->
   <script src="https://lkme.cc/js/linkedme.min.js" ></script>
