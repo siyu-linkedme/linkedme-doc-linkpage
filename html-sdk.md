@@ -22,5 +22,14 @@
 ## 初始化LinkedME全局对象
 <font color="red">注意：请在服务器环境下测试，本地打开存在跨域问题</font>。
 
+```js	
+/* 
+  接口名称: init(linkedme_key, data, callback)
+  参数说明：
+    linkedme_key: 每个app会分配唯一一个linkedme key，用户在linkedme官网创建app之后可以在设置菜单里面找到linkedme_key 【必选】
+    data: 初始化linkedme对象参数，比如测试时需要添加data.type="test",上线时需要修改为"live",如果传null,默认为"live" 【可选】
+    callback: 回调函数 【可选】
+*/
+```
 
 
