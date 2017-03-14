@@ -13,6 +13,12 @@
             "tocLevel3Icon": "fa fa-hand-o-right"
         },
             
+            "links": {
+        "sidebar": {
+            "Home": "http://www.zhangjikai.com"
+        }
+    },
+            
             "sharing": {
             "facebook": false,
             "twitter": false,
