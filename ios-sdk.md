@@ -13,15 +13,20 @@
 
 ## 直接导入LinkedME iOS SDK
 把Demo工程中的LinkedME_iOS.framework，导入工程中。
+
+
 ```
 CoreSpotlight.framework (status:Optional)
 SystemConfiguration.framework
 Security.framework
-```								
+```
+
+												
 <font color="red">注意事项：CoreSpotlight.framework必须标记为可选</font>。
 
 ## 通过Cocoapods安装SDK
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
+
 * 在Podfile文件中添加  
 
 **取IDFA版**(取IDFA为了广告效果检测,和统计相关,强烈建议集成带IDFA版本)
@@ -32,7 +37,9 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod_IDFA',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
 ```	
 							
-**不取IDFA版**								
+**不取IDFA版**
+
+														
 ```
 pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
@@ -40,25 +47,36 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 							
 * 运行 pod instal
 * 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
+
+
 # 基本配置
+
+
 ## 添加系统Framework
+
+
 * CoreSpotlight.framework(status:Optional)
 * SystemConfiguration.framework
 * Security.framework  
-<font color="red">注意事项：CoreSpotlight.framework必须标记为可选。</font>
+
+注意：<font color="red">CoreSpotlight.framework必须标记为可选</font>。
+
 ![](https://www.linkedme.cc/docs/images/4.1.4.jpg)
+
 ## 配置linkedme_key
 * 打开info.plist文件
 * 在列表中点击右键选择add row添加一个分组
 * 创建一个新的item名称为linkedme_key类型为Dictionary
 * 在linkedme_key新增一个字符串类型的item, live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
 ![](https://www.linkedme.cc/docs/images/4.1.7.jpg)
+
 ## 配置URL Scheme
 配置URL Scheme，以便通过URL Scheme来唤起APP
 * 打开info.plist
 * 找到URL Types（如果没有就右键add row添加一个）
 * 添加"you app"(你的app的唯一标识字符串)
 ![](https://www.linkedme.cc/docs/images/4.1.5.jpg)
+
 ## 配置Universal Link支持 (仅支持iOS 9)
 配置Universal Link，使得iOS9中可以通过Universal Link来唤起APP
 * 在左侧导航器中点击您的项目
@@ -66,11 +84,13 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 * 打开'Associated Domains'开关
 * 添加applinks:lkme.cc和applinks:www.lkme.cc
 ![](https://www.linkedme.cc/docs/images/4.1.6.jpg)
+
 ## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
-在Appdelegate中实现下列方法
+在Appdelegate中实现下列方法：
 
 {% codetabs name="Objective-C", type="C" -%}
+
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
   //判断是否是通过LinkedME的UrlScheme唤起App
   if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
@@ -124,6 +144,7 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
     return LinkedME.getInstance().handleDeepLink(url);
   }
 }
+
 {%- endcodetabs %}
 
 
@@ -132,8 +153,9 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
+
 ## 创建深度链接
-<font color="red">温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。</font>  
+<font color="red">温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成</font>。  
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面
 
 
@@ -174,8 +196,10 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
 |Feature|特点|表示深度链接的特点，例如邀请，分享等等；|
 |Tags|标签|表示深度链接的标签特性，自定义任何值；|
 |Stage|阶段|表示深度链接的阶段特性，比如第一版产品发布，第二版本测试等等；|
+
 ## 解析深度链接
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
+
 ### 配置AppDelegate
 
 Objective-C请先进行如下配置：
@@ -291,6 +315,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 # 用户行为追踪
 Track是追踪用户APP内行为的工具，这里的用户行为既可以是APP内页面浏览的次数，也可以是启动APP的次数，还可以是用户在APP内的任何点击行为，例如图片下载、音乐播放、文章分享等，甚至是APP内某种逻辑的判断，都可以通过Track来追踪。
 针对不同行为，您还可以添加具体的特征描述，例如下载图片的类型，播放音乐的流派，分享文章的作者等。
+
 ## 使用Track功能
 Track功能适用于iOS 6.0及以上操作系统的设备。系统提供三个标准效果点，如果不能满足您的监测需求，还可以自定义效果点
 
@@ -355,6 +380,7 @@ LinkedME AdTracking数据系统中的“用户”，指用户的一台唯一设�
 |account|NSString|用户账号|
 
 示例代码：
+
 ```java
 NSDictionary * dict = @{@"name":@"iPhone",@"color":@"Black"};
 [LMTracking onPay:@"user001" withOrderId:@"30012" orderDetail:dict withAmount:88 withAccount:@"user"];
@@ -384,6 +410,7 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 ### 验证接口
 
 当SDK成功向服务器传输数据时，会有类似下边的日志输出：
+
 ```java
 2016-11-10 12:18:12.990 LinkedMEiOSExample[38392:1830193] LMTrackingDataSDK:Start sending data. 2016-11-10 12:18:13.089 LinkedMEiOSExample[38392:1855022] LMTrackingDataSDK:Send data success!
 ```
@@ -391,6 +418,7 @@ NSDictionary * dict = @{@"Name":@"xiaowang",@"Age":@"11"};
 # 其他功能
 ## Debug模式
 在Debug模式下会打印日志
+
 {% codetabs name="Objective-c", type="C" -%}
 [linkedme setDebug];
 {%- language name="Swift", type="Swift" -%}
@@ -409,6 +437,7 @@ linkedme.setDebug();
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
 
 ### 创建Spotlight索引
+
 {% codetabs name="Objective-c", type="C" -%}
 [[LinkedME getInstance] createDiscoverableContentWithTitle:@"LinkedME 国内第一家企业级深度链接"
 			description:@"让APP不再是信息孤岛!"
