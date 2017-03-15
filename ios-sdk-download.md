@@ -1,9 +1,7 @@
 
 
 # iOS SDK及Demo下载
-[SDK下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
-
-[Demo下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo)
+[SDK及Demo下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/archive/master.zip)
  
 # iOS SDK更新日志
 ## 版本V1.3.3
