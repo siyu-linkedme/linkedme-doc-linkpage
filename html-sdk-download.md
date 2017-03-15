@@ -1,7 +1,7 @@
-# HTML SDK及Demo下载
+# JS SDK及Demo下载
 在线链接：https://lkme.cc/js/linkedme.min.js
  
-# HTML SDK更新日志
+# JS SDK更新日志
 ## 版本V1.0.2
 发布日期：2016年8月23日  
 <font color="red">**新增**</font>
