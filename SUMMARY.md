@@ -7,7 +7,7 @@
 
 ## LinkPage
 
-* [LinkPage SDK下载](sdk-downlad.md)
+* [LinkPage SDK下载](sdk-download.md)
   * [iOS SDK](ios-sdk-download.md)
   * [Android SDK](android-sdk-download.md)
   * [JS SDK](html-sdk-download.md)
