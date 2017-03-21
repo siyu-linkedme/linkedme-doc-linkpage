@@ -4,6 +4,11 @@
 [Demo下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/archive/master.zip)
  
 # Android SDK更新日志
+## 版本V1.0.10
+发布日期：2017年01月23日  
+<font color="red">**改善**</font>  
+* 优化了微信跳转体验;
+
 ## 版本V1.0.9
 发布日期：2017年01月23日  
 <font color="red">**改善**</font>  
