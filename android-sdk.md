@@ -14,7 +14,7 @@
 ```java
 dependencies {
   //注意修改jar包名,与下载的jar包名称一致
-  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.9.jar')
+  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.10.jar')
 }
 
 ```
@@ -32,7 +32,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -54,7 +54,7 @@ allprojects {
 ```java
 dependencies {
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile "cc.linkedme.deeplinks:link-page:1.0.9"
+compile "cc.linkedme.deeplinks:link-page:1.0.10"
 }
 ```
 
@@ -153,14 +153,6 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
         android:scheme="https" />
       <data
         android:host="lkme.cc"
-        android:pathPrefix="/AfC"
-        android:scheme="http" />
-      <data
-        android:host="www.lkme.cc"
-        android:pathPrefix="/AfC"
-        android:scheme="https" />
-      <data
-        android:host="www.lkme.cc"
         android:pathPrefix="/AfC"
         android:scheme="http" />
     </intent-filter>
@@ -334,6 +326,8 @@ public class ShareActivity extends BaseActivity {
       //https://www.lkme.cc/AfC/idFsW02l7
       @Override
       public void onLinkCreate(final String url, LMError error) {
+       if (error == null) {
+        Log.i("linkedme", "创建深度链接成功！创建的深度链接为：" + url);
         //deepLinkUrl创建返回的深度链接
         final UMImage image = new UMImage(ShareActivity.this, "https://www.linkedme.cc/homepage2.jpg");
         /**友盟分享化分享，分享的链接不单单是H5链接，而是携带深度链接的H5链接*/
@@ -355,6 +349,9 @@ public class ShareActivity extends BaseActivity {
             }
           }
         }).open();
+        }else{
+         Log.i("linkedme", "创建深度链接失败！失败原因：" + error.getMessage());
+        }
       }
     });
   }
