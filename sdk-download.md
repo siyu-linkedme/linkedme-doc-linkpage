@@ -5,7 +5,7 @@ LinkPage SDK包括 Android/iOS SDK 和 JS SDK 两种，各 SDK 的下载及更�
 
 [Android SDK下载及更新日志](/android-sdk-download.md)
 
-[JS SDK下载及更新日志](/html-sdk-download.md)
+[JS SDK下载及更新日志](/js-sdk-download.md)
 
 ## 我该如何选择SDK？
 创建深度链接可以通过JS SDK来创建，也可以通过原生的Android/iOS SDK来创建，解析深度链接只能通过原生的Android/iOS SDK来解析。如下所示：
