@@ -66,8 +66,8 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 ## 配置linkedme_key
 * 打开info.plist文件
 * 在列表中点击右键选择add row添加一个分组
-* 创建一个新的item名称为linkedme_key类型为Dictionary
-* 在linkedme_key新增一个字符串类型的item, live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
+* 创建一个新的item名称为linkedme_key，类型为Dictionary
+* 在linkedme_key新增一个字符串类型的item，live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
 ![](https://www.linkedme.cc/docs/images/4.1.7.jpg)
 
 ## 配置URL Scheme
