@@ -4,6 +4,13 @@
 [SDK及Demo下载](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/archive/master.zip)
  
 # iOS SDK更新日志
+
+## 版本V1.4.8.8
+发布日期：2017年3月22日  
+<font color="red">**改善**</font>
+* 修复部分iOS 6机型崩溃bug
+* 修复iPhone 6s模拟器崩溃bug
+
 ## 版本V1.4.8.5
 发布日期：2017年3月22日  
 <font color="red">**改善**</font>
