@@ -8,7 +8,7 @@
             }
         },
 
-    "plugins": [ "copy-code-button","codetabs","anchor-navigation-ex","-search","-lunr","search-pro","ga","expandable-chapters"], 
+    "plugins": [ "copy-code-button","codetabs","anchor-navigation-ex","-search","-lunr","search-pro","ga","expandable-chapters","baidu"], 
     "pluginsConfig": {  
              
              "anchor-navigation-ex": {
@@ -36,7 +36,11 @@
     
     "ga": {
         "token": "UA-93686943-1"
-    }
+    },
+    
+    "baidu": {
+            "token": "db74d221ed2a89aa335fc3ecf681ad9a"
+        }
     
     }
     
