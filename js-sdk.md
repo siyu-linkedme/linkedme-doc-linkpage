@@ -16,7 +16,7 @@
   <!-- 加载js -->
   <script src="https://lkme.cc/js/linkedme.min.js" ></script>
 ```
-
+> 提示：JS SDK会不定期优化跳转逻辑，请不要将JS SDK下载到本地加载。
 
 # 基本配置
 ## 初始化LinkedME全局对象
