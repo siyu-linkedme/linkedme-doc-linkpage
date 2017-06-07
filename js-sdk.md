@@ -146,7 +146,10 @@
   </body>
 </html>
 ```
-
+> 提示：请使用`<a/>`标签作为打开app的跳转按钮，同时为了在Chrome及QQ中获得更好的用户体验（直接唤起app），请在a标签中添加class="linkedme"，并且为a标签的href属性设置值为生成的深度链接。示例：  
+```
+<a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
+```
 
 # 其他功能
 ## 测试模式
