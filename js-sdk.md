@@ -151,6 +151,8 @@
 <a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
 ```
 
+<font color="red">提示：一个页面包含多个深度链接时，请添加QQ群：209222314沟通</font>。
+
 # 其他功能
 ## 测试模式
 若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。
