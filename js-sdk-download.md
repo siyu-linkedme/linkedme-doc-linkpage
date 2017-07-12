@@ -1,5 +1,5 @@
 # JS SDK及Demo下载
-在线链接：https://lkme.cc/js/linkedme.min.js
+在线链接：https://static.lkme.cc/linkedme.min.js
  
 # JS SDK更新日志
 ## 版本V1.0.2
