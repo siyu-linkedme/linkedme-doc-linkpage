@@ -46,7 +46,7 @@
 <script>
   var data = {};
   data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.
-  linkedme.init("linkedme_key", data, function(err, data){
+  linkedme.init("linkedme_key", data, function(err, response){
     if(err){
     // 初始化失败，返回错误对象err
     } else {
@@ -90,12 +90,12 @@
   var value1 = 1;
   var value2 = 2;
   data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
-  linkedme.link(data, function(err, data) {
+  linkedme.link(data, function(err, response) {
     if (err) {
       // 生成深度链接失败，返回错误对象err
     } else {
       // 生成深度链接成功，深度链接可以通过data.url得到
-      data.url
+      response.url
     }
   },false);
 </script>
@@ -125,7 +125,7 @@
       var value2 = 2;
       data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
 
-	linkedme.link(data, function(err, data){
+	linkedme.link(data, function(err, response){
         if(err){
           // 生成深度链接失败，返回错误对象err
         } else {
@@ -137,7 +137,7 @@
             在移动端，深度链接直接会根据手机设备类型打开ios
             或者安卓app 
            */
-          document.body.innerHTML += '<a class="linkedme" href="'+data.url+'">LinkedME深度链接</a>'
+          document.body.innerHTML += '<a class="linkedme" href="'+response.url+'">LinkedME深度链接</a>'
         }
       },false);
     </script>
