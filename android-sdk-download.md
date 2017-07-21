@@ -4,6 +4,12 @@
 [Demo下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/archive/master.zip)
  
 # Android SDK更新日志
+## 版本V1.0.12
+发布日期：2017年07月21日  
+<font color="red">**改善**</font>  
+* 优化了Android 4.*版本在某些条件下可能oom的问题;
+* 内部处理逻辑优化;
+
 ## 版本V1.0.10
 发布日期：2017年03月17日  
 <font color="red">**改善**</font>  
