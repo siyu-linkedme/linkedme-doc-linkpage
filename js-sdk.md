@@ -14,7 +14,7 @@
 
 ```js
   <!-- 加载js -->
-  <script src="https://static.lkme.cc/js/linkedme.min.js" ></script>
+  <script src="https://static.lkme.cc/linkedme.min.js" ></script>
 ```
 > 提示：JS SDK会不定期优化跳转逻辑，请不要将JS SDK下载到本地加载。
 
