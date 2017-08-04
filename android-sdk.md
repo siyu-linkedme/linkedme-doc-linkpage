@@ -14,7 +14,7 @@
 ```java
 dependencies {
   //注意修改jar包名,与下载的jar包名称一致
-  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.12.jar')
+  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.13.jar')
 }
 
 ```
@@ -54,7 +54,7 @@ allprojects {
 ```java
 dependencies {
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile "cc.linkedme.deeplinks:link-page:1.0.12"
+compile "cc.linkedme.deeplinks:link-page:1.0.13"
 }
 ```
 
