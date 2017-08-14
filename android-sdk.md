@@ -266,14 +266,13 @@ public class BaseActivity extends AppCompatActivity {
 ```
 
 
-若在自定义Application中初始化LinkedME时<font color="red">禁用</font>自动跳转功能，则还需要在onCreate()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
+若在自定义Application中初始化LinkedME时<font color="red">禁用</font>自动跳转功能，则还需要在onResume()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
 
 
 ```java
  @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+    protected void onResume() {
+        super.onResume();
         LinkedME.getInstance().setImmediate(true);
     }
 ```
