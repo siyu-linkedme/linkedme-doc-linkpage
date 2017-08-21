@@ -60,6 +60,9 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 * CoreSpotlight.framework(status:Optional)
 * SystemConfiguration.framework
 * Security.framework  
+* WebKit.framework
+* StoreKit.framework
+
 
 注意：<font color="red">CoreSpotlight.framework必须标记为可选</font>。
 
