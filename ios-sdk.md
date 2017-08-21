@@ -19,6 +19,8 @@
 CoreSpotlight.framework (status:Optional)
 SystemConfiguration.framework
 Security.framework
+WebKit.framework
+StoreKit.framework
 ```
 
 												
