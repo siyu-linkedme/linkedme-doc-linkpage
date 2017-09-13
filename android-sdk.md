@@ -118,7 +118,7 @@ compile "cc.linkedme.deeplinks:link-page:1.0.14"
 LinkedME-Android-Deep-Linking-Demo代码如下所示：
 
 
-```java
+```xml
 <application android:name=".activity.LinkedMEDemoApp">
   <activity
     android:name=".activity.MainActivity"
@@ -135,7 +135,10 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
     -->
     <intent-filter>
       <!-- 此处scheme值需要替换为后台设置中的scheme值 -->
-      <data android:scheme="lkmedemo" />
+      <!-- host禁止更改！！！ -->
+      <!-- 禁止配置其他属性 -->
+      <data android:scheme="lkmedemo"
+            android:host="linkedme" />
       <action android:name="android.intent.action.VIEW" />
       <category android:name="android.intent.category.DEFAULT" />
       <category android:name="android.intent.category.BROWSABLE" />
@@ -147,6 +150,7 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
       <category android:name="android.intent.category.DEFAULT" />
       <category android:name="android.intent.category.BROWSABLE" />
       <!-- 以下pathPrefix值需要替换为后台设置中 App ID 的值-->
+      <!-- host中设置的lkme.cc不要更改！！！-->
       <data
         android:host="lkme.cc"
         android:pathPrefix="/AfC"
@@ -159,7 +163,6 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
   </activity>
 </application>
 ```
-
 
 ## 初始化LinkedME实例
 在自定义Application类中的<font color="red">onCreate()</font>方法中，添加初始化LinkedME实例的代码。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
@@ -175,29 +178,13 @@ public class LinkedMEDemoApp extends Application {
         LinkedME.getInstance(this).setDebug();
     } else {
         LinkedME.getInstance(this);
-    }
-    // 设置是否开启自动跳转指定页面，默认为true
-    // 若在此处设置为false，请务必在配置Uri scheme的Activity页面的onCreate()方法中，
-    // 重新设置为true，否则将禁止开启自动跳转指定页面功能
-    // 示例：
-    // @Override
-    // public class MainActivity extends AppCompatActivity {
-    // ...
-    // @Override
-    // protected void onResume() {
-    //    super.onResume();
-    //    LinkedME.getInstance().setImmediate(true);
-    //   }
-    // ...
-    //  }
-    
-    //建议初始时设置为false，在需要跳转的地方设置为true
+    }    
+    //初始时设置为false，在配置Uri Scheme的Activity的onResume()中设置为true
     LinkedME.getInstance().setImmediate(false);
        
-     
     }
-  
-}
+}  
+
 ```
 
 
@@ -253,9 +240,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 ## 配置URI Scheme唤起的Activity页面(例如：MainActivity)
-此配置保证APP能正常跳转到特定详情页面。
-若在自定义Application中初始化LinkedME时<font color="red">未禁用</font>自动跳转功能，则只需添加以下代码：
-
+添加以下配置保证APP能正常跳转到特定详情页面。
 
 ```java
  // 添加此处目的是针对后台APP通过uri scheme唤起的情况，
@@ -265,9 +250,7 @@ public class BaseActivity extends AppCompatActivity {
         setIntent(intent);
     }
 ```
-
-
-若在自定义Application中初始化LinkedME时<font color="red">禁用</font>自动跳转功能，则还需要在onResume()中方法调用LinkedME.getInstance().setImmediate(true); 方法，开启自动跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
+在onResume()中方法调用LinkedME.getInstance().setImmediate(true)方法，开启跳转功能，从而控制从主页面跳转到指定页面。 示例如下：
 
 
 ```java
@@ -368,7 +351,7 @@ public class ShareActivity extends BaseActivity {
 LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的示例代码如下所示：
 
 
-```java
+```xml
 <activity
       android:name=".activity.MiddleActivity"
       android:screenOrientation="portrait"
