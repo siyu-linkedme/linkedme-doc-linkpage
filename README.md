@@ -1,5 +1,5 @@
 # LinkedME简介
-LinkedME——国内最专业的企业级深度链接服务提供商，致力于帮助APP解决<font color="red">用户增长</font>和<font color="red">流量变现</font>问题，为移动互联网创造全新的商业价值和时代意义！
+LinkedME——国内最专业的企业级深度链接服务提供商，致力于帮助APP解决<font color="red">用户增长</font>和<font color="red">流量变现</font>问题，为移动互联网创造全新的商业价值和时代意义！。
 
 # 产品简介
 LinkedME，目前提供两款产品，<font color="blue">[LinkPage](https://www.linkedme.cc/linkpage.html)</font> 和 <font color="blue">[LinkActive](https://www.linkedme.cc/linkactive.html)</font>。  
