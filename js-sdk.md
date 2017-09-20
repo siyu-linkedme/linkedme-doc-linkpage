@@ -155,7 +155,7 @@
 <a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
 ```
 
-<font color="red">注意：在iOS微信中必须手动触发深度链接，不能自动跳转。</font>。
+<font color="red">注意：在iOS微信中必须手动触发深度链接，不能自动跳转</font>。
 
 <font color="red">提示：一个页面包含多个深度链接时，请添加QQ群：209222314沟通</font>。
 
