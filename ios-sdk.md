@@ -91,7 +91,8 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 * 选择'Capabilities'标签
 * 打开'Associated Domains'开关
 * 添加applinks:lkme.cc和applinks:www.lkme.cc
-![](https://www.linkedme.cc/docs/images/4.1.6.jpg)
+
+![](/assets/4.1.6.jpg)
 
 ## 添加URLScheme和Universal Link支持
 在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP
