@@ -28,10 +28,12 @@ JS SDK创建深度链接的方式相较于Android/iOS SDK来说，使用方式�
 
 * 有自己的wap站同时有自己的APP并且wap站和APP的所有页面都是一一对应的，一般如新闻资讯类、电商类、直播类等，这种方式的APP我们建议使用JS SDK创建深度链接，客户端仅用于解析深度链接。  
 比如如下的形式
-![](https://www.linkedme.cc/docs/images/4.1.15-1.jpg)
+
+![](/assets/4.1.15-1.jpg)
 
 
 * 如果没有wap站，推荐采用Android/iOS SDK的方式创建深度链接，再通过js把深度链接放到打开按钮下。  
 比如如下形式
-![](https://www.linkedme.cc/docs/images/4.1.15-2.jpg)
-![](https://www.linkedme.cc/docs/images/4.1.15-3.jpg)
+
+![](/assets/4.1.15-2.jpg)
+![](/assets/4.1.15-3.jpg)
