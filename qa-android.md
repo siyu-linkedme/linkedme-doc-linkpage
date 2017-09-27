@@ -38,6 +38,7 @@ keytool -list -v -keystore C:\Users\Administrator\Desktop\debug.keystore
 
 ![](https://www.linkedme.cc/docs/images/docs_QA_windows.png)
 
+
 2.mac  
 
 打开终端，输入 java -version 查看Java版本号，若无法查看请先配置Java环境变量，若显示Java版本号，则在终端中继续输入命令 keytool -list -v -keystore 发布apk的签名文件路径\(以.keystore或.jks为结尾\)  
@@ -54,7 +55,9 @@ keytool -list -v -keystore Desktop/debug.keystore
 
 #### **Q7: 如何开通应用宝微下载功能？**
 
-A7:   登录[腾讯开放平台](http://open.qq.com)，打开应用设置页面，选择“运营服务”下的“微下载”功能进行设置。![](/assets/aaa.png)![](/assets/bbb.png)
+A7:   登录[腾讯开放平台](http://open.qq.com)，打开应用设置页面，选择“运营服务”下的“微下载”功能进行设置。
+![](/assets/aaa.png)
+![](/assets/bbb.png)
 
 
 
