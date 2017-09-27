@@ -36,8 +36,7 @@ A6:  开启方法：使用java的 keytool 命令获取SHA256指纹证书
 keytool -list -v -keystore C:\Users\Administrator\Desktop\debug.keystore
 ```
 
-![](https://www.linkedme.cc/docs/images/docs_QA_windows.png)
-
+![](/assets/docs_QA_windows.png)
 
 2.mac  
 
@@ -49,8 +48,7 @@ keytool -list -v -keystore C:\Users\Administrator\Desktop\debug.keystore
 keytool -list -v -keystore Desktop/debug.keystore
 ```
 
-![](https://www.linkedme.cc/docs/images/docs_QA_mac.png)
-
+![](/assets/docs_QA_mac.png)
 
 
 #### **Q7: 如何开通应用宝微下载功能？**
