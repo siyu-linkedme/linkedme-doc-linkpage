@@ -66,21 +66,24 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 
 注意：<font color="red">CoreSpotlight.framework必须标记为可选</font>。
 
-![](https://www.linkedme.cc/docs/images/4.1.4.jpg)
+![](/assets/4.1.4.jpg)
 
 ## 配置linkedme_key
 * 打开info.plist文件
 * 在列表中点击右键选择add row添加一个分组
 * 创建一个新的item名称为linkedme_key，类型为Dictionary
 * 在linkedme_key新增一个字符串类型的item，live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
-![](https://www.linkedme.cc/docs/images/4.1.7.jpg)
+
+![](/assets/4.1.7.jpg)
 
 ## 配置URL Scheme
 配置URL Scheme，以便通过URL Scheme来唤起APP
 * 打开info.plist
 * 找到URL Types（如果没有就右键add row添加一个）
 * 添加"you app"(你的app的唯一标识字符串)
-![](https://www.linkedme.cc/docs/images/4.1.5.jpg)
+
+![](/assets/4.1.5.jpg)
+
 
 ## 配置Universal Link支持 (仅支持iOS 9)
 配置Universal Link，使得iOS9中可以通过Universal Link来唤起APP
