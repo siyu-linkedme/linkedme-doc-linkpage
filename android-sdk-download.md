@@ -1,9 +1,18 @@
 # Android SDK及Demo下载
-[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/raw/master/LinkedME-Demo/libs/LinkedME-Android-Deep-Linking-SDK-V1.0.14.jar)
+[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/raw/master/LinkedME-Demo/libs/LinkedME-Android-Deep-Linking-SDK-V1.0.15.jar)
 
 [Demo下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/archive/master.zip)
  
 # Android SDK更新日志
+## 版本V1.0.15
+发布日期：2017年10月10日  
+<font color="red">**改善**</font>  
+* 用户反馈某些型号手机在个别情况下崩溃的问题;
+* 解决跳转详情页面受登录限制问题（如你有该限制请联系LinkedME技术协助解决）;
+* 从1.0.13及以下版本升级到该版本时，请重新参考集成文档优化集成代码;
+* 代码逻辑优化;
+
+
 ## 版本V1.0.14
 发布日期：2017年09月08日  
 <font color="red">**改善**</font>  

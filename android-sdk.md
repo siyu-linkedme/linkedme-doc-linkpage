@@ -14,7 +14,7 @@
 ```java
 dependencies {
   //注意修改jar包名,与下载的jar包名称一致
-  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.14.jar')
+  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.15.jar')
 }
 
 ```
@@ -54,7 +54,7 @@ allprojects {
 ```java
 dependencies {
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile "cc.linkedme.deeplinks:link-page:1.0.14"
+compile "cc.linkedme.deeplinks:link-page:1.0.15"
 }
 ```
 
@@ -265,7 +265,7 @@ public class BaseActivity extends AppCompatActivity {
 # 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
 ## 创建深度链接
-温馨提示：如果web端集成了web sdk，则无需客户端创建深度链接，本节无需集成。  
+> 温馨提示：如果web端集成了js sdk，则无需客户端创建深度链接，本节无需集成。(建议采用js sdk创建深度链接)  
 
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面。
 LinkedME SDK创建深度链接，必须传入链接的参数，用于区分App内不同的页面。比如唯品会商品详情页面的唯一标识为productId=230453452
@@ -340,6 +340,10 @@ public class ShareActivity extends BaseActivity {
   }
 }
 ```
+> 提示：虽然客户端可自行创建深度链接并分享，但是web端也需要对分享链接进行处理才可使用深度链接，需要将分享链接中的深度链接截取出来，并作为“打开app”按钮的跳转链接(因此，建议使用js sdk创建深度链接)。例如：
+原有的分享链接为：https://www.linkedme.cc/h5/partner 
+追加深度链接的分享链接为：https://www.linkedme.cc/h5/partner?linkedme=https://lkme.cc/AfC/CeG9o5VH8
+web端需要将深度链接https://lkme.cc/AfC/CeG9o5VH8取出并作为“打开app”按钮的跳转链接。
 
 
 ## 解析深度链接
