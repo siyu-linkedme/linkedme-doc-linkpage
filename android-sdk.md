@@ -419,7 +419,7 @@ public class MiddleActivity extends AppCompatActivity {
 ## 测试模式
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
 
-## Android SDK处理逻辑图
+## Android SDK处理逻辑图 
 ![](/assets/sdk处理逻辑.png)
 
 ## Android DeepLink跳转图示
