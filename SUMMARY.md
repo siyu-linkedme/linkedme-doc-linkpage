@@ -14,8 +14,6 @@
   * [Android SDK](android-sdk.md)
   * [JS SDK](js-sdk.md)
 * [数据指标](metrics.md)
-* [功能介绍](feature.md)
-  * [行为追踪](track.md)
 * [常见问题](qa.md)
   * [产品问题](qa-product.md)
   * [iOS 平台](qa-ios.md)
