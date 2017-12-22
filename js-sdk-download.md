@@ -2,6 +2,12 @@
 在线链接：https://static.lkme.cc/linkedme.min.js
  
 # JS SDK更新日志
+
+## 版本V1.1.0
+发布日期：2017年12月22日  
+<font color="red">**改善**</font>
+* 优化各版本浏览器的跳转逻辑；
+
 ## 版本V1.0.2
 发布日期：2016年8月23日  
 <font color="red">**新增**</font>
