@@ -35,7 +35,7 @@ StoreKit.framework
 [集成IDFA版但是app中没有广告审核问题](https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo/blob/master/IDFA_Audit.md)
 							
 ```
-pod 'LinkedME-iOS-Deep-Linking-Demo_Pod_IDFA',
+pod 'LinkedME-iOS-Deep-Linking-SDK_Pod_IDFA',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
 ```	
 							
@@ -47,7 +47,7 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 :git=>"https://github.com/WFC-LinkedME/LinkedME-iOS-Deep-Linking-Demo.git"
 ```	
 							
-* 运行 pod instal
+* 运行 pod installin
 * 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
 
 
@@ -74,7 +74,7 @@ pod 'LinkedME-iOS-Deep-Linking-Demo_Pod',
 * 创建一个新的item名称为linkedme_key，类型为Dictionary
 * 在linkedme_key新增一个字符串类型的item，live字段，到后台<font color="red">“设置”->“应用”</font>中进行查看
 
-![](/assets/4.1.7.jpg)
+![](/assets/4.1.7.png)
 
 ## 配置URL Scheme
 配置URL Scheme，以便通过URL Scheme来唤起APP
