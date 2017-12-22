@@ -36,6 +36,12 @@ pod 'LinkedME_LinkPage'
 * 运行 pod installin
 * 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
 
+> 提示：如果提示[!] Unable to find a pod with name, author, summary, or description matching \` LinkedME_LinkPage\`
+
+>解决方法就是Finder前往资源库去删除缓存中的search_index.json
+
+>执行：rm -rf ~/Library/Caches/CocoaPods/search_index.json
+>再重新search/install/update 
 
 # 基本配置
 
