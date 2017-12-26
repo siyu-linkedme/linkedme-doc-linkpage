@@ -170,8 +170,8 @@ func  application(app: UIApplication, openURL url: NSURL, options: [String : Any
   linkProperties.feature = @"Share";//特点
   linkProperties.tags=@[@"LinkedME",@"Demo"];//标签
   linkProperties.stage = @"Live";//阶段
-  [linkProperties addControlParam:@"View" withValue:arr[page][@"url"]];//页面唯一标识
-  [linkProperties addControlParam:@"LinkedME" withValue:@"Demo"];//Demo标识 
+  [linkProperties addControlParam:@"View" withValue:arr[page][@"url"]];//自定义参数，用于在深度链接跳转后获取该数据，这里代表页面唯一标识
+  [linkProperties addControlParam:@"LinkedME" withValue:@"Demo"];//自定义参数，用于在深度链接跳转后获取该数据，这里标识是Demo 
   //开始请求短链
   [self.linkedUniversalObject getShortUrlWithLinkProperties:linkProperties andCallback:^(NSString *url, NSError *err) {
     if (url) {
