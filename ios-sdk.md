@@ -284,7 +284,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
   //解析深度链获取跳转参数，开发者自己实现参数相对应的页面内容。
   linkedme.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: false) { (params, error) in
-    if(error != nil){
+    if(error == nil){
       print("LinkedME finished init with params\(params.description)");
        let title = params["$og_title"];
        //如一个电商类的App通过商品ID来判断和区分改进入哪个详情页
