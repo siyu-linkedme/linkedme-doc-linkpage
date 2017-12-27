@@ -1,51 +1,68 @@
-#
+\#  
 Web平台相关问题
 
 #### **Q1: js sdk创建的深度链接可分为两种类型：live（线上）和test（测试）。它们的区别是什么？它们与后台dashboard如何对应？**
-A1: js sdk可调用`linkedme.init("linkedme_key", {type: "live"}, null);`方法，通过设定type的值，来创建live或test两种类型的深度链接。
-二者唯一的区别是：深度链接对应的统计数据（曝光、点击等）会存到不同的数据库中，即使对应的参数相同也互不影响，便于开发者区分线上和测试数据。
-在后台dashboard中通过点击以下按钮来分别查看线上及测试数据:
+
+A1: js sdk可调用`linkedme.init("linkedme_key", {type: "live"}, null);`方法，通过设定type的值，来创建live或test两种类型的深度链接。  
+二者唯一的区别是：深度链接对应的统计数据（曝光、点击等）会存到不同的数据库中，即使对应的参数相同也互不影响，便于开发者区分线上和测试数据。  
+在后台dashboard中通过点击以下按钮来分别查看线上及测试数据:  
 ![](/assets/live.png)
+
 #### **Q2: 通过js sdk更改参数后，并没有生效，同时也没有重新生成深度链接**
-A2: 首次创建深度链接时，会获取用户js中配置的所有参数，取以下参数（表2-1）来创建深度链接，同时将其他参数（表2-2）附加到该深度链接上，深度链接不变，附加参数也不会变更。
-影响深度链接创建的参数（表2-1）：
-|参数|参数说明|
-|---|---|
-|linkedme_key|LinkedME Key|
-|type|init方法中的type参数live或者test|
-|feature|功能名称|
-|stage|阶段名称|
-|channel|渠道名称|
-|tags|标签名称|
-|params|用户自定义参数|
+
+A2: 首次创建深度链接时，会获取用户js中配置的所有参数，取以下参数（表2-1）来创建深度链接，同时将其他参数（表2-2）附加到该深度链接上，深度链接不变，附加参数也不会变更。  
+影响深度链接创建的参数（表2-1）：  
+\|参数\|参数说明\|  
+\|---\|---\|  
+\|linkedme\_key\|LinkedME Key\|  
+\|type\|init方法中的type参数live或者test\|  
+\|feature\|功能名称\|  
+\|stage\|阶段名称\|  
+\|channel\|渠道名称\|  
+\|tags\|标签名称\|  
+\|params\|用户自定义参数\|
 
 附加到创建的深度链接的其他参数（表2-2）：
 
-|参数|参数说明|
-|---|---|
-|ios_custom_url|参数说明参见集成文档|
-|ios_direct_open|参数说明参见集成文档|
-|android_custom_url|参数说明参见集成文档|
-|android_direct_open|参数说明参见集成文档|
+| 参数 | 参数说明 |
+| --- | --- |
+| ios\_custom\_url | 参数说明参见集成文档 |
+| ios\_direct\_open | 参数说明参见集成文档 |
+| android\_custom\_url | 参数说明参见集成文档 |
+| android\_direct\_open | 参数说明参见集成文档 |
 
 因此如果要重新生成深度链接，需要更改（表2-1）中的参数，更改（表2-2）中的参数是不会重新创建深度链接，也不会起任何效果。如果想更改（表2-2）中的参数并使其生效，那么就需要同时更改（表2-1）中的参数来重新生成深度链接。
-> 如果不想更改深度链接，同时也想修改其对应的参数，那么可通过后台dashboard更改，查找深度链接并编辑，如下所示：
-![](/assets/编辑深度链接.png)
+
+> 如果不想更改深度链接，同时也想修改其对应的参数，那么可通过后台dashboard更改，查找深度链接并编辑，如下所示：  
+> ![](/assets/编辑深度链接.png)
 
 #### **Q3: 通过js sdk创建的深度链接在后台查看发现其对应的h5地址不是详情页的地址，为什么？**
+
 A3: 深度链接对应的h5地址是在深度链接首次创建时通过获取地址栏中的地址来配置该参数，用户目前无法自定义，后续会优化该配置。
 
 #### **Q4: 客户端创建深度链接并拼接分享后，Web前端还需要如何处理？**
-A4: 对于移动端创建深度链接，将创建的深度链接拼接到分享链接之后再分享出去，例如你们的分享链接是这样的：https://www.host.com/title/one.html，则拼接后的分享链接为：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"，或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";。链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。
+
+A4: 对于移动端创建深度链接，将创建的深度链接拼接到分享链接之后再分享出去，例如你们的分享链接是这样的：[https://www.host.com/title/one.html，则拼接后的分享链接：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"，或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";。链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。](https://www.host.com/title/one.html，则拼接后的分享链接为：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"，或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";。链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。)
+
 > 提示：根据我们以往用户集成反馈结果，建议采用JS SDK创建深度链接，不建议采用客户端创建深度链接，客户端创建深度链接有一定的局限性，如若发版后遇到特殊情况，需要更改深度链接中的参数值，无法做到时时更新，同时用户更新客户端也有一个更新周期，非常受限。而采用JS SDK创建深度链接，可以随时修正，同时我们在JS端优化了一些跳转逻辑，有更好的用户体验，并不断优化更新。
 
 #### **Q5: 创建深度链接可通过JS SDK和客户端SDK两种方式创建，这两种方式有什么区别？**
+
 A5: 这两种方式创建的深度链接并无丝毫差别，主要是他们对于跳转的优化处理有差别：
+
 &nbsp;&nbsp;1. 两种方式都需要前端处理：
+
 &nbsp;&nbsp;&nbsp;&nbsp;客户端SDK创建深度链接也需要前端处理，将深度链接截取并放到“打开App”的按钮下面（具体参考Q4），因此建议直接采用JS SDK创建深度链接。
-&nbsp;&nbsp;2. 集成JS SDK后跳转更流畅
+
+ &nbsp;&nbsp;2. 集成JS SDK后跳转更流畅
+
 &nbsp;&nbsp;&nbsp;&nbsp;JS SDK会根据用户反馈不断优化跳转逻辑，使跳转更加流畅，而客户端SDK创建则只能优化部分跳转逻辑。比如：
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Android QQ中，如果使用JS SDK创建，则在安装App的情况下直接唤起App，而客户端SDK创建则无法直接唤起；
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Android UC中，如果使用JS SDK创建，则不会显示空白页面再弹出打开对话框，而客户端SDK创建则会显示空白页面；
+
 &nbsp;&nbsp;3. 更好的灵活性
+
 &nbsp;&nbsp;&nbsp;&nbsp;JS SDK创建有更好的灵活性，服务器端可迅速根据需要修改上线，而客户端发版上线更新流程较长。
+
