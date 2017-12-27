@@ -42,7 +42,10 @@ A3: 深度链接对应的h5地址是在深度链接首次创建时通过获取�
 
 #### **Q4: 客户端创建深度链接并拼接分享后，Web前端还需要如何处理？**
 
-A4: 对于移动端创建深度链接，将创建的深度链接拼接到分享链接之后再分享出去，例如你们的分享链接是这样的：[https://www.host.com/title/one.html，则拼接后的分享链接：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"，或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";。链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。](https://www.host.com/title/one.html，则拼接后的分享链接为：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"，或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";。链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。)
+A4: 对于移动端创建深度链接，将创建的深度链接拼接到分享链接之后再分享出去，例如：
+你们的分享链接是这样的：https://www.host.com/title/one.html，则拼接后的分享链接：https://www.host.com/title/one.html?linkedme="此处为生成的深度链接"；
+或者你们的分享链接是这样的：https://www.host.com/title/one.html?groupid=1234&id=789，则拼接后的分享链接为：https://www.host.com/title/one.html?groupid=1234&id=789&linkedme="此处为生成的深度链接";
+链接分享到各个分享平台后，用户点击分享的内容打开以上h5页面，Web端需要截取链接中的参数linkedme对应的深度链接值，将该深度链接放到“打开app”按钮下，用户点击“打开app”按钮后触发深度链接，打开app（不同平台打开app的方式是不同的，已是优化后的跳转方式）。
 
 > 提示：根据我们以往用户集成反馈结果，建议采用JS SDK创建深度链接，不建议采用客户端创建深度链接，客户端创建深度链接有一定的局限性，如若发版后遇到特殊情况，需要更改深度链接中的参数值，无法做到时时更新，同时用户更新客户端也有一个更新周期，非常受限。而采用JS SDK创建深度链接，可以随时修正，同时我们在JS端优化了一些跳转逻辑，有更好的用户体验，并不断优化更新。
 
@@ -51,18 +54,11 @@ A4: 对于移动端创建深度链接，将创建的深度链接拼接到分享�
 A5: 这两种方式创建的深度链接并无丝毫差别，主要是他们对于跳转的优化处理有差别：
 
 &nbsp;&nbsp;1. 两种方式都需要前端处理：
-
 &nbsp;&nbsp;&nbsp;&nbsp;客户端SDK创建深度链接也需要前端处理，将深度链接截取并放到“打开App”的按钮下面（具体参考Q4），因此建议直接采用JS SDK创建深度链接。
-
  &nbsp;&nbsp;2. 集成JS SDK后跳转更流畅
-
 &nbsp;&nbsp;&nbsp;&nbsp;JS SDK会根据用户反馈不断优化跳转逻辑，使跳转更加流畅，而客户端SDK创建则只能优化部分跳转逻辑。比如：
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Android QQ中，如果使用JS SDK创建，则在安装App的情况下直接唤起App，而客户端SDK创建则无法直接唤起；
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Android UC中，如果使用JS SDK创建，则不会显示空白页面再弹出打开对话框，而客户端SDK创建则会显示空白页面；
-
 &nbsp;&nbsp;3. 更好的灵活性
-
 &nbsp;&nbsp;&nbsp;&nbsp;JS SDK创建有更好的灵活性，服务器端可迅速根据需要修改上线，而客户端发版上线更新流程较长。
 
