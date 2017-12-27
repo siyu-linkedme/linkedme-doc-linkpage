@@ -107,7 +107,7 @@ compile "cc.linkedme.deeplinks:link-page:1.0.19"
 
 ### 添加URI Scheme和App Links支持
 添加URI Scheme和App Links支持后，才能够通过这两种方式跳转到APP内
-在工程主页的Activity中添加`android:launchMode="singleTask"`属性。
+在工程主页的Activity（如：MainActivity）中添加`android:launchMode="singleTask"`属性及`<intent-filter/>`属性：
 
 * URI Scheme方式；
 * App Links方式；  
