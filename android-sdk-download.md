@@ -1,9 +1,14 @@
 # Android SDK及Demo下载
-[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/raw/master/LinkedME-Demo/libs/LinkedME-Android-Deep-Linking-SDK-V1.0.19.jar)
+[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/raw/master/LinkedME-Demo/libs/LinkedME-Android-Deep-Linking-SDK-V1.0.20.jar)
 
 [Demo下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/archive/master.zip)
  
 # Android SDK更新日志
+
+## 版本V1.0.20
+发布日期：2018年1月2日  
+<font color="red">**改善**</font>  
+* 解决了应用通过深度链接唤起App后，应用退到后台，当进程被系统Kill后，再从最近应用列表中打开App时重复跳转的问题;
 
 ## 版本V1.0.19
 发布日期：2017年12月22日  

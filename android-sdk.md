@@ -14,7 +14,7 @@
 ```java
 dependencies {
   //注意修改jar包名,与下载的jar包名称一致
-  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.19.jar')
+  compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.20.jar')
 }
 
 ```
@@ -54,7 +54,7 @@ allprojects {
 ```java
 dependencies {
 compile fileTree(include: ['*.jar'], dir: 'libs')
-compile "cc.linkedme.deeplinks:link-page:1.0.19"
+compile "cc.linkedme.deeplinks:link-page:1.0.20"
 }
 ```
 
@@ -413,7 +413,12 @@ public class MiddleActivity extends AppCompatActivity {
     }
     // ...
     }
-```
+```   
+# 关于混淆   
+
+SDK理论上不需要添加混淆配置，但是如果您发现了我们的SDK给您的程序带来了崩溃异常问题，请及时联系我们，同时添加以下混淆配置，将错误信息发送给我们，方便我们准确定位问题，解决问题。
+`-keep class com.microquation.linkedme.android.** { *; }`
+
 
 # 其他功能
 ## 测试模式
