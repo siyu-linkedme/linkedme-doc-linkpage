@@ -1,6 +1,7 @@
 # 技术支持
 
-<font color="blue">官方QQ群</font>：209222314
+<font color="blue">官方QQ群</font>：
+群1：209222314（已满）<br>群2：639389757
 
 <font color="blue">Email</font>：support#linkedme.cc(#替换@)
 
