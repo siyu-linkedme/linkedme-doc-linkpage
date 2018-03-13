@@ -137,7 +137,7 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
       <!-- 此处scheme值需要替换为后台设置中的scheme值 -->
       <!-- host禁止更改！！！ -->
       <!-- 禁止配置其他属性 -->
-      <data android:scheme="lkmedemo"
+      <data android:scheme="修改为LinkedME后台设置的uri scheme"
             android:host="linkedme" />
       <action android:name="android.intent.action.VIEW" />
       <category android:name="android.intent.category.DEFAULT" />
@@ -153,11 +153,11 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
       <!-- host中设置的lkme.cc不要更改！！！-->
       <data
         android:host="lkme.cc"
-        android:pathPrefix="/AfC"
+        android:pathPrefix="/修改为LinkedME后台分配的App ID的值，注意保留反斜杠"
         android:scheme="https" />
       <data
         android:host="lkme.cc"
-        android:pathPrefix="/AfC"
+        android:pathPrefix="/修改为LinkedME后台分配的App ID的值，注意保留反斜杠"
         android:scheme="http" />
     </intent-filter>
   </activity>
@@ -403,7 +403,7 @@ public class MiddleActivity extends AppCompatActivity {
                     //根据不同的参数进行页面跳转,detail代表具体跳转到哪个页面,此处语义指详情页
                     if (view.equals("detail")) {
                         //DetailActivity类不存在,此处语义指要跳转的详情页,参数也是由上面的HashMap对象指定
-                        Intent intent = new intent(MiddleActivity.this, DetailActivity.class);
+                        Intent intent = new ntent(MiddleActivity.this, DetailActivity.class);
                         startActivity(intent);
                     }
                 }
