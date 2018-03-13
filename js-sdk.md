@@ -102,6 +102,7 @@
   },false);
 </script>
 ```
+> 注意：修改ios_custom_url、ios_direct_open、android_custom_url、android_direct_open这四个参数你会发现：点击深度链接还是走之前的逻辑，新设置的参数并没有生效，因为修改这四个值并不会重新创建深度链接，也就不会生效，具体请参考：https://pagedoc.lkme.cc/qa-web.html#q2-%E9%80%9A%E8%BF%87js-sdk%E6%9B%B4%E6%94%B9%E5%8F%82%E6%95%B0%E5%90%8E%EF%BC%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E7%94%9F%E6%95%88%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E6%B2%A1%E6%9C%89%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5
 
 ##完整代码示例
 
