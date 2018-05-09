@@ -57,7 +57,7 @@ dependencies {
 ### 添加LinkedME Key
 > 提示：配置为application的子节点，而非activity的子节点
 
-```java
+```xml
 <application
     android:name=".activity.LinkedMEDemoApp">
 <!-- LinkedME官网注册应用后,从"设置"页面获取该Key -->
@@ -81,7 +81,7 @@ dependencies {
 
 添加代码如下：
 
-```java
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <!--LinkedME SDK 需要开启的权限-->
