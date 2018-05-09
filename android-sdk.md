@@ -273,6 +273,31 @@ protected void onResume() {
     LinkedME.getInstance().setImmediate(true);
 }
 ```
+### 配置SplashActivity（即打开应用的第一个Activity）
+当通过包名将应用从后台唤起时，应直接销掉该Activity。
+```java
+public class SplashActivity extends BaseActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash_activity);
+    
+        //处理首次安装点击打开切到后台,点击桌面图标再回来重启的问题及通过应用宝唤起在特定条件下重走逻辑的问题
+        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+            // Activity was brought to front and not created,
+            // Thus finishing this will get us to the last viewed activity
+            finish();
+            return;
+        }
+        
+        Intent intent = new Intent(SplashActivity.this, WelcomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+}
+```
 ## 解析深度链接参数并跳转
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面
 新建一个Activity(例如：MiddleActivity)，用于接收SDK回传的参数，并根据业务要求进行跳转
