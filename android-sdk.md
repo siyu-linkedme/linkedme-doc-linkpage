@@ -193,6 +193,12 @@ public class UriSchemeProcessActivity extends AppCompatActivity {
             LinkedME.getInstance().setImmediate(true);
         }
     }
+    
+    @Override
+    protected void onNewIntent(Intent intent) {
+        // 请重写改方法并且设置该Activity的launchmode为singleTask
+        setIntent(intent);
+    }
 
     @Override
     protected void onPause() {
@@ -208,7 +214,7 @@ public class UriSchemeProcessActivity extends AppCompatActivity {
 > 提示：UriSchemeProcessActivity继承AppCompatActivity或者Activity，不继承基类
 
 ### 配置URI Scheme及App Links过滤器
-添加URI Scheme及App Links过滤器，深度链接才能够通过这两种方式打开APP，在AndroidManifest的UriSchemeProcessActivity声明中添加`android:noHistory="true"`属性及`<intent-filter/>`属性：
+添加URI Scheme及App Links过滤器，深度链接才能够通过这两种方式打开APP，在AndroidManifest的UriSchemeProcessActivity声明中添加`android:noHistory="true"`,`android:launchMode="singleTask"`属性及`<intent-filter/>`属性：
 
 * URI Scheme方式；
 * App Links方式；
@@ -224,6 +230,7 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
 <activity
     android:name=".activity.UriSchemeProcessActivity"
     android:screenOrientation="portrait"
+    android:launchMode="singleTask"
     android:noHistory="true">
 
     <!-- URI Scheme方式 在dashboard配置中,请保持与ios的URI Scheme相同 -->
