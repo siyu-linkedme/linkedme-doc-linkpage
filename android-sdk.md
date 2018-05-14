@@ -192,21 +192,16 @@ public class UriSchemeProcessActivity extends AppCompatActivity {
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
             LinkedME.getInstance().setImmediate(true);
         }
+        // 防止跳转后一直停留在该页面
+        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+        finish();
+        }
     }
     
     @Override
     protected void onNewIntent(Intent intent) {
         // 请重写改方法并且设置该Activity的launchmode为singleTask
         setIntent(intent);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // 防止跳转后一直停留在该页面
-        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
-            finish();
-        }
     }
 
 }
