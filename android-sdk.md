@@ -171,7 +171,8 @@ public class BaseActivity extends AppCompatActivity {
 ### 创建处理URI Scheme及App Links跳转逻辑的Activity
 ```java
 /**
- * UriSchemeProcessActivity继承AppCompatActivity或者Activity，不继承基类
+ * UriSchemeProcessActivity不继承基类，
+ * 继承AppCompatActivity或者Activity（你的基类继承哪个Activity，此处也同基类一样继承相同的Activity）
  */
 public class UriSchemeProcessActivity extends AppCompatActivity {
 
