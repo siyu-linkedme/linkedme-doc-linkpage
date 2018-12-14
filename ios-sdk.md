@@ -34,7 +34,7 @@ StoreKit.framework
 ```
 pod 'LinkedME_LinkPage'
 ```							
-* 运行 pod installin
+* 运行 pod install
 * 从现在开始使用 .xcworkspace 打开项目，而不是 .xcodeproj
 
 > 提示：如果提示[!] Unable to find a pod with name, author, summary, or description matching \` LinkedME_LinkPage\`
