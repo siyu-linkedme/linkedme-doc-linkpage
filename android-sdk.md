@@ -230,11 +230,6 @@ LinkedME-Android-Deep-Linking-Demo代码如下所示：
     android:noHistory="true">
 
     <!-- URI Scheme方式 在dashboard配置中,请保持与ios的URI Scheme相同 -->
-    <!--
-    如果程序已存在与此完全相同的data配置,即只包含scheme并且值完全相同,
-    则需要考虑发起的intent会出现相同应用图标的选择对话框的情况
-    参考集成文档:https://www.linkedme.cc/docs/page4.html#link1
-    -->
     <intent-filter>
         <!-- 此处scheme值需要替换为后台设置中的scheme值 -->
         <!-- host禁止更改！！！ -->
