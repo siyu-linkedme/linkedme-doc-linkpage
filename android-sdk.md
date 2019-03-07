@@ -93,6 +93,27 @@ dependencies {
     <uses-permission android:name="android.permission.BLUETOOTH" />
 </manifest>
 ```
+### 允许Android 9.0（API Level 28）及以上使用Http请求
+从Android 9.0开始禁止App使用未加密的连接，而LinkedME目前使用的是Http请求，如果你的目标版本是API 28，需要添加以下配置：  
+1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">lkme.cc</domain>
+    </domain-config>
+</network-security-config>
+```  
+2.在AndroidManifest.xml文件中的application标签中添加以下属性：  
+
+```xml
+<application
+...
+ android:networkSecurityConfig="@xml/network_security_config"
+...
+    />
+```  
+
 
 ## 初始化LinkedME实例
 在自定义Application类的<font color="red">onCreate()</font>方法中，初始化LinkedME SDK。LinkedME-Android-Deep-Linking-Demo示例代码如下所示：
