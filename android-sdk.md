@@ -16,7 +16,7 @@
 ```java
 dependencies {
 //注意修改jar包名,与下载的jar包名称一致
-compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.26.jar')
+compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.28.jar')
 }
 ```
 
@@ -48,7 +48,7 @@ allprojects {
 ```groovy
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "cc.linkedme.deeplinks:link-page:1.0.26"
+    compile "cc.linkedme.deeplinks:link-page:1.0.28"
 }
 ```
 
@@ -94,6 +94,8 @@ dependencies {
 </manifest>
 ```
 ### 允许Android 9.0（API Level 28）及以上使用Http请求
+> 如果使用的是SDK 版本是1.0.28及以上，则不需要增加以下配置  
+
 从Android 9.0开始禁止App使用未加密的连接，而LinkedME目前使用的是Http请求，如果你的目标版本是API 28，需要添加以下配置：  
 1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
 ```xml
