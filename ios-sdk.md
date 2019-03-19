@@ -132,7 +132,7 @@ func application(application: UIApplication, openURL url: NSURL, sourceApplicati
 }
 
 //Universal Links 通用链接实现深度链接技术
-func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
   //判断是否是通过LinkedME的Universal Links唤起App
   if url.absoluteString.componentsSeparatedByString("lkme.cc").count > 1 {
     return LinkedME.getInstance().continueUserActivity(userActivity);
