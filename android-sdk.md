@@ -16,7 +16,7 @@
 ```java
 dependencies {
 //注意修改jar包名,与下载的jar包名称一致
-compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.28.jar')
+compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.0.29.jar')
 }
 ```
 
@@ -48,7 +48,7 @@ allprojects {
 ```groovy
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "cc.linkedme.deeplinks:link-page:1.0.28"
+    compile "cc.linkedme.deeplinks:link-page:1.0.29"
 }
 ```
 
@@ -78,6 +78,7 @@ dependencies {
 |android.permission.ACCESS_WIFI_STATE	|获取WiFi状态|
 |android.permission.WRITE_EXTERNAL_STORAGE	|写入外部存储|
 |android.permission.BLUETOOTH	|获取设备名称|
+|android.permission.REORDER_TASKS	|优化跳转体验，请务必添加|
 
 添加代码如下：
 
@@ -91,6 +92,8 @@ dependencies {
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+      <!-- 请务必添加该权限，用户更流畅的跳转 -->
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
 </manifest>
 ```
 ### 允许Android 9.0（API Level 28）及以上使用Http请求
@@ -293,6 +296,21 @@ protected void onResume() {
     super.onResume();
     LinkedME.getInstance().setImmediate(true);
 }
+```  
+
+### 用户退出应用时，将应用压入后台
+在应用的 **根activity**（通常是主页，例如：MainActivity)中添加以下处理方式，目的是用户退出应用时不是真正finish了acitivity，而是相当于点击了home键退出了应用，以下只是参考，请自行处理。
+
+```
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 当用户准备退出应用时，是将应用压到后台，而不是正常的关闭activity
+            moveTaskToBack(false);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 ```
 ### 配置SplashActivity（即打开应用的第一个Activity）
 当通过包名将应用从后台唤起时，应直接销掉该Activity。
