@@ -220,9 +220,7 @@ public class UriSchemeProcessActivity extends AppCompatActivity {
             LinkedME.getInstance().setImmediate(true);
         }
         // 防止跳转后一直停留在该页面
-        if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
         finish();
-        }
     }
     
     @Override
