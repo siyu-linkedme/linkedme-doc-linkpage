@@ -97,9 +97,9 @@ dependencies {
 </manifest>
 ```
 ### 允许Android 9.0（API Level 28）及以上使用Http请求
-> 如果使用的是SDK 版本是1.0.28及以上，则不需要增加以下配置  
+> <font color="red">如果使用的是SDK 版本是1.0.28及以上，不需要增加以下配置</font>  
 
-从Android 9.0开始禁止App使用未加密的连接，而LinkedME目前使用的是Http请求，如果你的目标版本是API 28，需要添加以下配置：  
+从Android 9.0开始禁止App使用未加密的连接，而LinkedME Android SDK 1.0.28以下使用的是Http请求，如果你的目标版本是API 28，且使用的是SDK 1.0.28以下的本，需要添加以下配置：  
 1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -395,7 +395,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 
 # 创建深度链接
-> 温馨提示：如果web端集成了js sdk，则无需客户端创建深度链接，本节无需集成。(建议采用js sdk创建深度链接)
+> <font color="red">温馨提示：如果web端集成了js sdk，则无需客户端创建深度链接，本节无需集成。(建议采用js sdk创建深度链接)</font>
 
 通过SDK创建深度链接，例如在分享页面时，页面的链接是通过SDK生成的深度链接，当打开分享内容时就可以通过深度链接唤起APP并进入对应页面。
 LinkedME SDK创建深度链接，必须传入链接的参数，用于区分App内不同的页面。比如唯品会商品详情页面的唯一标识为productId=230453452
