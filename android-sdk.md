@@ -97,7 +97,7 @@ dependencies {
 </manifest>
 ```
 ### 允许Android 9.0（API Level 28）及以上使用Http请求
-> <font color="red">如果使用的是SDK 版本是1.0.28及以上，不需要增加以下配置</font>  
+> 如果使用的是SDK 版本是1.0.28及以上，不需要增加以下配置  
 
 从Android 9.0开始禁止App使用未加密的连接，而LinkedME Android SDK 1.0.28以下使用的是Http请求，如果你的目标版本是API 28，且使用的是SDK 1.0.28以下的本，需要添加以下配置：  
 1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
