@@ -1,9 +1,14 @@
 # Android SDK及Demo下载
-[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/raw/master/LinkedME-Demo/libs/LinkedME-Android-Deep-Linking-SDK-V1.0.29.jar)
+[SDK下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/tree/master/LinkedME-Demo/libs)
 
 [Demo下载](https://github.com/WFC-LinkedME/LinkedME-Android-Deep-Linking-Demo/archive/master.zip)
  
 # Android SDK更新日志
+
+## 版本V1.0.30
+发布日期：2019年05月05日
+<font color="red">**改善**</font>
+* 解决微信唤起部分机型无法获取参数的问题;
 
 ## 版本V1.0.29
 发布日期：2019年03月23日
