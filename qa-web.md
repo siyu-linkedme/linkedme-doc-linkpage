@@ -1,5 +1,4 @@
-\#  
-Web平台相关问题
+# Web平台相关问题
 
 #### **Q1: js sdk创建的深度链接可分为两种类型：live（线上）和test（测试）。它们的区别是什么？它们与后台dashboard如何对应？**
 
@@ -11,16 +10,17 @@ A1: js sdk可调用`linkedme.init("linkedme_key", {type: "live"}, null);`方法�
 #### **Q2: 通过js sdk更改参数后，并没有生效，同时也没有重新生成深度链接**
 
 A2: 首次创建深度链接时，会获取用户js中配置的所有参数，取以下参数（表2-1）来创建深度链接，同时将其他参数（表2-2）附加到该深度链接上，深度链接不变，附加参数也不会变更。  
-影响深度链接创建的参数（表2-1）：  
-\|参数\|参数说明\|  
-\|---\|---\|  
-\|linkedme\_key\|LinkedME Key\|  
-\|type\|init方法中的type参数live或者test\|  
-\|feature\|功能名称\|  
-\|stage\|阶段名称\|  
-\|channel\|渠道名称\|  
-\|tags\|标签名称\|  
-\|params\|用户自定义参数\|
+影响深度链接创建的参数（表2-1）： 
+ 
+|参数|参数说明|  
+|---|---|  
+|linkedme\_key|LinkedME Key|  
+|type|init方法中的type参数live或者test|  
+|feature|功能名称|  
+|stage|阶段名称|  
+|channel|渠道名称|  
+|tags|标签名称|  
+|params|用户自定义参数|
 
 附加到创建的深度链接的其他参数（表2-2）：
 
