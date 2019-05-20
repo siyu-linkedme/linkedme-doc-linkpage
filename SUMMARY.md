@@ -1,27 +1,24 @@
-# Summary
+# Table of contents
 
 * [新手上路](README.md)
 * [注册并开始](register.md)
 
 ## LinkPage
 
-* [LinkPage SDK下载](sdk-download.md)
-  * [iOS SDK](ios-sdk-download.md)
-  * [Android SDK](android-sdk-download.md)
-  * [JS SDK](js-sdk-download.md)
-* [LinkPage 集成文档](LinkPage-Integration.md)
-  * [iOS SDK](ios-sdk.md)
-  * [Android SDK](android-sdk.md)
-  * [JS SDK](js-sdk.md)
-* [数据指标](metrics.md)
-* [常见问题](qa.md)
-  * [产品问题](qa-product.md)
-  * [iOS 平台](qa-ios.md)
-  * [Android 平台](qa-android.md)
-  * [Web 平台](qa-web.md)
-  * [其他问题](qa-other.md)
-
----
-
-* [技术支持](support.md)
+* [LinkPage SDK下载](linkpage/sdk-download/README.md)
+  * [iOS SDK](linkpage/sdk-download/ios-sdk-download.md)
+  * [Android SDK](linkpage/sdk-download/android-sdk-download.md)
+  * [JS SDK](linkpage/sdk-download/js-sdk-download.md)
+* [LinkPage 集成文档](linkpage/linkpage-integration/README.md)
+  * [iOS SDK](linkpage/linkpage-integration/ios-sdk.md)
+  * [Android SDK](linkpage/linkpage-integration/android-sdk.md)
+  * [JS SDK](linkpage/linkpage-integration/js-sdk.md)
+* [数据指标](linkpage/metrics.md)
+* [常见问题](linkpage/qa/README.md)
+  * [产品问题](linkpage/qa/qa-product.md)
+  * [iOS 平台](linkpage/qa/qa-ios.md)
+  * [Android 平台](linkpage/qa/qa-android.md)
+  * [Web 平台](linkpage/qa/qa-web.md)
+  * [其他问题](linkpage/qa/qa-other.md)
+* [技术支持](linkpage/support.md)
 

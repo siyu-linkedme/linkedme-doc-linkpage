@@ -1,24 +1,31 @@
-# 准备工作
-## 获取LinkedME Key
-<font color="red">新用户</font>：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
-<font color="red">老用户</font>：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
+# JS SDK
 
+## 准备工作
 
-# 引入 JS SDK
+### 获取LinkedME Key
+
+新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
+
+老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
+
+## 引入 JS SDK
 
 在html文件的head标签里增加如下代码：
 
-```js
+```javascript
   <!-- 加载js -->
   <script src="https://static.lkme.cc/linkedme.min.js" ></script>
 ```
+
 > 提示：JS SDK会不定期优化跳转逻辑，请不要将JS SDK下载到本地加载。
 
-# 基本配置
-## 初始化LinkedME全局对象
-<font color="red">注意：请在服务器环境下测试，本地打开存在跨域问题</font>。
+## 基本配置
 
-```js	
+### 初始化LinkedME全局对象
+
+注意：请在服务器环境下测试，本地打开存在跨域问题。
+
+```javascript
 /* 
   接口名称: init(linkedme_key, initData, callback)
   参数说明：
@@ -30,7 +37,7 @@
 
 示例代码1：
 
-```js
+```javascript
 <script>
   linkedme.init("linkedme_key", null, null);
 </script>
@@ -38,7 +45,7 @@
 
 示例代码2：
 
-```js
+```javascript
 <script>
   var initData = {};
   initData.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.
@@ -52,14 +59,15 @@
 </script>
 ```
 
+## 深度链接功能
 
-# 深度链接功能
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现“基本配置”中的内容
 
-## 创建深度链接
+### 创建深度链接
+
 通过js创建深度链接，例如在H5页面中通过js将该页面的深度链接写到“打开APP”按钮下
 
-```js
+```javascript
 /* 
   接口名称： link(data, callback, autoSelect)
   参数说明：
@@ -71,7 +79,7 @@
 
 示例代码：
 
-```js
+```javascript
 <script>
   var data = {};
   data.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.【可选】
@@ -98,11 +106,12 @@
   },false);
 </script>
 ```
-> 注意：修改ios_custom_url、ios_direct_open、android_custom_url、android_direct_open这四个参数你会发现：点击深度链接还是走之前的逻辑，新设置的参数并没有生效，因为修改这四个值并不会重新创建深度链接，也就不会生效，具体请参考：https://pagedoc.lkme.cc/qa-web.html#q2-%E9%80%9A%E8%BF%87js-sdk%E6%9B%B4%E6%94%B9%E5%8F%82%E6%95%B0%E5%90%8E%EF%BC%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E7%94%9F%E6%95%88%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E6%B2%A1%E6%9C%89%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5
 
-##完整代码示例
+> 注意：修改ios\_custom\_url、ios\_direct\_open、android\_custom\_url、android\_direct\_open这四个参数你会发现：点击深度链接还是走之前的逻辑，新设置的参数并没有生效，因为修改这四个值并不会重新创建深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接)
 
-```
+### 完整代码示例
+
+```text
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -126,7 +135,7 @@
       var value2 = 2;
       data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
 
-	linkedme.link(data, function(err, response){
+    linkedme.link(data, function(err, response){
         if(err){
           // 生成深度链接失败，返回错误对象err
         } else {
@@ -147,24 +156,22 @@
   </body>
 </html>
 ```
-> 提示：请使用`<a/>`标签作为打开app的跳转按钮，同时为了在Chrome及QQ中获得更好的用户体验（直接唤起app），请在a标签中添加class="linkedme"，并且为a标签的href属性设置值为生成的深度链接。示例：  
-```
-<a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
-```
 
-<font color="red">注意：在iOS微信中必须手动触发深度链接，不能自动跳转</font>。
+> 提示：请使用`<a/>`标签作为打开app的跳转按钮，同时为了在Chrome及QQ中获得更好的用户体验（直接唤起app），请在a标签中添加class="linkedme"，并且为a标签的href属性设置值为生成的深度链接。示例：
+>
+> ```text
+> <a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
+> ```
 
-<font color="red">提示：一个页面包含多个深度链接时，请添加QQ群：639389757沟通</font>。
+注意：在iOS微信中必须手动触发深度链接，不能自动跳转。
 
-# 其他功能
-## 测试模式
-若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test"; ` 测试模式产生的数据将进入测试系统（Test）中。
+提示：一个页面包含多个深度链接时，请添加QQ群：639389757沟通。
 
+## 其他功能
 
-注意：<font color="red">上线后务必设置  `data.type = "live"` ;   否则将影响APP线上数据的查看</font>。
+### 测试模式
 
+若想测试集成SDK后是否能正确生成深度链接，可以使用测试模式。测试模式需要设置 `data.type = "test";` 测试模式产生的数据将进入测试系统（Test）中。
 
-
-
-
+注意：上线后务必设置 `data.type = "live"` ; 否则将影响APP线上数据的查看。
 
