@@ -20,5 +20,7 @@
   * [Android 平台](linkpage/qa/qa-android.md)
   * [Web 平台](linkpage/qa/qa-web.md)
   * [其他问题](linkpage/qa/qa-other.md)
+* [解决方案](linkpage/jie-jue-fang-an/README.md)
+  * [携带参数安装](linkpage/jie-jue-fang-an/xie-dai-can-shu-an-zhuang.md)
 * [技术支持](linkpage/support.md)
 
