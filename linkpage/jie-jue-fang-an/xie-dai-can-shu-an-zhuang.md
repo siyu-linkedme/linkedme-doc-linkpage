@@ -45,7 +45,7 @@ PageType = goods；
 UserName=小栗鸭；
 ```
 
-JS SDK传参代码参见链接：[https://pagedoc.lkme.cc/linkpage/linkpage-integration/js-sdk.html\#%E5%88%9B%E5%BB%BA%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5](https://pagedoc.lkme.cc/linkpage/linkpage-integration/js-sdk.html#%E5%88%9B%E5%BB%BA%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5)
+JS SDK传参代码参见链接：[点击这里](https://pagedoc.lkme.cc/linkpage/linkpage-integration/js-sdk.html#%E5%88%9B%E5%BB%BA%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5)
 
 Step2：用户B打开来自社交好友的分享页面，点击深度链接后，唤起APP（如用户未安装APP，会先跳转至应用商店或apk下载地址，进行下载，安装后打开APP），LinkedMe 服务器回传创建链接时，所传递的参数值给Android / IOS SDK，示例如下：
 
@@ -57,6 +57,6 @@ UserName=小栗鸭；（用户昵称）
 //获知邀请人的用户昵称，用户注册后自动绑定邀请关系，加好友。
 ```
 
-Android SDK 解析深度链接代码参见链接：[https://pagedoc.lkme.cc/linkpage/linkpage-integration/androidsdk.html\#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5%E5%8F%82%E6%95%B0%E5%B9%B6%E8%B7%B3%E8%BD%AC](https://pagedoc.lkme.cc/linkpage/linkpage-integration/android-sdk.html#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5%E5%8F%82%E6%95%B0%E5%B9%B6%E8%B7%B3%E8%BD%AC)  
-IOS SDK 解析深度链接代码参见链接：[https://pagedoc.lkme.cc/linkpage/linkpage-integration/iossdk.html\#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5](https://pagedoc.lkme.cc/linkpage/linkpage-integration/ios-sdk.html#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5)
+Android SDK 解析深度链接代码参见链接：[点击这里](https://pagedoc.lkme.cc/linkpage/linkpage-integration/android-sdk.html#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5%E5%8F%82%E6%95%B0%E5%B9%B6%E8%B7%B3%E8%BD%AC)  
+IOS SDK 解析深度链接代码参见链接：[点击这里](https://pagedoc.lkme.cc/linkpage/linkpage-integration/ios-sdk.html#%E8%A7%A3%E6%9E%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5) 
 
