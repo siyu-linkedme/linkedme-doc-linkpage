@@ -21,6 +21,7 @@
   * [Web 平台](linkpage/qa/qa-web.md)
   * [其他问题](linkpage/qa/qa-other.md)
 * [解决方案](linkpage/jie-jue-fang-an/README.md)
+  * [免打包跨渠道推广](linkpage/jie-jue-fang-an/mian-da-bao-kua-qu-dao-tui-guang.md)
   * [免填邀请码](linkpage/jie-jue-fang-an/xie-dai-can-shu-an-zhuang.md)
 * [技术支持](linkpage/support.md)
 
