@@ -25,7 +25,7 @@
 ```java
 dependencies {
 //注意修改jar包名,与下载的jar包名称一致
-compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.1.0.jar')
+compile files('libs/LinkedME-Android-Deep-Linking-SDK-V1.1.1.jar')
 }
 ```
 
@@ -58,27 +58,13 @@ allprojects {
 ```groovy
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "cc.linkedme.deeplinks:link-page:1.1.0"
+    compile "cc.linkedme.deeplinks:link-page:1.1.1"
 }
 ```
 
 ## 基本配置
 
 ### 配置AndroidManifest.xml
-
-#### 添加LinkedME Key
-
-> 提示：配置为application的子节点，而非activity的子节点
-
-```markup
-<application
-    android:name=".activity.LinkedMEDemoApp">
-<!-- LinkedME官网注册应用后,从"设置"页面获取该Key -->
-<meta-data
-    android:name="linkedme.sdk.key"
-    android:value="替换为后台设置页面中的LinkedME Key" />
-</application>
-```
 
 #### 添加访问权限
 
@@ -113,7 +99,7 @@ dependencies {
 
 #### 允许Android 9.0（API Level 28）及以上使用Http请求
 
-> 如果使用的是SDK 版本是1.0.28及以上，不需要增加以下配置
+> 如果使用的 SDK 版本是1.0.28及以上，不需要增加以下配置！！！
 
 从Android 9.0开始禁止App使用未加密的连接，而LinkedME Android SDK 1.0.28以下使用的是Http请求，如果你的目标版本是API 28，且使用的是SDK 1.0.28以下的本，需要添加以下配置：  
 1.在res文件夹下创建一个xml文件夹，然后创建一个network\_security\_config.xml文件，文件内容如下：
@@ -146,8 +132,8 @@ public class LinkedMEDemoApp extends Application {
 @Override
 public void onCreate() {
     super.onCreate();
-    // 初始化SDK
-    LinkedME.getInstance(this);
+    // 初始化SDK，为了提高初始化效率，linkedme key不再在AndroidManifest.xml文件中配置
+    LinkedME.getInstance(this, "替换为后台设置页面中的LinkedME Key");
 
     if (BuildConfig.DEBUG) {
         //设置debug模式下打印LinkedME日志
