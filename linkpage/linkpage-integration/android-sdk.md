@@ -350,10 +350,9 @@ public class SplashActivity extends BaseActivity {
 
 通过深度链接唤起APP时，解析深度链接携带的参数以打开对应页面 新建一个Activity\(例如：MiddleActivity\)，用于接收SDK回传的参数，并根据业务要求进行跳转
 
-* 首先，创建MiddleActivity，并在AndroidManifest.xml中配置MiddleActivity
-  1. 添加属性：`android:noHistory="true"`，目的是不显现该页面也不让其放入栈中，只进行页面逻辑跳转；
+* 首先，创建MiddleActivity，并在AndroidManifest.xml中配置MiddleActivity 1. 添加属性：`android:noHistory="true"`，目的是不显现该页面也不让其放入栈中，只进行页面逻辑跳转；
 
-     LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的示例代码如下所示：
+  LinkedME-Android-Deep-Linking-Demo的MiddleActivity在AndroidManifest.xml中的示例代码如下所示：
 
 ```markup
 <activity
@@ -363,10 +362,9 @@ public class SplashActivity extends BaseActivity {
 </activity>
 ```
 
-* 其次，在MiddleActivity的onCreate\(\)方法中编写跳转逻辑
-  1. 通过getIntent\(\).getParcelableExtra\(LinkedME.LM\_LINKPROPERTIES\)获取跳转参数
+* 其次，在MiddleActivity的onCreate\(\)方法中编写跳转逻辑 1. 通过getIntent\(\).getParcelableExtra\(LinkedME.LM\_LINKPROPERTIES\)获取跳转参数
 
-     LinkedME-Android-Deep-Linking-Demo的MiddleActivity示例代码如下所示：
+  LinkedME-Android-Deep-Linking-Demo的MiddleActivity示例代码如下所示：
 
 ```java
 public class MiddleActivity extends AppCompatActivity {
