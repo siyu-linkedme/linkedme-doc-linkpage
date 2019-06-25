@@ -97,30 +97,70 @@ StoreKit.framework
 
 ### 添加URLScheme和Universal Link支持
 
-在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP 在Appdelegate中实现下列方法：
-
-* \(BOOL\)application:\(UIApplication_\)application openURL:\(NSURL_\)url sourceApplication:\(NSString\*\)sourceApplication annotation:\(id\)annotation{ //判断是否是通过LinkedME的UrlScheme唤起App if \(\[\[url description\] rangeOfString:@"click\_id"\].location != NSNotFound\) { return \[\[LinkedME getInstance\] handleDeepLink:url\]; }
-
-  return YES; }
-
+在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP 在Appdelegate中实现下列方法：  
+#### object-c  
+```objc
+- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
+    //判断是否是通过LinkedME的UrlScheme唤起App
+    if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
+        return [[LinkedME getInstance] handleDeepLink:url];
+    }
+    
+    return YES;
+}
+```
+```objc
 //Universal Links 通用链接实现深度链接技术
-
-* \(BOOL\)application:\(UIApplication_\)application continueUserActivity:\(NSUserActivity_\)userActivity restorationHandler:\(void \(^\)\(NSArray\*\)\)restorationHandler{
-
-  //判断是否是通过LinkedME的Universal Links唤起App if \(\[\[userActivity.webpageURL description\] rangeOfString:@"lkme.cc"\].location != NSNotFound\) { return \[\[LinkedME getInstance\] continueUserActivity:userActivity\]; } return YES; }
-
+- (BOOL)application:(UIApplication*)application continueUserActivity:(NSUserActivity*)userActivity restorationHandler:(void (^)(NSArray*))restorationHandler{
+    
+    //判断是否是通过LinkedME的Universal Links唤起App
+    if ([[userActivity.webpageURL description] rangeOfString:@"lkme.cc"].location != NSNotFound) {
+        return  [[LinkedME getInstance] continueUserActivity:userActivity];
+    }
+    
+    return YES;
+}
+```
+```objc
 //URI Scheme 实现深度链接技术
-
-* \(BOOL\)application:\(UIApplication _\)app openURL:\(NSURL_ \)url options:\(NSDictionary \*\)options{ NSLog\(@"opened app from URL %@", \[url description\]\);
-
-  //判断是否是通过LinkedME的UrlScheme唤起App if \(\[\[url description\] rangeOfString:@"click\_id"\].location != NSNotFound\) { return \[\[LinkedME getInstance\] handleDeepLink:url\]; } return YES; }
-
-  //URI Scheme 实现深度链接技术 func application\(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject\) -&gt; Bool { //判断是否是通过LinkedME的UrlScheme唤起App if url.absoluteString.componentsSeparatedByString\("click\_id"\).count &gt; 1 { return LinkedME.getInstance\(\).handleDeepLink\(url\); } }
-
-//Universal Links 通用链接实现深度链接技术 func application\(\_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping \(\[UIUserActivityRestoring\]?\) -&gt; Void\) -&gt; Bool { //判断是否是通过LinkedME的Universal Links唤起App if url.absoluteString.componentsSeparatedByString\("lkme.cc"\).count &gt; 1 { return LinkedME.getInstance\(\).continueUserActivity\(userActivity\); } }
-
-//URI Scheme 实现深度链接技术 func application\(app: UIApplication, openURL url: NSURL, options: \[String : AnyObject\]\) -&gt; Bool { //判断是否是通过LinkedME的UrlScheme唤起App if url.absoluteString.componentsSeparatedByString\("click\_id"\).count &gt; 1 { return LinkedME.getInstance\(\).handleDeepLink\(url\); } }
-
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options{
+    NSLog(@"opened app from URL %@", [url description]);
+    
+    //判断是否是通过LinkedME的UrlScheme唤起App
+    if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
+        return [[LinkedME getInstance] handleDeepLink:url];
+    }
+    return YES;
+}
+```
+#### swift
+```swift
+  //URI Scheme 实现深度链接技术 
+  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -&gt; Bool {
+   //判断是否是通过LinkedME的UrlScheme唤起App 
+     if url.absoluteString.componentsSeparatedByString("click_id").count &gt; 1 { 
+       return LinkedME.getInstance().handleDeepLink(url); 
+     } 
+   }
+```
+```swift
+//Universal Links 通用链接实现深度链接技术 
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -&gt; Void) -&gt; Bool {
+ //判断是否是通过LinkedME的Universal Links唤起App 
+   if url.absoluteString.componentsSeparatedByString("lkme.cc").count &gt; 1 { 
+     return LinkedME.getInstance().continueUserActivity(userActivity); 
+   } 
+ }
+```
+```swift
+//URI Scheme 实现深度链接技术 
+func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -&gt; Bool { 
+//判断是否是通过LinkedME的UrlScheme唤起App 
+  if url.absoluteString.componentsSeparatedByString("click_id").count &gt; 1 { 
+    return LinkedME.getInstance().handleDeepLink(url); 
+  } 
+}
+```
 ## 深度链接功能
 
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
@@ -173,84 +213,125 @@ StoreKit.framework
 
 #### 配置AppDelegate
 
-Objective-C请先进行如下配置： 1. 在AppDelegate中引入头文件`#import <LinkedME_iOS/LinkedME.h>` 2. 在Appdelegate里注册ViewController
+Objective-C请先进行如下配置： 
+1. 在AppDelegate中引入头文件`#import <LinkedME_iOS/LinkedME.h>` 
+2. 在Appdelegate里注册ViewController
 
 Swift请先进行如下配置：  
-1. 在xxxx-Bridging-Header.h中导入头文件`#import <LinkedME_iOS/LinkedME.h>` 2. 在Appdelegate里注册ViewController
+1. 在xxxx-Bridging-Header.h中导入头文件`#import <LinkedME_iOS/LinkedME.h>` 
+2. 在Appdelegate里注册ViewController
 
 #### 配置注册ViewController设置及跳转方式
-
-* \(BOOL\)application:\(UIApplication _\)application didFinishLaunchingWithOptions:\(NSDictionary_ \)launchOptions {
-
-  // Override point for customization after application launch.'
-
-  //初始化及实例
-
-  LinkedME\* linkedme = \[LinkedME getInstance\];
-
-// //注册需要跳转的viewController UIStoryboard  _storyBoard=\[UIStoryboard storyboardWithName:@"Main" bundle:\[NSBundle mainBundle\]\]; DetailViewController_ dvc=\[storyBoard instantiateViewControllerWithIdentifier:@"detailView"\];
-
-//\[自动跳转\]如果使用自动跳转需要注册viewController // \[linkedme registerDeepLinkController:featureVC forKey:@"LMFeatureViewController"\];
-
-//获取跳转参数 \[linkedme initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:NO deepLinkHandler:^\(NSDictionary _params, NSError_ error\) { if \(!error\) { //防止传递参数出错取不到数据,导致App崩溃这里一定要用try catch @try { NSLog\(@"LinkedME finished init with params = %@",\[params description\]\); //获取标题 NSString _title = \[params objectForKey:@"$og\_title"\]; NSString_ tag = params\[@"$control"\]\[@"View"\];
-
-```text
-  if (title.length >0 && tag.length >0) {
-```
-
-//如果app需要登录或者注册后，才能打开详情页，这里可以先把值存起来，登录/注册完成后，再使用 //\[自动跳转\]使用自动跳转 //SDK提供的跳转方法 /\*\*
-
-* pushViewController : 类名
-* storyBoardID : 需要跳转的页面的storyBoardID
-* animated : 是否开启动画
-* customValue : 传参  __warning 需要在被跳转页中实现次方法 - \(void\)configureControlWithData:\(NSDictionary _\)data;_ /
-
-  // \[LinkedME pushViewController:title storyBoardID:@"detailView" animated:YES customValue:@{@"tag":tag} completion:^{ //// // }\];
-
-  //自定义跳转 dvc.openUrl = params\[@"$control"\]\[@"ViewId"\]; \[\[LinkedME getViewController\] showViewController:dvc sender:nil\]; } } @catch \(NSException \*exception\) {
-
-  } @finally { } } else { NSLog\(@"LinkedME failed init: %@", error\); } }\]; return YES; }
-
-func application\(application: UIApplication, didFinishLaunchingWithOptions launchOptions: \[NSObject: AnyObject\]?\) -&gt; Bool { // Override point for customization after application launch. let linkedme = LinkedME.getInstance\(\);
-
-//是否开启Debug模式,开启Debug模式将会打印日志,上线时请关闭Debug模式 //linkedme.setDebug\(\);
-
-let storyBoard = UIStoryboard\(\).instantiateViewControllerWithIdentifier\("detailView"\); linkedme.registerDeepLinkController\(storyBoard, forKey: "detailView"\);
-
-//解析深度链获取跳转参数，开发者自己实现参数相对应的页面内容。 linkedme.initSessionWithLaunchOptions\(launchOptions, automaticallyDisplayDeepLinkController: false\) { \(params, error\) in if\(error == nil\){ print\("LinkedME finished init with params\(params.description\)"\); let title = params\["$og\_title"\]; //如一个电商类的App通过商品ID来判断和区分改进入哪个详情页 let goodsID = params\["$control"\]!\["goodsID"\];
-
-```text
-   if (title!.isEqualToString("DetailViewController")){
-   //页面跳转,使用自动跳转方式必须在被跳转的页面中实现代理方法传值,通过customValue传一个字典
-   LinkedME.pushViewController("这里填写需要跳转的类名" as! String, storyBoardID: "这里填写StoryBoardID", animated: true, customValue: goodsID as! [AnyObject], completion: {});
-  /*
-   * 注:如果不是使用StoryBoard创建的View使用下面的方法进行跳转,更多方法进入LinkedME.h中查看
-   * + (void)pushViewController:(NSString *)vc animated: (BOOL)flag customValue:(NSDictionary *)dict completion:(void (^)(void))completion NS_AVAILABLE_IOS(5_0);
-   * 或者自己获取xxx.navigationController跳转页面,使用属性传值,如果没有使用自动跳转方法就不用注册View和实现代理方法.
-   */
-  }
-}else{
-   print(error);
+##### object-c
+```objc
+- (BOOL)application:(UIApplication _)application didFinishLaunchingWithOptions:(NSDictionary_ )launchOptions {
+    // Override point for customization after application launch.'
+    
+    //初始化及实例
+    LinkedME* linkedme = [LinkedME getInstance];
+    
+    //注册需要跳转的viewController UIStoryboard
+    _storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DetailViewController_ dvc=[storyBoard instantiateViewControllerWithIdentifier:@"detailView"];
+    
+    //[自动跳转]如果使用自动跳转需要注册viewController
+    // [linkedme registerDeepLinkController:featureVC forKey:@"LMFeatureViewController"];
+    
+    //获取跳转参数
+    [linkedme initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:NO deepLinkHandler:^(NSDictionary _params, NSError_ error) {
+        if (!error) {
+            //防止传递参数出错取不到数据,导致App崩溃这里一定要用try catch
+            @try {
+                NSLog(@"LinkedME finished init with params = %@",[params description]);
+                //获取标题
+                NSString _title = [params objectForKey:@"$og_title"];
+                NSString_ tag = params[@"$control"][@"View"];
+                
+                if (title.length >0 && tag.length >0) {
+                    
+                    //如果app需要登录或者注册后，才能打开详情页，这里可以先把值存起来，登录/注册完成后，再使用
+                    //[自动跳转]使用自动跳转
+                    //SDK提供的跳转方法
+                    /**
+                     * pushViewController : 类名
+                     * storyBoardID : 需要跳转的页面的storyBoardID
+                     * animated : 是否开启动画
+                     * customValue : 传参 __warning 需要在被跳转页中实现次方法 - (void)configureControlWithData:(NSDictionary _)data;_ /
+                     **/
+                    
+                    // [LinkedME pushViewController:title storyBoardID:@"detailView" animated:YES customValue:@{@"tag":tag} completion:^{ //// // }];
+                    
+                    //自定义跳转 dvc.openUrl = params[@"$control"][@"ViewId"];
+                    [[LinkedME getViewController] showViewController:dvc sender:nil];
+                }
+            } @catch (NSException *exception) {
+                
+            } @finally {
+            }
+        } else {
+            NSLog(@"LinkedME failed init: %@", error);
+        }
+    }];
+    return YES;
 }
 ```
+##### swift
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+    // Override point for customization after application launch. 
+    let linkedme = LinkedME.getInstance();
 
+    //是否开启Debug模式,开启Debug模式将会打印日志,上线时请关闭Debug模式
+    //linkedme.setDebug();
+
+    let storyBoard = UIStoryboard().instantiateViewControllerWithIdentifier("detailView"); 
+    linkedme.registerDeepLinkController(storyBoard, forKey: "detailView");
+
+    //解析深度链获取跳转参数，开发者自己实现参数相对应的页面内容。 
+    linkedme.initSessionWithLaunchOptions(launchOptions, automaticallyDisplayDeepLinkController: false) { (params, error) in if(error == nil){ 
+        print("LinkedME finished init with params(params.description)"); 
+        let title = params["$og_title"]; 
+        //如一个电商类的App通过商品ID来判断和区分改进入哪个详情页 
+        let goodsID = params["$control"]!["goodsID"];
+
+
+        if (title!.isEqualToString("DetailViewController")){
+
+            //页面跳转,使用自动跳转方式必须在被跳转的页面中实现代理方法传值,通过customValue传一个字典
+
+            LinkedME.pushViewController("这里填写需要跳转的类名" as! String, storyBoardID: "这里填写StoryBoardID", animated: true, customValue: goodsID as! [AnyObject], completion: {});
+            /*
+            * 注:如果不是使用StoryBoard创建的View使用下面的方法进行跳转,更多方法进入LinkedME.h中查看
+            * + (void)pushViewController:(NSString *)vc animated: (BOOL)flag customValue:(NSDictionary *)dict completion:(void (^)(void))completion NS_AVAILABLE_IOS(5_0);
+            * 或者自己获取xxx.navigationController跳转页面,使用属性传值,如果没有使用自动跳转方法就不用注册View和实现代理方法.
+            */
+        }
+    }else{
+        print(error);
+    }
 } return true
+```
 
 ## 其他功能
 
 ### Debug模式
 
 在Debug模式下会打印日志
+#### object-c
 
-\[linkedme setDebug\];
-
-linkedme.setDebug\(\);
+```objc
+[linkedme setDebug];
+```
+#### swift
+```swift
+linkedme.setDebug();
+```
 
 ### 测试模式
 
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
 
-* 在后台\(Dashboard\)中-设置-测试-添加测试设备
+* 在后台(Dashboard)中-设置-测试-添加测试设备
 
 OC：通过`[LinkedME getTestID]`获取设备ID,去后台中添加设备
 
@@ -261,27 +342,45 @@ Swift：通过`LinkedME.getTestID()`获取设备ID,去后台中添加设备
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
 
 #### 创建Spotlight索引
-
-\[\[LinkedME getInstance\] createDiscoverableContentWithTitle:@"LinkedME 国内第一家企业级深度链接" description:@"让APP不再是信息孤岛!" thumbnailUrl:\[NSURL URLWithString:@"[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"\] linkParams:dict type:@"" publiclyIndexable:NO keywords:set5 expirationDate:nil spotlightIdentifier:@"bbcc" spotlightCallback:^\(NSString _url, NSString_ spotlightIdentifier, NSError \*error\) {
-
-```text
+##### object-c
+```objc
+[[LinkedME getInstance] createDiscoverableContentWithTitle:@"LinkedME 国内第一家企业级深度链接" 
+description:@"让APP不再是信息孤岛!" 
+thumbnailUrl:[NSURL URLWithString:@"[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"] 
+linkParams:dict 
+type:@"" 
+publiclyIndexable:NO 
+keywords:set5 
+expirationDate:nil 
+spotlightIdentifier:@"bbcc" 
+spotlightCallback:^(NSString _url, NSString_ spotlightIdentifier, NSError *error) {
         }];
 ```
+##### swift
+```swift
+LinkedME.getInstance().createDiscoverableContentWithTitle("LinkedME 国内第一家企业级深度链接", description: "让APP不再是信息孤岛!",thumbnailUrl: NSURL.init(string: "[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"), linkParams: dic, type: nil, publiclyIndexable: false, keywords: keyWord as NSSet as Set,expirationDate: nil, spotlightIdentifier: "linkedme") { (url, spotlightID, error) in }
+```
 
-LinkedME.getInstance\(\).createDiscoverableContentWithTitle\("LinkedME 国内第一家企业级深度链接", description: "让APP不再是信息孤岛!", thumbnailUrl: NSURL.init\(string: "[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"\), linkParams: dic, type: nil, publiclyIndexable: false, keywords: keyWord as NSSet as Set, expirationDate: nil, spotlightIdentifier: "linkedme"\) { \(url, spotlightID, error\) in }
+**设置关键字**  
+##### object-c
 
-**设置关键字**
-
-NSSet \*keyWord = \[NSSet setWithObjects:@"linkedme", nil\];
-
-let keyWord = NSSet.init\(array: \["linkedme","hellolkm"\]\)
+```objc  
+NSSet *keyWord = [NSSet setWithObjects:@"linkedme", nil];
+```
+##### swift
+```swift
+let keyWord = NSSet.init(array: ["linkedme","hellolkm"])
+```
 
 **需要传递的参数**
-
-NSSet \*set5 = \[NSSet setWithObjects:@"linkedme",@"linked",@"深度链接", nil\];
-
-let dic = \["url":"[http://linkedme.cc](http://linkedme.cc)"\]
-
+##### object-c
+```objc
+SSet *set5 = [NSSet setWithObjects:@"linkedme",@"linked",@"深度链接", nil];
+```
+##### swift
+```swift
+let dic = ["url":"[http://linkedme.cc](http://linkedme.cc)"]
+```
 **关键字详解**
 
 | title | 标题 |
@@ -300,14 +399,21 @@ let dic = \["url":"[http://linkedme.cc](http://linkedme.cc)"\]
 #### 删除索引
 
 **删除所有索引**
-
-\[LinkedME removeAllSearchItems\];
-
-LinkedME.removeAllSearchItems\(\);
-
+##### object-c
+```objc
+[LinkedME removeAllSearchItems];
+```
+##### swift
+```swift
+LinkedME.removeAllSearchItems();
+```
 **通过spotlightIdentifier删除索引**
-
-\[LinkedME removeSearchItemWith:@\[@"linkedme"\]\];
-
-LinkedME.removeSearchItemWith\(\["linkedme"\]\);
+##### object-c
+```objc
+[LinkedME removeSearchItemWith:@[@"linkedme"]];
+```
+##### swift
+```swift
+LinkedME.removeSearchItemWith(["linkedme"]);
+```
 
