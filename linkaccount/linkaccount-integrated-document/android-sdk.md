@@ -1,6 +1,6 @@
 # Android SDK
 
-## 一、准备工作
+## 准备工作
 
 #### SDK说明
 
@@ -19,7 +19,7 @@
 
 应用的创建流程及APPID/APPKEY的获取，请查看「[产品指南](../product-guide/)」文档
 
-## 二、SDK集成
+## SDK集成
 
 ### **SDK导入及配置**
 
@@ -387,7 +387,7 @@ public void setDebug(boolean isDebug)
 LinkAccount.getInstance().setDebug(true);
 ```
 
-## **三、一键登录授权页面修改**
+## **一键登录授权页面修改**
 
 ![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/sdk-shou-quan-ye-she-ji-gui-fan%20%281%29.jpg)
 
@@ -524,7 +524,7 @@ builder.setNavText("欢迎登录");
 LinkAccount.getInstance().setAuthUIConfig(builder.create());
 ```
 
-## **四、返回码对照**
+## **返回码对照**
 
 | 返回码 | 说明 |
 | :--- | :--- |
@@ -545,7 +545,7 @@ LinkAccount.getInstance().setAuthUIConfig(builder.create());
 | 10013 | 未找到相应方法 |
 | 10014 | 用户未授权READ\_PHONE\_STATE |
 
-## 五、常见问题
+## 常见问题
 
 **某些厂商机增加了移动数据网络权限设置问题**
 

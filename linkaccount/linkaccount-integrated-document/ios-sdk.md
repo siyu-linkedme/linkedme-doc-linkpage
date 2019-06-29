@@ -1,6 +1,6 @@
 # iOS SDK
 
-## 一.准备工作
+## 准备工作
 
 #### 前置条件
 
@@ -37,9 +37,9 @@ LinkAccount SDK目前仅提供手动集成方式。
 
 ![](../../.gitbook/assets/build-phases.png)
 
-## 二.SDK使用说明
+## SDK使用说明
 
-### 1.初始化
+### 初始化
 
 方法原型
 
@@ -65,13 +65,13 @@ LinkAccount SDK目前仅提供手动集成方式。
 * 必须在一键登录前至少调用一次
 * 只需调用一次，多次调用不会多次初始化，与一次调用效果一致
 
-**OC** 
-
+{% tabs %}
+{% tab title="OC" %}
 1.导入LinkAccount SDK头文件 \#import`<LinkAccountLib/LinkAccount.h>` 
 
 2.在AppDelegate中的 didFinishLaunchingWithOptions方法中添加初始化代码
 
-```text
+```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ...
     //初始化SDK
@@ -81,9 +81,9 @@ LinkAccount SDK目前仅提供手动集成方式。
     ...
 }
 ```
+{% endtab %}
 
-**Swift** 
-
+{% tab title="Swift" %}
 创建混编桥接头文件并导入LinkAccount SDK头文件
 
 #### import 
@@ -92,7 +92,7 @@ LinkAccount SDK目前仅提供手动集成方式。
 
 在AppDelegate中的 didFinishLaunchingWithOptions方法中添加初始化代码
 
-```text
+```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 ...        
       LMAuthSDKManager.initWithKey("your appKey") { ([AnyHashable : Any]) in
@@ -102,8 +102,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
     }
 ```
+{% endtab %}
+{% endtabs %}
 
-### 2.预取号
+### 预取号
 
 **方法原型**
 
@@ -134,9 +136,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > 请求示例代码
 
-OC:
-
-```text
+{% tabs %}
+{% tab title="OC" %}
+```objectivec
 #import <LinkAccountLib/LinkAccount.h>
 
 //需要拉起授权页的ViewController页面
@@ -158,10 +160,10 @@ OC:
     ...
 }
 ```
+{% endtab %}
 
-**Swift**
-
-```text
+{% tab title="Swift" %}
+```swift
 class ViewController: UIViewController {
 
     //需要拉起授权页的ViewController页面
@@ -183,8 +185,10 @@ class ViewController: UIViewController {
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-### 3.拉起授权页
+### 拉起授权页
 
 ```text
 - (void)getLoginTokenWithController:(UIViewController *_Nonnull)vc model:(LMCustomModel *_Nullable)model timeout:(NSTimeInterval )timeout complete:(void (^_Nullable)(NSDictionary * _Nonnull resultDic))complete otherLogin:(void(^)(void))otherBlock;
@@ -210,9 +214,9 @@ class ViewController: UIViewController {
 
 导入LinkAccount SDK头文件 \#import `<LinkAccountLib/LinkAccount.h>` 在需要使用一键登录的地方调用一键登录接口
 
-**OC**
-
-```text
+{% tabs %}
+{% tab title="OC" %}
+```objectivec
 ...
 
 - (IBAction)authPageLogin:(id)sender {
@@ -248,11 +252,11 @@ class ViewController: UIViewController {
     }];
 }
 ```
+{% endtab %}
 
-**Swift**
-
-```text
-    //拉起授权页
+{% tab title="Swift" %}
+```swift
+ //拉起授权页
     @IBAction func authPageLogin(_ sender: Any) {
         //自定义Model
         let model = LMCustomModel.init()
@@ -288,6 +292,8 @@ class ViewController: UIViewController {
         }
     }
 ```
+{% endtab %}
+{% endtabs %}
 
 > 成功回调
 
@@ -323,7 +329,7 @@ class ViewController: UIViewController {
 
 其他错误 【处理建议：可根据实际情况跳转其他登录方式 】
 
-### 4.本机号码验证
+### 本机号码验证
 
 ```text
 - (void)getAccessCodeWithcomplete:(void (^_Nullable)(NSDictionary * _Nonnull resultDic))complete;
@@ -335,9 +341,9 @@ class ViewController: UIViewController {
 | :--- | :--- | :--- |
 | complete | Block | 回调 |
 
-**OC**
-
-```text
+{% tabs %}
+{% tab title="OC" %}
+```objectivec
 ...
 - (IBAction)phoneNumValidation:(id)sender {
     [[LMAuthSDKManager sharedSDKManager]getAccessCodeWithcomplete:^(NSDictionary * _Nonnull resultDic) {
@@ -346,10 +352,10 @@ class ViewController: UIViewController {
 }
 ...
 ```
+{% endtab %}
 
-**Swift**
-
-```text
+{% tab title="Swift" %}
+```swift
 ...
 @IBAction func authLogin(_ sender: Any) {
     LMAuthSDKManager.getMobileAuth(withTimeout: 666) { ([AnyHashable : Any]) in
@@ -358,8 +364,10 @@ class ViewController: UIViewController {
 }
 ...
 ```
+{% endtab %}
+{% endtabs %}
 
-### 5.手动关闭授权页
+### 手动关闭授权页
 
 当开发者设置点击一键登录或者自定义控件不自动销毁授权页时，将需要自行调用此方法主动销毁授权页，建议在置换手机号成功后销毁。如在得到回调后未销毁授权页而，使用拉起授权页方法再次拉起授权页，此页面将无法响应任何按键（除了导航栏的返回按钮）。
 
@@ -372,7 +380,7 @@ class ViewController: UIViewController {
     [[LMAuthSDKManager sharedSDKManager] closeAuthView];
 ```
 
-## 三.授权界面修改
+## 授权界面修改
 
 ![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/sdk-shou-quan-ye-she-ji-gui-fan.jpg)
 
@@ -428,7 +436,7 @@ class ViewController: UIViewController {
 
 ```
 
-## 四.返回码对照
+## 返回码对照
 
 | 状态码 | 描述 |
 | :--- | :--- |
@@ -440,7 +448,7 @@ class ViewController: UIViewController {
 | 2233 | 其他错误 |
 | 3344 | 蜂窝数据未开启或不稳定 |
 
-## 五.已知问题
+## 已知问题
 
 1.ATS开关\(Http与Https\)
 
