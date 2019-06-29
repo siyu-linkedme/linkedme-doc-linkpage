@@ -42,13 +42,13 @@
         (1, &quot;android&quot;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">appId</td>
+      <td style="text-align:left">app_key</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x5E94;&#x7528;ID</td>
+      <td style="text-align:left">&#x5E94;&#x7528;APPKEY</td>
     </tr>
     <tr>
-      <td style="text-align:left">authCode</td>
+      <td style="text-align:left">auth_code</td>
       <td style="text-align:left">&#x5426;</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">&#x6821;&#x9A8C;&#x7801;&#xFF0C;&#x5F53;&#x8FD0;&#x8425;&#x5546;&#x7C7B;&#x578B;&#x4E3A;1&#x65F6;&#xFF0C;&#x5FC5;&#x586B;</td>
@@ -66,7 +66,7 @@
       <td style="text-align:left">
         <p>&#x9664;sign &#x5916;&#x5176;&#x5B83;&#x53C2;&#x6570;&#x7684; RSA &#x52A0;&#x5BC6;&#x503C;&#xFF0C;
           &#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;:</p>
-        <p>sign=RSA(appId+authCode+channel+platform+token,RSA_Private_key) &#x8F6C;16&#x8FDB;&#x5236;&#x3002;</p>
+        <p>sign=RSA(app_key+auth_code+channel+platform+token,RSA_Private_key) &#x8F6C;16&#x8FDB;&#x5236;&#x3002;</p>
         <p>&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x4E3A;&#xFF1A;SHA256withRSA&#x3002;</p>
         <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x53C2;&#x6570;&#x62FC;&#x63A5; key&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5BC6;&#x94A5;&#x683C;&#x5F0F;&#x4E3A;PSKCS#8&#xFF0C;1024&#x4F4D;&#xFF08;bit&#xFF09;&#x3002;</p>
         <p>&#x5176;&#x4E2D; RSA_Private_key&#x662F;&#x5408;&#x4F5C;&#x65B9;&#x7684;
@@ -85,7 +85,7 @@
     "body": {
        "channel":"1",
        "platform":"0",
-       "app_id":"10230",
+       "app_key":"99bfd12b542b36ad35ea378a07edf349",
        "token":"nm899e6f8f32b44f81972cbe28ca01623a",
        "sign":"4B36329C1429512FD24C2C460065F677D3521EC56A91370AFF40E65990AF74C7D12C9F0E6061D2E2C6FE022B66CCD23554249ECA13D5F8FB0E8C7459DD6D25A0309FD6AE73D4918E45EAF85AB7D4DA942B3664966B92CEFC57B7B28CC4EE57186A1B27860FF74698FE6307A85F0DD9D3A13A34397CB8F4F921DC3869BAA9B80"
     }
@@ -191,10 +191,10 @@
       <td style="text-align:left">&#x5E73;&#x53F0; IOS (0, &quot;ios&quot;), ANDROID (1, &quot;android&quot;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">appId</td>
+      <td style="text-align:left">app_key</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">&#x5E94;&#x7528;ID</td>
+      <td style="text-align:left">&#x5E94;&#x7528;APPKEY</td>
     </tr>
     <tr>
       <td style="text-align:left">token</td>
@@ -203,7 +203,7 @@
       <td style="text-align:left">&#x8EAB;&#x4EFD;&#x6807;&#x8BC6;&#xFF0C;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</td>
     </tr>
     <tr>
-      <td style="text-align:left">phoneNum</td>
+      <td style="text-align:left">phone_num</td>
       <td style="text-align:left">&#x662F;</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">&#x624B;&#x673A;&#x53F7;</td>
@@ -214,7 +214,7 @@
       <td style="text-align:left">string</td>
       <td style="text-align:left">
         <p>&#x9664; sign &#x5916;&#x5176;&#x5B83;&#x53C2;&#x6570;&#x7684; RSA &#x52A0;&#x5BC6;&#x503C;&#xFF0C;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;:</p>
-        <p>sign=RSA(appId+channel+phoneNum+platform+token,RSA_Private_key)&#x8F6C;16&#x8FDB;&#x5236;&#x3002;</p>
+        <p>sign=RSA(app_key+channel+phone_num+platform+token,RSA_Private_key)&#x8F6C;16&#x8FDB;&#x5236;&#x3002;</p>
         <p>&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x4E3A;&#xFF1A;SHA256withRSA, 1024&#x4F4D;&#xFF08;bit&#xFF09;&#x3002;</p>
         <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x53C2;&#x6570;&#x62FC;&#x63A5; key &#x5347;&#x5E8F;&#x6392;&#x5E8F;,&#x5BC6;&#x94A5;&#x683C;&#x5F0F;&#x4E3A;PSKCS#8&#x3002;</p>
         <p>&#x5176;&#x4E2D; RSA_Private_key &#x662F;&#x5408;&#x4F5C;&#x65B9;&#x7684;
@@ -232,7 +232,7 @@
     "body": {
        "channel":"1",
        "platform":"0",
-       "app_id":"10230",
+       "app_key":"99bfd12b542b36ad35ea378a07edf349",
        "token":"nm899e6f8f32b44f81972cbe28ca01623a",
        "phone_num":"18123972798",                                        
        "sign":"4B36329C1429512FD24C2C460065F677D3521EC56A91370AFF40E65990AF74C7D12C9F0E6061D2E2C6FE022B66CCD23554249ECA13D5F8FB0E8C7459DD6D25A0309FD6AE73D4918E45EAF85AB7D4DA942B3664966B92CEFC57B7B28CC4EE57186A1B27860FF74698FE6307A85F0DD9D3A13A34397CB8F4F921DC3869BAA9B80"

@@ -17,7 +17,7 @@
 
 #### 创建应用
 
-应用的创建流程及APPID/APPKEY的获取，请查看「[产品指南](../product-guide/)」文档
+应用的创建流程及APPKEY的获取，请查看「[产品指南](../product-guide/)」文档
 
 ## SDK集成
 

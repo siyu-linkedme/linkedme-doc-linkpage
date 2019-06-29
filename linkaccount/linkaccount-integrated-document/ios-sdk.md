@@ -11,7 +11,7 @@
 
 #### 创建应用
 
-应用的创建流程及APPID/APPKEY的获取，请查看「[产品指南](../product-guide/)」文档
+应用的创建流程及APPKEY的获取，请查看「[产品指南](../product-guide/)」文档
 
 #### 开发环境搭建
 
@@ -52,12 +52,12 @@ LinkAccount SDK目前仅提供手动集成方式。
 
 | 参数 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | ---: | ---: |
-| key | 是 | NSString | LinkAccount APPKey |
+| key | 是 | NSString | LinkAccount APPKEY |
 | complete | 是 | Block | 初始化回调block，可以在此回调block中接收初始化情况，也可以不关心初始化结果 |
 
 **接口作用**
 
-初始化SDK :传入用户的appID、获取本机运营商,读取缓存,获取运营商配置,初始化SDK
+初始化SDK :传入用户的APPKEY、获取本机运营商,读取缓存,获取运营商配置,初始化SDK
 
 **使用场景**
 
