@@ -361,7 +361,7 @@ public void quitAuthActivity()
 LinkAccount.getInstance().quitAuthActivity();
 ```
 
-**打印日志**
+### **打印日志**
 
 **接口**
 
