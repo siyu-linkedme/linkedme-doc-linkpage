@@ -65,8 +65,8 @@ LinkAccount SDK目前仅提供手动集成方式。
 * 必须在一键登录前至少调用一次
 * 只需调用一次，多次调用不会多次初始化，与一次调用效果一致
 
-{% tabs %}
-{% tab title="OC" %}
+**OC** 
+
 1.导入LinkAccount SDK头文件 \#import`<LinkAccountLib/LinkAccount.h>` 
 
 2.在AppDelegate中的 didFinishLaunchingWithOptions方法中添加初始化代码
@@ -81,14 +81,12 @@ LinkAccount SDK目前仅提供手动集成方式。
     ...
 }
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+**Swift** 
+
 创建混编桥接头文件并导入LinkAccount SDK头文件
 
-#### import 
-
-`<LinkAccountLib/LinkAccount.h>`
+import `<LinkAccountLib/LinkAccount.h>`
 
 在AppDelegate中的 didFinishLaunchingWithOptions方法中添加初始化代码
 
@@ -102,8 +100,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
     }
 ```
-{% endtab %}
-{% endtabs %}
+
+
 
 ### 预取号
 
@@ -136,8 +134,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > 请求示例代码
 
-{% tabs %}
-{% tab title="OC" %}
+**OC**
+
 ```objectivec
 #import <LinkAccountLib/LinkAccount.h>
 
@@ -160,9 +158,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     ...
 }
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+**Swift**
+
 ```swift
 class ViewController: UIViewController {
 
@@ -185,8 +183,6 @@ class ViewController: UIViewController {
     }
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 ### 拉起授权页
 
@@ -214,8 +210,8 @@ class ViewController: UIViewController {
 
 导入LinkAccount SDK头文件 \#import `<LinkAccountLib/LinkAccount.h>` 在需要使用一键登录的地方调用一键登录接口
 
-{% tabs %}
-{% tab title="OC" %}
+**OC**
+
 ```objectivec
 ...
 
@@ -252,11 +248,11 @@ class ViewController: UIViewController {
     }];
 }
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+**Swift**
+
 ```swift
- //拉起授权页
+    //拉起授权页
     @IBAction func authPageLogin(_ sender: Any) {
         //自定义Model
         let model = LMCustomModel.init()
@@ -292,8 +288,6 @@ class ViewController: UIViewController {
         }
     }
 ```
-{% endtab %}
-{% endtabs %}
 
 > 成功回调
 
@@ -341,8 +335,8 @@ class ViewController: UIViewController {
 | :--- | :--- | :--- |
 | complete | Block | 回调 |
 
-{% tabs %}
-{% tab title="OC" %}
+**OC**
+
 ```objectivec
 ...
 - (IBAction)phoneNumValidation:(id)sender {
@@ -352,9 +346,9 @@ class ViewController: UIViewController {
 }
 ...
 ```
-{% endtab %}
 
-{% tab title="Swift" %}
+**Swift**
+
 ```swift
 ...
 @IBAction func authLogin(_ sender: Any) {
@@ -364,8 +358,6 @@ class ViewController: UIViewController {
 }
 ...
 ```
-{% endtab %}
-{% endtabs %}
 
 ### 手动关闭授权页
 
