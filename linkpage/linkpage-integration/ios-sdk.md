@@ -36,7 +36,7 @@ StoreKit.framework
 
 如果您想更方便地集成/更新 LinkPage的SDK，可以使用Cocoapods工具，想要了解Cocoapods，推荐参考官方文档[《CocoaPods安装和使用教程》](http://code4app.com/article/cocoapods-install-usage)。
 
-* 编辑Podfile文件并添加以下代码                          
+* 编辑Podfile文件并添加以下代码
 
   ```text
   pod 'LinkedME_LinkPage'
@@ -97,35 +97,39 @@ StoreKit.framework
 
 ### 添加URLScheme和Universal Link支持
 
-在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP 在Appdelegate中实现下列方法：  
-#### object-c  
-```objc
+在SDK中配置URL Scheme和Universal Link，使得可以通过URL Scheme和Universal Link唤起APP 在Appdelegate中实现下列方法：
+
+#### object-c
+
+```text
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation{
     //判断是否是通过LinkedME的UrlScheme唤起App
     if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
         return [[LinkedME getInstance] handleDeepLink:url];
     }
-    
+
     return YES;
 }
 ```
-```objc
+
+```text
 //Universal Links 通用链接实现深度链接技术
 - (BOOL)application:(UIApplication*)application continueUserActivity:(NSUserActivity*)userActivity restorationHandler:(void (^)(NSArray*))restorationHandler{
-    
+
     //判断是否是通过LinkedME的Universal Links唤起App
     if ([[userActivity.webpageURL description] rangeOfString:@"lkme.cc"].location != NSNotFound) {
         return  [[LinkedME getInstance] continueUserActivity:userActivity];
     }
-    
+
     return YES;
 }
 ```
-```objc
+
+```text
 //URI Scheme 实现深度链接技术
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options{
     NSLog(@"opened app from URL %@", [url description]);
-    
+
     //判断是否是通过LinkedME的UrlScheme唤起App
     if ([[url description] rangeOfString:@"click_id"].location != NSNotFound) {
         return [[LinkedME getInstance] handleDeepLink:url];
@@ -133,7 +137,9 @@ StoreKit.framework
     return YES;
 }
 ```
+
 #### swift
+
 ```swift
   //URI Scheme 实现深度链接技术 
   func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -&gt; Bool {
@@ -143,6 +149,7 @@ StoreKit.framework
      } 
    }
 ```
+
 ```swift
 //Universal Links 通用链接实现深度链接技术 
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -&gt; Void) -&gt; Bool {
@@ -152,6 +159,7 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
    } 
  }
 ```
+
 ```swift
 //URI Scheme 实现深度链接技术 
 func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -&gt; Bool { 
@@ -161,6 +169,7 @@ func application(app: UIApplication, openURL url: NSURL, options: [String : AnyO
   } 
 }
 ```
+
 ## 深度链接功能
 
 本模块实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必将“基本配置”部分全部实现
@@ -213,30 +222,29 @@ func application(app: UIApplication, openURL url: NSURL, options: [String : AnyO
 
 #### 配置AppDelegate
 
-Objective-C请先进行如下配置： 
-1. 在AppDelegate中引入头文件`#import <LinkedME_iOS/LinkedME.h>` 
-2. 在Appdelegate里注册ViewController
+Objective-C请先进行如下配置： 1. 在AppDelegate中引入头文件`#import <LinkedME_iOS/LinkedME.h>` 2. 在Appdelegate里注册ViewController
 
 Swift请先进行如下配置：  
-1. 在xxxx-Bridging-Header.h中导入头文件`#import <LinkedME_iOS/LinkedME.h>` 
-2. 在Appdelegate里注册ViewController
+1. 在xxxx-Bridging-Header.h中导入头文件`#import <LinkedME_iOS/LinkedME.h>` 2. 在Appdelegate里注册ViewController
 
 #### 配置注册ViewController设置及跳转方式
-##### object-c
-```objc
+
+**object-c**
+
+```text
 - (BOOL)application:(UIApplication _)application didFinishLaunchingWithOptions:(NSDictionary_ )launchOptions {
     // Override point for customization after application launch.'
-    
+
     //初始化及实例
     LinkedME* linkedme = [LinkedME getInstance];
-    
+
     //注册需要跳转的viewController UIStoryboard
     _storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     DetailViewController_ dvc=[storyBoard instantiateViewControllerWithIdentifier:@"detailView"];
-    
+
     //[自动跳转]如果使用自动跳转需要注册viewController
     // [linkedme registerDeepLinkController:featureVC forKey:@"LMFeatureViewController"];
-    
+
     //获取跳转参数
     [linkedme initSessionWithLaunchOptions:launchOptions automaticallyDisplayDeepLinkController:NO deepLinkHandler:^(NSDictionary _params, NSError_ error) {
         if (!error) {
@@ -246,9 +254,9 @@ Swift请先进行如下配置：
                 //获取标题
                 NSString _title = [params objectForKey:@"$og_title"];
                 NSString_ tag = params[@"$control"][@"View"];
-                
+
                 if (title.length >0 && tag.length >0) {
-                    
+
                     //如果app需要登录或者注册后，才能打开详情页，这里可以先把值存起来，登录/注册完成后，再使用
                     //[自动跳转]使用自动跳转
                     //SDK提供的跳转方法
@@ -258,14 +266,14 @@ Swift请先进行如下配置：
                      * animated : 是否开启动画
                      * customValue : 传参 __warning 需要在被跳转页中实现次方法 - (void)configureControlWithData:(NSDictionary _)data;_ /
                      **/
-                    
+
                     // [LinkedME pushViewController:title storyBoardID:@"detailView" animated:YES customValue:@{@"tag":tag} completion:^{ //// // }];
-                    
+
                     //自定义跳转 dvc.openUrl = params[@"$control"][@"ViewId"];
                     [[LinkedME getViewController] showViewController:dvc sender:nil];
                 }
             } @catch (NSException *exception) {
-                
+
             } @finally {
             }
         } else {
@@ -275,7 +283,9 @@ Swift请先进行如下配置：
     return YES;
 }
 ```
-##### swift
+
+**swift**
+
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
     // Override point for customization after application launch. 
@@ -317,12 +327,15 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 ### Debug模式
 
 在Debug模式下会打印日志
+
 #### object-c
 
-```objc
+```text
 [linkedme setDebug];
 ```
+
 #### swift
+
 ```swift
 linkedme.setDebug();
 ```
@@ -331,7 +344,7 @@ linkedme.setDebug();
 
 若想测试集成SDK后是否能正确生成并解析深度链接，可以使用测试模式。测试模式需要先在后台中注册您的测试设备，测试设备产生的数据将进入测试系统（Test）中。
 
-* 在后台(Dashboard)中-设置-测试-添加测试设备
+* 在后台\(Dashboard\)中-设置-测试-添加测试设备
 
 OC：通过`[LinkedME getTestID]`获取设备ID,去后台中添加设备
 
@@ -342,8 +355,10 @@ Swift：通过`LinkedME.getTestID()`获取设备ID,去后台中添加设备
 配置Spotlight索引后，可以在iPhone的系统级搜索（主屏下拉或下拉菜单中的搜索）中搜索内容并直接打开APP的特定页面
 
 #### 创建Spotlight索引
-##### object-c
-```objc
+
+**object-c**
+
+```text
 [[LinkedME getInstance] createDiscoverableContentWithTitle:@"LinkedME 国内第一家企业级深度链接" 
 description:@"让APP不再是信息孤岛!" 
 thumbnailUrl:[NSURL URLWithString:@"[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"] 
@@ -356,31 +371,41 @@ spotlightIdentifier:@"bbcc"
 spotlightCallback:^(NSString _url, NSString_ spotlightIdentifier, NSError *error) {
         }];
 ```
-##### swift
+
+**swift**
+
 ```swift
 LinkedME.getInstance().createDiscoverableContentWithTitle("LinkedME 国内第一家企业级深度链接", description: "让APP不再是信息孤岛!",thumbnailUrl: NSURL.init(string: "[http://7xq8b0.com1.z0.glb.clouddn.com/logo.png](http://7xq8b0.com1.z0.glb.clouddn.com/logo.png)"), linkParams: dic, type: nil, publiclyIndexable: false, keywords: keyWord as NSSet as Set,expirationDate: nil, spotlightIdentifier: "linkedme") { (url, spotlightID, error) in }
 ```
 
-**设置关键字**  
-##### object-c
+**设置关键字**
 
-```objc  
+**object-c**
+
+```text
 NSSet *keyWord = [NSSet setWithObjects:@"linkedme", nil];
 ```
-##### swift
+
+**swift**
+
 ```swift
 let keyWord = NSSet.init(array: ["linkedme","hellolkm"])
 ```
 
 **需要传递的参数**
-##### object-c
-```objc
+
+**object-c**
+
+```text
 SSet *set5 = [NSSet setWithObjects:@"linkedme",@"linked",@"深度链接", nil];
 ```
-##### swift
+
+**swift**
+
 ```swift
 let dic = ["url":"[http://linkedme.cc](http://linkedme.cc)"]
 ```
+
 **关键字详解**
 
 | title | 标题 |
@@ -399,20 +424,29 @@ let dic = ["url":"[http://linkedme.cc](http://linkedme.cc)"]
 #### 删除索引
 
 **删除所有索引**
-##### object-c
-```objc
+
+**object-c**
+
+```text
 [LinkedME removeAllSearchItems];
 ```
-##### swift
+
+**swift**
+
 ```swift
 LinkedME.removeAllSearchItems();
 ```
+
 **通过spotlightIdentifier删除索引**
-##### object-c
-```objc
+
+**object-c**
+
+```text
 [LinkedME removeSearchItemWith:@[@"linkedme"]];
 ```
-##### swift
+
+**swift**
+
 ```swift
 LinkedME.removeSearchItemWith(["linkedme"]);
 ```
