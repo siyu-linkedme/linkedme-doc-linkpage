@@ -132,7 +132,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 * &lt;font color="\#dd0000"&gt;不建议调用后立即调用拉起授权页方法（此方法是异步） &lt;/font&gt;
 * 此方法需要1~2s的时间取得临时凭证，因此也不建议和拉起授权页方法一起串行调用 
 * 不建议频繁的多次调用和在拉起授权页后调用 
-* 建议在判断当前用户属于未登录状态时使用，&lt;font color="\#dd0000"&gt;已登录状态用户请不要调用该方法&lt;/font&gt;
+* 建议在判断当前用户属于未登录状态时使用，&lt;font color="red"&gt;已登录状态用户请不要调用该方法&lt;/font&gt;
 
 > 请求示例代码
 
