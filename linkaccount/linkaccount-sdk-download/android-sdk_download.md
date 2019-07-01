@@ -2,7 +2,7 @@
 
 ## Android SDK 下载
 
-SDK下载链接
+[点击此处下载](https://linkedme.cc/sdk/linkaccount/linkaccount_android_1.0.0.zip)
 
 ## Android SDK更新日志
 
