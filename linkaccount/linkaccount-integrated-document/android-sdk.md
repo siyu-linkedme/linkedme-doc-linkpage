@@ -168,10 +168,10 @@ public interface TokenResultListener {
      * 获取成功，返回token
      *
      * @param resultType   结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果
-     * @param tokenJson    结果json字符串数据
+     * @param tokenResult  成功结果对象TokenResult
      * @param originResult 运营商返回的原始数据
      */
-    void onSuccess(int resultType, String tokenJson, String originResult);
+    void onSuccess(int resultType, TokenResult tokenResult, String originResult);
 
     /**
      * 失败，返回失败的结果，json串格式
@@ -196,18 +196,23 @@ public interface TokenResultListener {
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | resultType | int | 结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果 |
-| tokenJson | String | 结果Json数据，需要用户自己解析结果 |
+| tokenResult | TokenResult | 成功结果对象TokenResult |
 | originResult | String | 运营商返回的原始数据 |
 
-tokenJson说明
+TokenResult说明
 
-```javascript
-{
-    "resultCode":6666, // 成功状态码
-    "operatorType": "CM", // CM: 中国移动 CU: 中国联通 CT: 中国电信 XX: 未知
-    "accessToken": "llllllll", // 一键登录或号码认证 token，移动、联通、电信均返回
-    "gwAuth": "6789", // 一键登录或号码认证 auth，电信返回
-    "os": "1" // 系统标识，1: Android
+```java
+public class TokenResult {
+    // 成功状态码
+    private int resultCode;
+    // 一键登录或号码认证 token，移动、联通、电信均返回
+    private String accessToken;
+    // CM: 中国移动 CU: 中国联通 CT: 中国电信 XX: 未知
+    private String operatorType;
+    // 一键登录或号码认证 auth，电信返回
+    private String gwAuth;
+    // 系统标识，0：iOS 1: Android
+    private String platform;
 }
 ```
 
@@ -223,7 +228,7 @@ tokenJson说明
 ```java
 LinkAccount.getInstance().setTokenResultListener(new TokenResultListener() {
     @Override
-    public void onSuccess(@AbilityType final int resultType, final String tokenJson, final String originResult) {
+    public void onSuccess(@AbilityType final int resultType, final TokenResult tokenResult, final String originResult) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -232,16 +237,11 @@ LinkAccount.getInstance().setTokenResultListener(new TokenResultListener() {
                          break;
                     case AbilityType.ABILITY_TOKEN:
                          LinkAccount.getInstance().quitAuthActivity();
-                         try {
-                            JSONObject jsonObject = new JSONObject(tokenJson);
-                            String accessToken = jsonObject.optString("accessToken");
-                            String operatorType = jsonObject.optString("operatorType");
-                            String gwAuth = jsonObject.optString("gwAuth");
-                            String os = jsonObject.optString("os");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        break;
+                         String token = tokenResult.getAccessToken();
+                         String authCode = tokenResult.getGwAuth();
+                         String platform = tokenResult.getPlatform();
+                         String operator = getChannel(tokenResult.getOperatorType());
+                         break;
                     case AbilityType.ABILITY_MOBILE_TOKEN:
                          break;
                   }
