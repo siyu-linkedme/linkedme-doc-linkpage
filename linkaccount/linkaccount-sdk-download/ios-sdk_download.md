@@ -2,7 +2,7 @@
 
 ## iOS SDK 下载
 
-[点击此处下载](https://linkedme.cc/sdk/linkaccount/linkaccount_lib_ios_1.0.0.zip)
+[点击此处跳转下载页面](https://github.com/WFC-LinkedME/LinkAccount)
 
 ## iOS SDK更新日志
 

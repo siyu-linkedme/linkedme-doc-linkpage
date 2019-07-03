@@ -2,13 +2,23 @@
 
 ## Android SDK 下载
 
-[点击此处下载](https://linkedme.cc/sdk/linkaccount/linkaccount_android_1.0.0.zip)
+[点击此处跳转下载页面](https://github.com/WFC-LinkedME/link_account_demo/tree/master/app/libs)
 
 ## Android SDK更新日志
 
-版本V1.0.0
+### 版本V1.0.1
+
+发布日期：2019年07月03日
+
+**改善**
+
+* 优化SDK结果监听;
+
+### 版本V1.0.0
 
 发布日期：2019年06月30日
+
+
 
 
 
