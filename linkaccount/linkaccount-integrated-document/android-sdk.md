@@ -109,14 +109,20 @@
  *
  * @param context  Application Context
  * @param key      linkaccount key
- * @param listener TokenResultListener 结果监听
  * @return LinkAccount 实例
  */
-public static LinkAccount getInstance(@NonNull Context context, @NonNull String key, TokenResultListener listener)
+public static LinkAccount getInstance(@NonNull Context context, @NonNull String key)
+/**
+ * 是否打印相关认证日志
+ *
+ * @param isDebug true: 打印 false: 不打印
+ */
+public void setDebug(boolean isDebug)
 ```
 
 **说明**
 
+* 在Application的onCreate()中初始化;
 * 只需初始化一次，多次调用不会多次初始化，与一次调用效果一致；
 
 **参数描述**
@@ -125,13 +131,98 @@ public static LinkAccount getInstance(@NonNull Context context, @NonNull String 
 | :--- | :--- | ---: | ---: |
 | context | 是 | Context | Application Context |
 | key | 是 | String | 后台分配的应用APPkey |
-| tokenResultListener | 是 | TokenResultListener | 预取号、一键登录、号码认证回调结果监听 |
 
 **示例代码**
 
 ```java
 // 初始化
-LinkAccount.getInstance(getApplicationContext(), "linkaccount key", new TokenResultListener() {
+public class CustomApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        LinkAccount.getInstance(getApplicationContext(), "LinkAccount Key");
+        // 设置debug模式来输出日志
+        if (BuildConfig.DEBUG) {
+            LinkAccount.getInstance().setDebug(true);
+        }
+    }
+}
+```
+
+**添加结果监听**
+
+```java
+
+/**
+ * 设置结果监听
+ *
+ * @param listener TokenResultListener 结果监听
+ */
+public void setTokenResultListener(TokenResultListener listener)
+    
+/**
+ * 预取号、一键登录、号码认证结果回调监听接口
+ */
+public interface TokenResultListener {
+    /**
+     * 获取成功，返回token
+     *
+     * @param resultType   结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果
+     * @param tokenJson    结果json字符串数据
+     * @param originResult 运营商返回的原始数据
+     */
+    void onSuccess(int resultType, String tokenJson, String originResult);
+
+    /**
+     * 失败，返回失败的结果，json串格式
+     *
+     * @param resultType 错误类型
+     * @param result     错误说明
+     */
+    void onFailed(int resultType, String result);
+}
+```
+
+**说明**
+
+* 在需要监听结果的Activity中设置监听；
+* 用于预取号、一键登录、号码认证结果回调监听；
+* 根据返回的不同的结果类型需要分别处理。
+
+**参数描述**
+
+成功回调
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| resultType | int | 结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果 |
+| tokenJson | String | 结果Json数据，需要用户自己解析结果 |
+| originResult | String | 运营商返回的原始数据 |
+
+tokenJson说明
+
+```javascript
+{
+    "resultCode":6666, // 成功状态码
+    "operatorType": "CM", // CM: 中国移动 CU: 中国联通 CT: 中国电信 XX: 未知
+    "accessToken": "llllllll", // 一键登录或号码认证 token，移动、联通、电信均返回
+    "gwAuth": "6789", // 一键登录或号码认证 auth，电信返回
+    "os": "1" // 系统标识，1: Android
+}
+```
+
+失败回调
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| resultType | int | 结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果 |
+| result | String | 错误描述，参见文档后面错误码描述 |
+
+**示例代码**
+
+```java
+LinkAccount.getInstance().setTokenResultListener(new TokenResultListener() {
     @Override
     public void onSuccess(@AbilityType final int resultType, final String tokenJson, final String originResult) {
         runOnUiThread(new Runnable() {
@@ -170,66 +261,8 @@ LinkAccount.getInstance(getApplicationContext(), "linkaccount key", new TokenRes
 
      }
  });
+
 ```
-
-**结果监听**
-
-```java
-/**
- * 预取号、一键登录、号码认证结果回调监听
- */
-public interface TokenResultListener {
-    /**
-     * 获取成功，返回token
-     *
-     * @param resultType   结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果
-     * @param tokenJson    结果json字符串数据
-     * @param originResult 运营商返回的原始数据
-     */
-    void onSuccess(int resultType, String tokenJson, String originResult);
-
-    /**
-     * 失败，返回失败的结果，json串格式
-     *
-     * @param resultType 错误类型
-     * @param result     错误说明
-     */
-    void onFailed(int resultType, String result);
-}
-```
-
-**说明**
-
-用于预取号、一键登录、号码认证结果回调监听；根据返回的不同的结果类型需要分别处理。
-
-**参数描述**
-
-成功回调
-
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| resultType | int | 结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果 |
-| tokenJson | String | 结果Json数据，需要用户自己解析结果 |
-| originResult | String | 运营商返回的原始数据 |
-
-tokenJson说明
-
-```javascript
-{
-    "resultCode":6666, // 成功状态码
-    "operatorType": "CM", // CM: 中国移动 CU: 中国联通 CT: 中国电信 XX: 未知
-    "accessToken": "llllllll", // 一键登录或号码认证 token，移动、联通、电信均返回
-    "gwAuth": "6789", // 一键登录或号码认证 auth，电信返回
-    "os": "1" // 系统标识，1: Android
-}
-```
-
-失败回调
-
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| resultType | int | 结果类型 0: 预取号结果 1: 一键登录结果 2: 号码认证结果 |
-| result | String | 错误描述，参见文档后面错误码描述 |
 
 ### **预取号**
 
