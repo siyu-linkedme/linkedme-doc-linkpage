@@ -6,9 +6,9 @@
 
 * 一键登录与号码认证服务需要设备开启蜂窝数据网络，与运营商基站通信;
 * 一键登录与号码认证（目前支持中国移动2/3/4G、中国联通3/4G、中国电信4G）目前SDK提供aar包集成；
-* 支持网络环境为  
+* 支持网络环境为
 
-  a.纯蜂窝数据网络  
+  a.纯蜂窝数据网络
 
   b.蜂窝数据网络与wifi网络双开
 
@@ -122,7 +122,7 @@ public void setDebug(boolean isDebug)
 
 **说明**
 
-* 在Application的onCreate()中初始化;
+* 在Application的onCreate\(\)中初始化;
 * 只需初始化一次，多次调用不会多次初始化，与一次调用效果一致；
 
 **参数描述**
@@ -153,14 +153,13 @@ public class CustomApplication extends Application {
 **添加结果监听**
 
 ```java
-
 /**
  * 设置结果监听
  *
  * @param listener TokenResultListener 结果监听
  */
 public void setTokenResultListener(TokenResultListener listener)
-    
+
 /**
  * 预取号、一键登录、号码认证结果回调监听接口
  */
@@ -261,7 +260,6 @@ LinkAccount.getInstance().setTokenResultListener(new TokenResultListener() {
 
      }
  });
-
 ```
 
 ### **预取号**
@@ -588,5 +586,5 @@ LinkAccount.getInstance().setAuthUIConfig(builder.create());
 
 **号码认证支持的移动网络情况**
 
-中国移动支持2G/3G/4G、中国联通支持3G/4G、中国电信支持4G，但2G网络下认证失败率稍高。 
+中国移动支持2G/3G/4G、中国联通支持3G/4G、中国电信支持4G，但2G网络下认证失败率稍高。
 
