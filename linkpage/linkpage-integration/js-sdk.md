@@ -1,6 +1,6 @@
 # JS SDK
 
-### 获取LinkedME Key
+## 获取LinkedME Key
 
 新用户：在官网网站[注册账号](https://www.linkedme.cc/dashboard/index.html#/access/signup)，注册后[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)，在后台导航栏“设置”中查看LinkedME Key。
 
@@ -8,7 +8,7 @@
 
 如图：![](/assets/企业微信截图_e4bc32b9-9290-45a9-900c-6031264bbbc1.png)
 
-##  引入 JS SDK
+## 引入 JS SDK
 
 在html文件的head标签里增加如下代码：
 
@@ -18,7 +18,7 @@
   <script src="https://static.lkme.cc/linkedme.min.js" ></script>
 ```
 
-##  在HTML页面中准备一个或多个用于打开深度链接的a元素
+## 在HTML页面中准备一个或多个用于打开深度链接的a元素
 
 > 开发者可根据自身需求调整，如需要创建多个深度链接，就需要建立多个a标签
 
@@ -29,7 +29,7 @@
 
 **注意：新版本已经不需要给a标签添加class名"linkedme"，如果您的代码中包含class="linkedme"，请去除并参照下面步骤检查集成代码（尤其是一个页面使用多个深度链接的用户）。**
 
-## 1.4 JS SDK 集成配置
+## JS SDK 集成配置
 
 > 提示：请在服务器环境下测试，本地打开存在跨域问题。
 
@@ -182,7 +182,7 @@ autoSelect【可选】
 
 > 请使用a标签作为打开app的跳转按钮，参照步骤1.3
 
-##  功能测试
+## 功能测试
 
 测试跳转链接地址：
 
@@ -192,7 +192,7 @@ autoSelect【可选】
 
 如仍有问题可加qq群639389757咨询，我司免费提供前期接入的技术支持服务。
 
-##  常见问题FAQ
+## 常见问题FAQ
 
 > 注：请严格按照以上集成文档进行集成。
 
