@@ -29,7 +29,7 @@
 <a id="open_footer" href="">打开LinkedME深度链接</a>
 ```
 
-**注意：新版本已经不需要给a标签添加class名"linkedme"，如果您的代码中包含class="linkedme"，请去除并参照下面步骤检查集成代码（尤其是一个页面使用多个深度链的用户）。**
+**注意：新版本已经不需要给a标签添加class名"linkedme"，如果您的代码中包含class="linkedme"，请去除并参照下面步骤检查集成代码（尤其是一个页面使用多个深度链接的用户）。**
 
 ### 1.4 JS SDK 集成配置
 
@@ -50,9 +50,9 @@ initData  【必选】
 类型：Object
 初始化linkedme对象参数
 
-initData.type 【可选】
-测试时需要添加initData.type="test",上线时需要修改为"live",如果传null,默认为"live";
-测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
+    initData.type 【可选】
+    测试时需要添加initData.type="test",上线时需要修改为"live",如果传null,默认为"live";
+    测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
 
 callback【可选】
 类型：Function
@@ -86,27 +86,27 @@ data 【必选】
     类型：String
     测试模式"test"，线上模式"live",如果传null，默认为"live";
     测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
-    
+
     data.feature 【可选】
     类型：String
     自定义深度链接功能名称，多个名称用逗号分隔
-    
+
     data.stage 【可选】
     类型：String
     自定义深度链接阶段名称，多个名称用逗号分隔
-    
+
     data.channel【可选】
     类型：String
     自定义深度链接渠道名称，多个名称用逗号分隔
-    
+
     data.tags【可选】
     类型：String
     自定义深度链接标签名称，多个名称用逗号分隔
-    
+
     data.ios_custom_url【可选】
     类型：String
     首次集成测试请留空！自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https。注意不能使用.apk地址,建议填写H5地址。
-    
+
     data.ios_direct_open【可选】
     类型：String
     首次集成测试请默认为false！未安装情况下直接打开ios_custom_url
@@ -114,12 +114,12 @@ data 【必选】
     data.android_custom_url【可选】
     类型：String
     首次集成测试请留空！！！自定义安卓平台下App的下载地址，需填写http或https。注意不能使用apk地址，建议填写H5地址。
-    
+
     data.android_direct_open【可选】
     类型：String
     默认false
     首次集成测试请默认为false！未安装情况下直接打开android_custom_url
-    
+
     data.params【可选】
     类型：JSON字符串
     跳转到详情页面的所需参数，对象要用JSON.stringify()方法转化为JSON字符串如{"key1":"value1","key2":"value2"...}
@@ -166,12 +166,12 @@ autoSelect【可选】
        open_header.setAttribute('href', response.url);
     }
   },false);
-  
+
   var datafooter = {};  //创建第二个深度链接所需参数
   ...
   linkedme.link(datafooter, function(err, response) {
     if (err) {
-    
+
     } else {
         var open_footer = document.getElementById("open_footer");
         open_footer.addEventListener("click",function(){
@@ -186,7 +186,7 @@ autoSelect【可选】
 > 1.请使用a标签作为打开app的跳转按钮，参照步骤1.3。
 >
 > 2.注意：修改ios\_custom\_url、ios\_direct\_open、android\_custom\_url、android\_direct\_open这四个参数你会发现：点击深度链接还是走之前的逻辑，新设置的参数并没有生效，因为修改这四个值并不会重新创建深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接)
-
+>
 > 提示：请使用`<a/>`标签作为打开app的跳转按钮，同时为了在Chrome及QQ中获得更好的用户体验（直接唤起app），请在a标签中添加class="linkedme"，并且为a标签的href属性设置值为生成的深度链接。示例：
 >
 > ```text
@@ -207,8 +207,6 @@ autoSelect【可选】
 
 ### 1.6 常见问题FAQ
 
-
-
 > 注：请严格按照以上集成文档进行集成。
 
 Q1：使用的前端框架不习惯于直接操作DOM，可不可以使用window.location方式来打开a标签？
@@ -217,7 +215,5 @@ A：不建议使用，会出现IOS不兼容的情况。
 
 Q2：修改ios\_custom\_url、ios\_direct\_open、android\_custom\_url、android\_direct\_open这四个参数为什么没有生效，还是原来的跳转逻辑？
 
-A：只修改上述几个参数，并不会重新创建生成深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-%E9%80%9A%E8%BF%87js-sdk%E6%9B%B4%E6%94%B9%E5%8F%82%E6%95%B0%E5%90%8E%EF%BC%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E7%94%9F%E6%95%88%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E6%B2%A1%E6%9C%89%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5)
-
-
+A：只修改上述几个参数，并不会重新创建生成深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接)
 
