@@ -69,7 +69,7 @@ callback【可选】
 </script>
 ```
 
-### 1.4.2 创建深度链接
+#### 1.4.2 创建深度链接
 
 > 注意：下面步骤实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现上面1.4.1的内容
 
@@ -183,17 +183,7 @@ autoSelect【可选】
 </script>
 ```
 
-> 1.请使用a标签作为打开app的跳转按钮，参照步骤1.3。
->
-> 2.注意：修改ios\_custom\_url、ios\_direct\_open、android\_custom\_url、android\_direct\_open这四个参数你会发现：点击深度链接还是走之前的逻辑，新设置的参数并没有生效，因为修改这四个值并不会重新创建深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接)
->
-> 提示：请使用`<a/>`标签作为打开app的跳转按钮，同时为了在Chrome及QQ中获得更好的用户体验（直接唤起app），请在a标签中添加class="linkedme"，并且为a标签的href属性设置值为生成的深度链接。示例：
->
-> ```text
-> <a href="https://lkme.cc/AfC/CeG9o5VH8" class="linkedme">打开应用</a>
-> ```
-
-注意：在iOS微信中必须手动触发深度链接，不能自动跳转。
+> 请使用a标签作为打开app的跳转按钮，参照步骤1.3
 
 ### 1.5 功能测试
 
