@@ -31,11 +31,11 @@
 
 **注意：新版本已经不需要给a标签添加class名"linkedme"，如果您的代码中包含class="linkedme"，请去除并参照下面步骤检查集成代码（尤其是一个页面使用多个深度链接的用户）。**
 
-### 1.4 JS SDK 集成配置
+## 1.4 JS SDK 集成配置
 
 > 提示：请在服务器环境下测试，本地打开存在跨域问题。
 
-#### 1.4.1 初始化LinkedME全局对象
+### 1.4.1 初始化LinkedME全局对象
 
 ###### 接口名称: init\(linkedme\_key, initData, callback\)
 
@@ -69,7 +69,7 @@ callback【可选】
 </script>
 ```
 
-#### 1.4.2 创建深度链接
+### 1.4.2 创建深度链接
 
 > 注意：下面步骤实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现上面1.4.1的内容
 
@@ -117,12 +117,11 @@ data 【必选】
 
     data.android_direct_open【可选】
     类型：String
-    默认false
     首次集成测试请默认为false！未安装情况下直接打开android_custom_url
 
     data.params【可选】
     类型：JSON字符串
-    跳转到详情页面的所需参数，对象要用JSON.stringify()方法转化为JSON字符串如{"key1":"value1","key2":"value2"...}
+    跳转到详情页面的所需参数，对象类型，后要用JSON.stringify()方法转化为JSON字符串如{"key1":"value1","key2":"value2"...}
 
 
 callback【必选】
@@ -144,17 +143,17 @@ autoSelect【可选】
 <script>
   var data = {};
   data.type = "live";
-  data.feature = "";
-  data.stage = ""; 
-  data.channel = ""; 
-  data.tags = ""; 
+  data.feature = "功能名称";
+  data.stage = "阶段名称"; 
+  data.channel = "渠道名称"; 
+  data.tags = "标签名称"; 
   data.ios_custom_url = ""; 
-  data.ios_direct_open = "";
+  data.ios_direct_open = "false";
   data.android_custom_url = "";
-  data.android_direct_open = "";
+  data.android_direct_open = "false";
   var value1 = 1;
   var value2 = 2;
-  data.params = '{"key1":"'+value1+'","key2":"'+value2+'"}'; //注意单引号和双引号的位置
+  data.params = {"key1":"value1","key2":"value2"}; //注意单引号和双引号的位置
   linkedme.link(data, function(err, response) {
     if (err) {
       // 生成深度链接失败，返回错误对象err
@@ -185,17 +184,17 @@ autoSelect【可选】
 
 > 请使用a标签作为打开app的跳转按钮，参照步骤1.3
 
-### 1.5 功能测试
+## 1.5 功能测试
 
 测试跳转链接地址：
 
 [https://www.linkedme.cc/standard/sample.html](https://www.linkedme.cc/standard/sample.html)
 
-或者可以使用官网提供的测试功能，或者自行完成功能测试。
+或者自行完成功能测试。
 
 如仍有问题可加qq群639389757咨询，我司免费提供前期接入的技术支持服务。
 
-### 1.6 常见问题FAQ
+## 1.6 常见问题FAQ
 
 > 注：请严格按照以上集成文档进行集成。
 
