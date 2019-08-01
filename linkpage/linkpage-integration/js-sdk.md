@@ -119,7 +119,7 @@ data 【必选】
 
     data.params【可选】
     类型：JSON字符串
-    跳转到详情页面的所需参数，对象类型，后要用JSON.stringify()方法转化为JSON字符串如{"key1":"value1","key2":"value2"...}
+    跳转到详情页面的所需参数，如'{"key1":"value1","key2":"value2"...}'
 
 
 callback【必选】
@@ -149,9 +149,12 @@ autoSelect【可选】
   data.ios_direct_open = "false";
   data.android_custom_url = "";
   data.android_direct_open = "false";
-  var value1 = 1;
-  var value2 = 2;
-  data.params = {"key1":"value1","key2":"value2"}; //注意单引号和双引号的位置
+  var options = {
+        "key1":"value1",
+	"key2":"value2",
+	...
+   }
+  data.params = JSON.stringify(options); 
   linkedme.link(data, function(err, response) {
     if (err) {
       // 生成深度链接失败，返回错误对象err
