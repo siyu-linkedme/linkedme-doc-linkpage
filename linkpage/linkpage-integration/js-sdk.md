@@ -151,8 +151,8 @@ autoSelect【可选】
   data.android_direct_open = "false";
   var options = {
         "key1":"value1",
-	"key2":"value2",
-	...
+        "key2":"value2",
+        ...
    }
   data.params = JSON.stringify(options); 
   linkedme.link(data, function(err, response) {
