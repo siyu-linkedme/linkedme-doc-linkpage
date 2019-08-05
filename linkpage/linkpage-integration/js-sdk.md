@@ -6,7 +6,7 @@
 
 老用户：已经在官网网站注册账号，直接[创建应用](https://www.linkedme.cc/dashboard/index.html#/app/aplt/create)（可以创建多个应用），直接到导航栏“设置”中查看LinkedME Key。
 
-如图：![](/assets/企业微信截图_e4bc32b9-9290-45a9-900c-6031264bbbc1.png)
+如图：![](../../.gitbook/assets/qi-ye-wei-xin-jie-tu-e4bc32b9929045a9900c6031264bbbc1.png)
 
 ## 引入 JS SDK
 
@@ -22,7 +22,7 @@
 
 > 开发者可根据自身需求调整，如需要创建多个深度链接，就需要建立多个a标签
 
-```
+```text
 <a id="open_header" href="">打开LinkedME深度链接</a>
 <a id="open_footer" href="">打开LinkedME深度链接</a>
 ```
@@ -35,7 +35,7 @@
 
 ### 初始化LinkedME全局对象
 
-###### 接口名称: init\(linkedme\_key, initData, callback\)
+#### 接口名称: init\(linkedme\_key, initData, callback\)
 
 参数说明：
 
@@ -71,7 +71,7 @@ callback【可选】
 
 > 注意：下面步骤实现的功能是创建深度链接及通过深度链接跳转到APP内的详情页面，若想要使用如下功能，请务必实现上面1.4.1的内容
 
-###### 接口名称： link\(data, callback, autoSelect\)
+#### 接口名称： link\(data, callback, autoSelect\)
 
 参数说明：
 

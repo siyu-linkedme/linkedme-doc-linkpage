@@ -3,7 +3,7 @@
 * [新手上路](README.md)
 * [注册并开始](register.md)
 
-## LinkPage
+## LinkPage（深度链接产品） <a id="linkpage"></a>
 
 * [LinkPage SDK下载](linkpage/sdk-download/README.md)
   * [iOS SDK](linkpage/sdk-download/ios-sdk-download.md)
@@ -27,7 +27,7 @@
   * [免填邀请码](linkpage/solution/no-invitation-code.md)
 * [技术支持](linkpage/support.md)
 
-## LINKACCOUNT
+## LINKACCOUNT（一键登录/号码认证/验证码） <a id="linkaccount"></a>
 
 * [产品指南](linkaccount/product-guide/README.md)
   * [产品介绍](linkaccount/product-guide/product-introduction.md)
