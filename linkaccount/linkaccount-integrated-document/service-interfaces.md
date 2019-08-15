@@ -364,36 +364,25 @@
 
 **请求实例**
 
-> <table>
->   <thead>
->     <tr>
->       <th style="text-align:left">
->         <p>{</p>
->         <p>&quot;app_key&quot;:&quot;7e289a2484f4368dbafbd1e5c7d06903&quot;,</p>
->         <p>&quot;recipient&quot;:&quot;+8613412345678&quot;,</p>
->         <p>&quot;sign_name&quot;:&quot;&#x77ED;&#x4FE1;&quot;,</p>
->         <p>&quot;template_id&quot;:&quot;45&quot;,</p>
->         <p>&quot;template_params&quot;:[&quot;1224&quot;,&quot;&#x4F60;&#x597D;&quot;,&quot;2019/12/12&quot;,&quot;12:12&quot;],</p>
->         <p>&quot;status_callback_url&quot;:&quot;http://requestbin.fullcontact.com/scvavdsc&quot;,</p>
->         <p>&quot;sign&quot;:&quot;226964223a202230313233343536372d383961622d636465662d303</p>
->         <p>132332d343536373839616263646566222c0d0a2020226e616d65223a20226</p>
->         <p>4656d6f617070222c0d0a2020226f776e6572223a207b0d0a2020202022656d</p>
->         <p>61696c223a2022757365726e616d65406578616d706c652e636f6d222c0d0a2</p>
->         <p>0202020226964223a202230313233343536372d383961622d636465662d3031</p>
->         <p>32332d3435363738396162636464ff&quot;,</p>
->         <p>&quot;extend&quot;:&quot;linkedme&quot;</p>
->         <p>}</p>
->       </th>
->     </tr>
->   </thead>
->   <tbody></tbody>
-> </table>
+```text
+{ 
+"app_key":"7e289a2484f4368dbafbd1e5c7d06903", 
+"recipient":"+8613412345678", 
+"sign_name":"短信", 
+"template_id":"45", 
+"template_params":["1224","你好","2019/12/12","12:12"], 
+"status_callback_url":"http://requestbin.fullcontact.com/scvavdsc", 
+"sign":"226964223a202230313233343536372d383961622d636465662d303
+132332d343536373839616263646566222c0d0a2020226e616d65223a20226 
+4656d6f617070222c0d0a2020226f776e6572223a207b0d0a2020202022656d 
+61696c223a2022757365726e616d65406578616d706c652e636f6d222c0d0a2 
+0202020226964223a202230313233343536372d383961622d636465662d3031 
+32332d3435363738396162636464ff", 
+"extend":"linkedme" 
+}
+```
 
-#### **响应参数**
-
-**表4 响应结果参数**
-
-| **参数名称** | **是否必选** | **参数类型** | **默认值** | **说明** |
+| **参数类型** | 是否必选 | 参数类型 | **默认值** | **说明** |
 | :--- | :--- | :--- | :--- | :--- |
 | result | 是 | SmsResult\[\] | 无 | 短信结构体，当返回响应出现异常时不包含此字段 |
 
@@ -408,34 +397,27 @@
 
 **响应实例**
 
-> <table>
->   <thead>
->     <tr>
->       <th style="text-align:left">
->         <p>{</p>
->         <p>&quot;header&quot;: {</p>
->         <p>&quot;code&quot;: 200,</p>
->         <p>&quot;msg&quot;: &quot;&#x64CD;&#x4F5C;&#x6210;&#x529F;&quot;,</p>
->         <p>&quot;success&quot;: true,</p>
->         <p>&quot;alert&quot;: true,</p>
->         <p>&quot;time&quot;: 1564486490320</p>
->         <p>},</p>
->         <p>&quot;body&quot;: {</p>
->         <p>&quot;result&quot;: [</p>
->         <p>{</p>
->         <p>&quot;smsMsgId&quot;: &quot;7524a9aa-19d1-4be6-bef0-2b0ce5dd6107&quot;,</p>
->         <p>&quot;originTo&quot;: &quot;+8613412345678&quot;,</p>
->         <p>&quot;createTime&quot;: 1564486490192,</p>
->         <p>&quot;status&quot;: &quot;000000&quot;</p>
->         <p>}</p>
->         <p>]</p>
->         <p>}</p>
->         <p>}</p>
->       </th>
->     </tr>
->   </thead>
->   <tbody></tbody>
-> </table>
+```text
+ {
+    "header": {
+        "code": 200,
+        "msg": "操作成功",
+        "success": true,
+        "alert": true,
+        "time": 1564486490320
+    },
+    "body": {
+        "result": [
+            {
+                "smsMsgId": "7524a9aa-19d1-4be6-bef0-2b0ce5dd6107",
+                "originTo": "+8613412345678",
+                "createTime": 1564486490192,
+                "status": "000000"
+            }
+        ]
+    }
+}
+```
 
 #### **时序图**
 
@@ -510,26 +492,19 @@
 
 **请求实例**
 
-> <table>
->   <thead>
->     <tr>
->       <th style="text-align:left">
->         <p>{</p>
->         <p>&quot;smsMsgId&quot;:&quot;e1f27fd2-59cb-4827-b926-4550856e2c44&quot;,</p>
->         <p>&quot;total&quot;: &quot;1&quot;,</p>
->         <p>&quot;sequence&quot;: &quot;1&quot;,</p>
->         <p>&quot;status&quot;: &quot;1300001&quot;,</p>
->         <p>&quot;msg&quot;: &quot;&#x7528;&#x6237;&#x5DF2;&#x6210;&#x529F;&#x6536;&#x5230;&#x77ED;&#x4FE1;&quot;,</p>
->         <p>&quot;source&quot;: &quot;2&quot;,</p>
->         <p>&quot;updateTime&quot;: &quot;2019-07-27&quot;,</p>
->         <p>&quot;extend&quot;: &quot;linkedme&quot;,</p>
->         <p>&quot;to&quot;: &quot;+8613412345678&quot;</p>
->         <p>}</p>
->       </th>
->     </tr>
->   </thead>
->   <tbody></tbody>
-> </table>
+```text
+{
+     "smsMsgId":"e1f27fd2-59cb-4827-b926-4550856e2c44",
+     "total": "1",
+     "sequence": "1",
+     "status": "1300001",
+     "msg": "用户已成功收到短信",
+     "source": "2",
+     "updateTime": "2019-07-27",
+     "extend": "linkedme",
+     "to": "+8613412345678"
+}
+```
 
 **平台返回码说明**
 
@@ -588,31 +563,26 @@
 
 #### **请求实例**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p>{</p>
-        <p>&quot;recipient&quot;: &quot;15970704470&quot;,</p>
-        <p>&quot;app_key&quot;: &quot;7e289a2484f4368dbafbd1e5c7d06903&quot;,</p>
-        <p>&quot;status_callback_url&quot;: &quot;http://requestbin.fullcontact.com/scvavdsc&quot;,</p>
-        <p>&quot;extend&quot;: &quot;linkedme&quot;,</p>
-        <p>&quot;sign&quot;:&quot;226964223a202230313233343536372d383961622d636465662d30</p>
-        <p>3132332d343536373839616263646566222c0d0a2020226e616d65223a2</p>
-        <p>02264656d6f617070222c0d0a2020226f776e6572223a207b0d0a202020</p>
-        <p>2022656d61696c223a2022757365726e616d65406578616d706c652e63</p>
-        <p>6f6d222c0d0a20202020226964223a202230313233343536372d383961</p>
-        <p>622d636465662d303132332d3435363738396162636464ff&quot;,</p>
-        <p>&quot;template_id&quot;: &quot;TTS01&quot;,</p>
-        <p>&quot;template_params&quot;: [</p>
-        <p>&quot;2222&quot;</p>
-        <p>]</p>
-        <p>}</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>#### **响应参数**
+```text
+{
+  "recipient": "15970704470",
+  "app_key": "7e289a2484f4368dbafbd1e5c7d06903",
+  "status_callback_url": "http://requestbin.fullcontact.com/scvavdsc",
+  "extend": "linkedme",                  
+ "sign":"226964223a202230313233343536372d383961622d636465662d30
+   3132332d343536373839616263646566222c0d0a2020226e616d65223a2
+   02264656d6f617070222c0d0a2020226f776e6572223a207b0d0a202020
+   2022656d61696c223a2022757365726e616d65406578616d706c652e63
+   6f6d222c0d0a20202020226964223a202230313233343536372d383961
+   622d636465662d303132332d3435363738396162636464ff",
+   "template_id": "TTS01",
+   "template_params": [
+        "2222"
+     ]   
+}
+```
+
+#### **响应参数**
 
 **表4响应结果参数**
 
@@ -623,28 +593,23 @@
 
 #### **响应实例**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p>{</p>
-        <p>&quot;header&quot;: {</p>
-        <p>&quot;code&quot;: 200,</p>
-        <p>&quot;msg&quot;: &quot;&#x64CD;&#x4F5C;&#x6210;&#x529F;&quot;,</p>
-        <p>&quot;success&quot;: true,</p>
-        <p>&quot;alert&quot;: true,</p>
-        <p>&quot;time&quot;: 1564108757224</p>
-        <p>},</p>
-        <p>&quot;body&quot;: {</p>
-        <p>&quot;sms_msg_id&quot;: &quot;977713dc-386b-4a3e-b6a0-a783629c2c87&quot;,</p>
-        <p>&quot;status&quot;: &quot;000000&quot;</p>
-        <p>}</p>
-        <p>}</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>**时序图**
+```text
+ {
+    "header": {
+        "code": 200,
+        "msg": "操作成功",
+        "success": true,
+        "alert": true,
+        "time": 1564108757224
+    },
+    "body": {
+        "sms_msg_id": "977713dc-386b-4a3e-b6a0-a783629c2c87",
+        "status": "000000"
+    }
+}
+```
+
+**时序图**
 
 ![](../../.gitbook/assets/yu-yin-shi-xu-tu.png)
 
@@ -675,12 +640,9 @@
 
 **简要描述**
 
-·  用户通话结束后，LinkAccount业务平台通过此接口向SP推送通话的状态信息
-
-· 请求方向 :LinkAccount业务平台（客户端） → 客户服务器（服务端）
-
-· 使用前提: 开发者在开发应用时，若需订阅状态通知，必须要提供状态接收URL（status\_callback\_url），并且确保URL能够正常处理LinkAccount业务平台发送的通知信息
-
+·  用户通话结束后，LinkAccount业务平台通过此接口向SP推送通话的状态信息  
+****· 请求方向 :LinkAccount业务平台（客户端） → 客户服务器（服务端）  
+· 使用前提: 开发者在开发应用时，若需订阅状态通知，必须要提供状态接收URL（status\_callback\_url），并且确保URL能够正常处理LinkAccount业务平台发送的通知信息  
 · 使用限制: LinkAccount业务平台推送话单信息给开发者应用，仅支持POST方式
 
 **表1 接口类型说明**
@@ -704,24 +666,17 @@
 
 **请求实例**
 
-> <table>
->   <thead>
->     <tr>
->       <th style="text-align:left">
->         <p>{</p>
->         <p>&quot;msgId&quot;: &quot;11fb06c3-b5ca-4822-99fe-15000cc43d83&quot;,</p>
->         <p>&quot;status&quot;: 0,</p>
->         <p>&quot;callerNum&quot;: &quot;+8631180985016&quot;,</p>
->         <p>&quot;to&quot;: &quot;+86134123456578&quot;,</p>
->         <p>&quot;callOutStartTime&quot;: &quot;2019-07-29 06:27:08&quot;,</p>
->         <p>&quot;callEndTime&quot;: &quot;2019-07-29 06:27:21&quot;,</p>
->         <p>&quot;extend&quot;: &quot;linkedme&quot;</p>
->         <p>}</p>
->       </th>
->     </tr>
->   </thead>
->   <tbody></tbody>
-> </table>
+```text
+{
+    "msgId": "11fb06c3-b5ca-4822-99fe-15000cc43d83",
+    "status": 0,
+    "callerNum": "+8631180985016",
+    "to": "+86134123456578",
+    "callOutStartTime": "2019-07-29 06:27:08",
+    "callEndTime": "2019-07-29 06:27:21",
+    "extend": "linkedme"
+}
+```
 
 **平台返回码说明**
 
