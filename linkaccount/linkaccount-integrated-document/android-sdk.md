@@ -456,6 +456,14 @@ public void setAuthUIConfig(AuthUIConfig authUIConfig)
   */
  public AuthUIConfig.Builder setNavBackImgPath(String navBackImgPath)
  /**
+  * 设置授权页面背景图片
+  */
+ public AuthUIConfig.Builder setBackgroundImgPath(String backgroundImgPath)
+ /**
+  * 设置授权页面背景颜色，默认白色
+  */
+ public AuthUIConfig.Builder setBackgroundColor(int backgroundColor) 
+ /**
   * ④设置logo图片
   */
  public AuthUIConfig.Builder setLogoImgPath(String logoImgPath)
@@ -526,7 +534,11 @@ public void setAuthUIConfig(AuthUIConfig authUIConfig)
  /**
   * ⑧设置切换方式视图是否可见
   */
- public AuthUIConfig.Builder setSwitchHidden(boolean switchHidden)  
+ public AuthUIConfig.Builder setSwitchHidden(boolean switchHidden)
+ /**
+  * 设置切换方式文字
+  */
+ public AuthUIConfig.Builder setSwitchText(String switchText)  
  /**
   * 设置切换方式视图字体颜色
   */
@@ -552,6 +564,7 @@ public void setAuthUIConfig(AuthUIConfig authUIConfig)
 ```java
 AuthUIConfig.Builder builder = new AuthUIConfig.Builder();
 builder.setNavText("欢迎登录");
+builder.setCheckboxDrawable("linkaccount_check");
 LinkAccount.getInstance().setAuthUIConfig(builder.create());
 ```
 
