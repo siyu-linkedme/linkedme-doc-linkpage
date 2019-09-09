@@ -85,6 +85,10 @@ data 【必选】
     测试模式"test"，线上模式"live",如果传null，默认为"live";
     测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
 
+    data.promotion_name【可选】
+    类型：String
+    自定义深度链接名称
+
     data.feature 【可选】
     类型：String
     自定义深度链接功能名称，多个名称用逗号分隔
@@ -141,6 +145,7 @@ autoSelect【可选】
 <script>
   var data = {};
   data.type = "live";
+  data.promotion_name = "链接名称";
   data.feature = "功能名称";
   data.stage = "阶段名称"; 
   data.channel = "渠道名称"; 
