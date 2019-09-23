@@ -420,7 +420,7 @@ LinkAccount.getInstance().setDebug(true);
 
 ## **一键登录授权页面修改**
 
-![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/sdk-shou-quan-ye-she-ji-gui-fan%20%281%29.jpg)
+![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../assets/android1.0.6.png)
 
 **接口**
 
@@ -434,119 +434,393 @@ public void setAuthUIConfig(AuthUIConfig authUIConfig)
 ```
 
 ```java
- /**
-  * ①设置导航栏背景色
-  */
- public AuthUIConfig.Builder setNavColor(int navColor)
- /**
-  * ②设置导航栏标题内容
-  */
- public AuthUIConfig.Builder setNavText(String navText)
- /**
-  * 设置导航栏标题字体大小
-  */
- public AuthUIConfig.Builder setNavTextSize(int navTextSize)
+/**
+ * 设置 status bar 的背景色
+ */
+public Builder setStatusBarColor(int statusBarColor)
 
- /**
-  * 设置导航栏标题颜色
-  */
- public AuthUIConfig.Builder setNavTextColor(int navTextColor)
- /**
-  * ③设置返回按钮图片
-  */
- public AuthUIConfig.Builder setNavBackImgPath(String navBackImgPath)
- /**
-  * 设置授权页面背景图片
-  */
- public AuthUIConfig.Builder setBackgroundImgPath(String backgroundImgPath)
- /**
-  * 设置授权页面背景颜色，默认白色
-  */
- public AuthUIConfig.Builder setBackgroundColor(int backgroundColor) 
- /**
-  * ④设置logo图片
-  */
- public AuthUIConfig.Builder setLogoImgPath(String logoImgPath)
- /**
-  * 设置是否隐藏logo
-  */
- public AuthUIConfig.Builder setLogoHidden(boolean logoHidden)
- /**
-  * 设置logo padding top
-  */
- public AuthUIConfig.Builder setLogoPaddingTop(int logoPaddingTop)
- /**
-  * 设置logo padding bottom
-  */
- public AuthUIConfig.Builder setLogoPaddingBottom(int logoPaddingBottom)
- /**
-  * 设置logo图标宽度
-  */
- public AuthUIConfig.Builder setLogoWidth(int logoWidth)
- /**
-  * 设置logo图标高度
-  */
- public AuthUIConfig.Builder setLogoHeight(int logoHeight)
- /**
-  * ⑤设置脱敏号码颜色
-  */
- public AuthUIConfig.Builder setNumberColor(int numberColor)
- /**
-  * 设置脱敏号码大小
-  */
- public AuthUIConfig.Builder setNumberSize(int numberSize)
- /**
-  * ⑥设置slogan字体颜色
-  */
- public AuthUIConfig.Builder setSloganTextColor(int sloganTextColor)
- /**
-  * ⑦设置登录按钮文字
-  */
- public AuthUIConfig.Builder setLogBtnText(String logBtnText)
- /**
-  * 设置登录按钮字体颜色
-  */
- public AuthUIConfig.Builder setLogBtnTextColor(int logBtnTextColor)
- /**
-  * 设置登录按钮字体大小
-  */
- public AuthUIConfig.Builder setLogBtnTextSize(int logBtnTextSize)
- /**
-  * 设置登录按钮高度
-  */
- public AuthUIConfig.Builder setLogBtnHeight(int logBtnHeight)
- /**
-  * 设置登录按钮背景图片
-  */
- public AuthUIConfig.Builder setLogBtnBackgroundPath(String logBtnBackgroundPath)
- /**
-  * ⑨设置隐私条款1的文字和链接
-  */
- public AuthUIConfig.Builder setAppPrivacyOne(String name, String url)
- /**
-  * 设置隐私条款2的文字和链接
-  */
- public AuthUIConfig.Builder setAppPrivacyTwo(String name, String url)
- /**
-  * 设置隐私条款基础颜色和条款颜色
-  */
- public AuthUIConfig.Builder setAppPrivacyColor(int baseColor, int privacyColor)
- /**
-  * ⑧设置切换方式视图是否可见
-  */
- public AuthUIConfig.Builder setSwitchHidden(boolean switchHidden)
- /**
-  * 设置切换方式文字
-  */
- public AuthUIConfig.Builder setSwitchText(String switchText)  
- /**
-  * 设置切换方式视图字体颜色
-  */
- public AuthUIConfig.Builder setSwitchTextColor(int switchTextColor)
- /**
-  * 设置切换方式视图的点击事件
-  */
- public AuthUIConfig.Builder setSwitchClicker(View.OnClickListener switchClicker)
+/**
+ * 设置 status bar 样式，true：暗色图标 false：亮色图标
+ */
+public Builder setStatusBarLight(boolean statusBarLight)
+
+/**
+ * 设置导航栏背景色
+ */
+public Builder setNavColor(int navColor)
+
+/**
+ * 设置导航栏标题内容
+ */
+public Builder setNavText(String navText)
+
+/**
+ * 设置导航栏标题字体大小
+ */
+public Builder setNavTextSize(int navTextSize)
+
+/**
+ * 设置导航栏标题颜色
+ */
+public Builder setNavTextColor(int navTextColor)
+
+/**
+ * 设置返回按钮图片
+ */
+public Builder setNavBackImgPath(String navBackImgPath)
+
+/**
+ * 设置返回按钮图片
+ */
+public Builder setNavBackImgDrawable(Drawable navBackImgDrawable)
+
+/**
+ * 设置返回按钮是否隐藏
+ */
+public Builder setNavBackHidden(boolean navBackHidden)
+
+/**
+ * 设置返回按钮位于左侧及偏移量
+ */
+public Builder setNavBackOffsetX(int navBackOffsetX)
+
+/**
+ * 设置返回按钮位于右侧及其偏移量
+ */
+public Builder setNavBackOffsetRightX(int navBackOffsetRightX)
+
+/**
+ * 设置返回按钮的宽度
+ */
+public Builder setNavBackWidh(int navBackWidh)
+
+/**
+ * 设置返回按钮的高度
+ */
+public Builder setNavBackHeight(int navBackHeight)
+
+/**
+ * 设置导航栏是否隐藏
+ */
+public Builder setNavHidden(boolean navHidden)
+
+/**
+ * 设置导航栏是否透明
+ */
+public Builder setNavTransparent(boolean navTransparent)
+
+/**
+ * 设置背景图片
+ */
+public Builder setBackgroundImgPath(String backgroundImgPath)
+
+/**
+ * 设置背景图片
+ */
+public Builder setBackgroundImgDrawable(Drawable backgroundImgDrawable)
+
+/**
+ * 设置背景颜色，默认白色
+ */
+public Builder setBackgroundColor(int backgroundColor)
+
+/**
+ * 设置logo图片
+ */
+public Builder setLogoImgPath(String logoImgPath)
+
+/**
+ * 设置logo图片
+ */
+public Builder setLogoImgDrawable(Drawable logoImgDrawable)
+
+/**
+ * 设置是否隐藏logo
+ */
+public Builder setLogoHidden(boolean logoHidden)
+
+/**
+ * 设置logo padding top
+ */
+public Builder setLogoPaddingTop(int logoPaddingTop)
+
+/**
+ * 设置logo padding bottom
+ */
+public Builder setLogoPaddingBottom(int logoPaddingBottom)
+
+/**
+ * 设置logo图标宽度
+ */
+public Builder setLogoWidth(int logoWidth)
+
+/**
+ * 设置logo图标高度
+ */
+public Builder setLogoHeight(int logoHeight)
+
+/**
+ * 设置logo相对于屏幕左侧X偏移
+ */
+public Builder setLogoOffsetX(int logoOffsetX)
+
+/**
+ * 设置logo相对于标题栏Y偏移
+ */
+public Builder setLogoOffsetY(int logoOffsetY)
+
+/**
+ * 设置logo相对于屏幕右侧X偏移
+ */
+public Builder setLogoOffsetRightX(int logoOffsetRightX)
+
+/**
+ * 设置logo相对于屏幕底部Y偏移
+ */
+public Builder setLogoOffsetBottomY(int logoOffsetBottomY)
+
+/**
+ * 设置脱敏号码颜色
+ */
+public Builder setNumberColor(int numberColor)
+
+/**
+ * 设置脱敏号码大小
+ */
+public Builder setNumberTextSize(int numberTextSize)
+
+/**
+ * 设置号码栏的宽度
+ */
+public Builder setNumberWidth(int numberWidth)
+
+/**
+ * 设置号码栏的高度
+ */
+public Builder setNumberHeight(int numberHeight)
+
+/**
+ * 设置手机号相对于屏幕左侧X偏移
+ */
+public Builder setNumberOffsetX(int numberOffsetX)
+
+/**
+ * 设置手机号相对于标题栏Y偏移
+ */
+public Builder setNumberOffsetY(int numberOffsetY)
+
+/**
+ * 设置手机号相对于屏幕右侧X偏移
+ */
+public Builder setNumberOffsetRightX(int numberOffsetRightX)
+
+/**
+ * 设置手机号相对于屏幕底部Y偏移
+ */
+public Builder setNumberOffsetBottomY(int numberOffsetBottomY)
+
+/**
+ * 设置slogan字体颜色
+ */
+public Builder setSloganTextColor(int sloganTextColor)
+
+/**
+ * 设置slogan字体大小
+ */
+public Builder setSloganTextSize(int sloganTextSize)
+
+/**
+ * 设置slogan相对于屏幕左侧X偏移
+ */
+public Builder setSloganOffsetX(int sloganOffsetX)
+
+/**
+ * 设置slogan相对于标题栏Y偏移
+ */
+public Builder setSloganOffsetY(int sloganOffsetY)
+
+/**
+ * 设置slogan相对于屏幕右侧X偏移
+ */
+public Builder setSloganOffsetRightX(int sloganOffsetRightX)
+
+/**
+ * 设置slogan相对于屏幕底部Y偏移
+ */
+public Builder setSloganOffsetBottomY(int sloganOffsetBottomY)
+
+/**
+ * 设置登录按钮文字
+ */
+public Builder setLogBtnText(String logBtnText)
+
+/**
+ * 设置登录按钮字体颜色
+ */
+public Builder setLogBtnTextColor(int logBtnTextColor)
+
+/**
+ * 设置登录按钮字体大小
+ */
+public Builder setLogBtnTextSize(int logBtnTextSize)
+
+/**
+ * 设置登录按钮宽度
+ */
+public Builder setLogBtnWidth(int logBtnWidth)
+
+/**
+ * 设置登录按钮高度
+ */
+public Builder setLogBtnHeight(int logBtnHeight)
+
+/**
+ * 设置登录按钮背景图片
+ */
+public Builder setLogBtnBackgroundPath(String logBtnBackgroundPath)
+
+/**
+ * 设置登录按钮背景图片
+ */
+public Builder setLogBtnBackgroundDrawable(Drawable logBtnBackgroundDrawable)
+
+/**
+ * 设置登录按钮相对于屏幕左侧X偏移
+ */
+public Builder setLogBtnOffsetX(int logBtnOffsetX)
+
+/**
+ * 设置登录按钮相对于标题栏Y偏移
+ */
+public Builder setLogBtnOffsetY(int logBtnOffsetY)
+
+/**
+ * 设置登录按钮相对于屏幕右侧X偏移
+ */
+public Builder setLogBtnOffsetRightX(int logBtnOffsetRightX)
+
+/**
+ * 设置登录按钮相对于屏幕底部Y偏移
+ */
+public Builder setLogBtnOffsetBottomY(int logBtnOffsetBottomY)
+
+
+/**
+ * 设置隐私条款1的文字和链接
+ */
+public Builder setAppPrivacyOne(String name, String url)
+
+/**
+ * 设置隐私条款2的文字和链接
+ */
+public Builder setAppPrivacyTwo(String name, String url)
+
+/**
+ * 设置隐私条款基础颜色和条款颜色
+ */
+public Builder setAppPrivacyColor(int baseColor, int privacyColor)
+
+/**
+ * 设置隐私条款按钮相对于屏幕左侧X偏移
+ */
+public Builder setPrivacyOffsetX(int privacyOffsetX)
+
+/**
+ * 设置切换方式按钮相对于标题栏Y偏移
+ */
+public Builder setPrivacyOffsetY(int privacyOffsetY)
+
+/**
+ * 设置切换方式按钮相对于屏幕右侧X偏移
+ */
+public Builder setPrivacyOffsetRightX(int privacyOffsetRightX)
+
+/**
+ * 设置切换方式按钮相对于屏幕底部Y偏移
+ */
+public Builder setPrivacyOffsetBottomY(int privacyOffsetBottomY)
+
+/**
+ * 设置复选按钮是否隐藏
+ */
+public Builder setCheckboxHidden(boolean checkboxHidden)
+
+/**
+ * 设置复选按钮是否默认为选中状态
+ */
+public Builder setCheckboxChecked(boolean checkboxChecked)
+
+/**
+ * 设置隐私条款是否左对齐，默认居中对齐
+ */
+public Builder setPrivacyGravityLeft(boolean privacyGravityLeft)
+
+/**
+ * 设置隐私条款文字大小
+ */
+public Builder setPrivacyTextSize(int privacyTextSize)
+
+public Builder setPrivacyDecorator(String firstDecorator, String secondDecorator, String thirdDecorator, String fourthDecorator)
+
+/**
+ * 设置切换方式视图是否可见
+ */
+public Builder setSwitchHidden(boolean switchHidden)
+
+/**
+ * 设置切换方式文字
+ */
+public Builder setSwitchText(String switchText)
+
+/**
+ * 设置切换方式视图字体颜色
+ */
+public Builder setSwitchTextColor(int switchTextColor)
+
+/**
+ * 设置切换文字大小
+ */
+public Builder setSwitchTextSize(int switchTextSize)
+
+/**
+ * 设置切换方式视图的点击事件
+ */
+public Builder setSwitchClicker(View.OnClickListener switchClicker)
+
+/**
+ * 设置复选框样式
+ */
+public Builder setCheckboxDrawable(String checkboxDrawable)
+
+/**
+ * 设置切换方式按钮相对于屏幕左侧X偏移
+ */
+public Builder setSwitchOffsetX(int switchOffsetX)
+
+/**
+ * 设置切换方式按钮相对于标题栏Y偏移
+ */
+public Builder setSwitchOffsetY(int switchOffsetY)
+
+/**
+ * 设置切换方式按钮相对于屏幕右侧X偏移
+ */
+public Builder setSwitchOffsetRightX(int switchOffsetRightX)
+
+/**
+ * 设置切换方式按钮相对于屏幕底部Y偏移
+ */
+public Builder setSwitchOffsetBottomY(int switchOffsetBottomY)
+
+/**
+ * 添加自定义视图
+ */
+public Builder addCustomView(View view, View.OnClickListener onClickListener)
+
+/**
+ * 自定义正在加载的视图
+ */
+public Builder setLoadingView(View loadingView)
 ```
 
 **参数描述**
