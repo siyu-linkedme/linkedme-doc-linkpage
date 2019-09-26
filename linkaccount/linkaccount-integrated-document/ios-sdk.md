@@ -394,7 +394,7 @@ class ViewController: UIViewController {
 
 ## 授权界面修改
 
-![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/sdk-shou-quan-ye-she-ji-gui-fan.jpg)
+![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../assets/ios_account.png)
 
 可以调整属性
 
