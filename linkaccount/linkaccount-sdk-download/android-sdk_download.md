@@ -2,7 +2,7 @@
 
 ## Android SDK 下载
 
-[点击此处跳转下载页面](https://github.com/WFC-LinkedME/link_account_demo/tree/master/app/libs)
+[点击此处跳转下载页面](https://github.com/WFC-LinkedME/link_account_demo)
 
 ## Android SDK更新日志
 

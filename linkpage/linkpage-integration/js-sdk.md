@@ -48,10 +48,6 @@ initData  【必选】
 类型：Object
 初始化linkedme对象参数
 
-    initData.type 【可选】
-    测试时需要添加initData.type="test",上线时需要修改为"live",如果传null,默认为"live";
-    测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
-
 callback【可选】
 类型：Function
 回调函数,处理初始化成功或者失败后的逻辑
@@ -76,14 +72,9 @@ callback【可选】
 参数说明：
 
 ```javascript
-data 【必选】
-类型：Object
-生成深度链接的请求参数
-
-    data.type【可选】
-    类型：String
-    测试模式"test"，线上模式"live",如果传null，默认为"live";
-    测试模式产生的数据将进入测试系统（Test）中。注意：上线后务必设置 data.type = "live" ; 否则将影响APP线上数据的查看。
+    data 【必选】
+    类型：Object
+    生成深度链接的请求参数
 
     data.promotion_name【可选】
     类型：String
@@ -107,7 +98,7 @@ data 【必选】
 
     data.ios_custom_url【可选】
     类型：String
-    首次集成测试请留空！自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https。注意不能使用.apk地址,建议填写H5地址。
+    限制长度为512个字符以内，首次集成测试请留空！自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https。注意不能使用.apk地址,建议填写H5地址。
 
     data.ios_direct_open【可选】
     类型：String
@@ -125,18 +116,16 @@ data 【必选】
     类型：JSON字符串
     跳转到详情页面的所需参数，如'{"key1":"value1","key2":"value2"...}'
 
-
-callback【必选】
-类型：Function
-回调函数：
+    callback【必选】
+    类型：Function
+    回调函数：
     1.生成深度链接成功，深度链接可以通过response.url得到;       
     2.调用linkedme.trigger_deeplink(response.url)
     3.同时把response.url赋值于a标签的href属性，将深度链接绑定到<a>标签
 
-
-autoSelect【可选】
-类型：String
-生成深度链接之后是否自动打开深度链接，默认值为false
+    autoSelect【可选】
+    类型：String
+    生成深度链接之后是否自动打开深度链接，默认值为false
 ```
 
 示例代码：
@@ -210,5 +199,6 @@ A：不建议使用，会出现IOS不兼容的情况。
 
 Q2：修改ios\_custom\_url、ios\_direct\_open、android\_custom\_url、android\_direct\_open这四个参数为什么没有生效，还是原来的跳转逻辑？
 
-A：只修改上述几个参数，并不会重新创建生成深度链接，也就不会生效，具体请参考：[https://pagedoc.lkme.cc/qa-web.html\#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接](https://pagedoc.lkme.cc/qa-web.html#q2-通过js-sdk更改参数后，并没有生效，同时也没有重新生成深度链接)
+A：只修改上述几个参数，并不会重新创建生成深度链接，也就不会生效，[详情请点击](https://pagedoc.lkme.cc/linkpage/qa/qa-web.html#q2-%E9%80%9A%E8%BF%87js-sdk%E6%9B%B4%E6%94%B9%E5%8F%82%E6%95%B0%E5%90%8E%EF%BC%8C%E5%B9%B6%E6%B2%A1%E6%9C%89%E7%94%9F%E6%95%88%EF%BC%8C%E5%90%8C%E6%97%B6%E4%B9%9F%E6%B2%A1%E6%9C%89%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E6%B7%B1%E5%BA%A6%E9%93%BE%E6%8E%A5)  
+
 
