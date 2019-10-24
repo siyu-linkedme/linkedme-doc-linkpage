@@ -480,14 +480,14 @@ public Builder setNavBackImgDrawable(Drawable navBackImgDrawable)
 public Builder setNavBackHidden(boolean navBackHidden)
 
 /**
- * 设置返回按钮位于左侧及偏移量
+ * 设置返回按钮相对于屏幕位置
+ *
+ * @param navBackOffsetX       相对于屏幕左侧X偏移
+ * @param navBackOffsetY       相对于屏幕顶部Y偏移
+ * @param navBackOffsetRightX  相对于屏幕右侧X偏移
+ * @param navBackOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setNavBackOffsetX(int navBackOffsetX)
-
-/**
- * 设置返回按钮位于右侧及其偏移量
- */
-public Builder setNavBackOffsetRightX(int navBackOffsetRightX)
+public Builder setNavBackOffset(Integer navBackOffsetX, Integer navBackOffsetY, Integer navBackOffsetRightX, Integer navBackOffsetBottomY) 
 
 /**
  * 设置返回按钮的宽度
@@ -560,25 +560,15 @@ public Builder setLogoWidth(int logoWidth)
 public Builder setLogoHeight(int logoHeight)
 
 /**
- * 设置logo相对于屏幕左侧X偏移
+ * 设置logo相对于屏幕位置
+ *
+ * @param logoOffsetX       相对于屏幕左侧X偏移
+ * @param logoOffsetY       相对于屏幕顶部Y偏移
+ * @param logoOffsetRightX  相对于屏幕右侧X偏移
+ * @param logoOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setLogoOffsetX(int logoOffsetX)
-
-/**
- * 设置logo相对于标题栏Y偏移
- */
-public Builder setLogoOffsetY(int logoOffsetY)
-
-/**
- * 设置logo相对于屏幕右侧X偏移
- */
-public Builder setLogoOffsetRightX(int logoOffsetRightX)
-
-/**
- * 设置logo相对于屏幕底部Y偏移
- */
-public Builder setLogoOffsetBottomY(int logoOffsetBottomY)
-
+public Builder setLogoOffset(Integer logoOffsetX, Integer logoOffsetY, Integer logoOffsetRightX, Integer logoOffsetBottomY) 
+        
 /**
  * 设置脱敏号码颜色
  */
@@ -600,24 +590,14 @@ public Builder setNumberWidth(int numberWidth)
 public Builder setNumberHeight(int numberHeight)
 
 /**
- * 设置手机号相对于屏幕左侧X偏移
+ * 设置手机号相对于屏幕位置
+ *
+ * @param numberOffsetX       相对于屏幕左侧X偏移
+ * @param numberOffsetY       相对于屏幕顶部Y偏移
+ * @param numberOffsetRightX  相对于屏幕右侧X偏移
+ * @param numberOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setNumberOffsetX(int numberOffsetX)
-
-/**
- * 设置手机号相对于标题栏Y偏移
- */
-public Builder setNumberOffsetY(int numberOffsetY)
-
-/**
- * 设置手机号相对于屏幕右侧X偏移
- */
-public Builder setNumberOffsetRightX(int numberOffsetRightX)
-
-/**
- * 设置手机号相对于屏幕底部Y偏移
- */
-public Builder setNumberOffsetBottomY(int numberOffsetBottomY)
+public Builder setNumberOffset(Integer numberOffsetX, Integer numberOffsetY, Integer numberOffsetRightX, Integer numberOffsetBottomY)
 
 /**
  * 设置slogan字体颜色
@@ -630,24 +610,14 @@ public Builder setSloganTextColor(int sloganTextColor)
 public Builder setSloganTextSize(int sloganTextSize)
 
 /**
- * 设置slogan相对于屏幕左侧X偏移
+ * 设置slogan相对于屏幕位置
+ *
+ * @param sloganOffsetX       相对于屏幕左侧X偏移
+ * @param sloganOffsetY       相对于屏幕顶部Y偏移
+ * @param sloganOffsetRightX  相对于屏幕右侧X偏移
+ * @param sloganOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setSloganOffsetX(int sloganOffsetX)
-
-/**
- * 设置slogan相对于标题栏Y偏移
- */
-public Builder setSloganOffsetY(int sloganOffsetY)
-
-/**
- * 设置slogan相对于屏幕右侧X偏移
- */
-public Builder setSloganOffsetRightX(int sloganOffsetRightX)
-
-/**
- * 设置slogan相对于屏幕底部Y偏移
- */
-public Builder setSloganOffsetBottomY(int sloganOffsetBottomY)
+public Builder setSloganOffset(Integer sloganOffsetX, Integer sloganOffsetY, Integer sloganOffsetRightX, Integer sloganOffsetBottomY)
 
 /**
  * 设置登录按钮文字
@@ -685,25 +655,14 @@ public Builder setLogBtnBackgroundPath(String logBtnBackgroundPath)
 public Builder setLogBtnBackgroundDrawable(Drawable logBtnBackgroundDrawable)
 
 /**
- * 设置登录按钮相对于屏幕左侧X偏移
+ * 设置登录按钮相对于屏幕位置
+ *
+ * @param logBtnOffsetX       相对于屏幕左侧X偏移
+ * @param logBtnOffsetY       相对于屏幕顶部Y偏移
+ * @param logBtnOffsetRightX  相对于屏幕右侧X偏移
+ * @param logBtnOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setLogBtnOffsetX(int logBtnOffsetX)
-
-/**
- * 设置登录按钮相对于标题栏Y偏移
- */
-public Builder setLogBtnOffsetY(int logBtnOffsetY)
-
-/**
- * 设置登录按钮相对于屏幕右侧X偏移
- */
-public Builder setLogBtnOffsetRightX(int logBtnOffsetRightX)
-
-/**
- * 设置登录按钮相对于屏幕底部Y偏移
- */
-public Builder setLogBtnOffsetBottomY(int logBtnOffsetBottomY)
-
+public Builder setLogBtnOffset(Integer logBtnOffsetX, Integer logBtnOffsetY, Integer logBtnOffsetRightX, Integer logBtnOffsetBottomY)
 
 /**
  * 设置隐私条款1的文字和链接
@@ -721,25 +680,15 @@ public Builder setAppPrivacyTwo(String name, String url)
 public Builder setAppPrivacyColor(int baseColor, int privacyColor)
 
 /**
- * 设置隐私条款按钮相对于屏幕左侧X偏移
+ * 设置隐私条款按钮相对于屏幕位置
+ *
+ * @param privacyOffsetX       相对于屏幕左侧X偏移
+ * @param privacyOffsetY       相对于屏幕顶部Y偏移
+ * @param privacyOffsetRightX  相对于屏幕右侧X偏移
+ * @param privacyOffsetBottomY 相对于屏幕底部Y偏移
  */
-public Builder setPrivacyOffsetX(int privacyOffsetX)
-
-/**
- * 设置切换方式按钮相对于标题栏Y偏移
- */
-public Builder setPrivacyOffsetY(int privacyOffsetY)
-
-/**
- * 设置切换方式按钮相对于屏幕右侧X偏移
- */
-public Builder setPrivacyOffsetRightX(int privacyOffsetRightX)
-
-/**
- * 设置切换方式按钮相对于屏幕底部Y偏移
- */
-public Builder setPrivacyOffsetBottomY(int privacyOffsetBottomY)
-
+public Builder setPrivacyOffset(Integer privacyOffsetX, Integer privacyOffsetY, Integer privacyOffsetRightX, Integer privacyOffsetBottomY) 
+        
 /**
  * 设置复选按钮是否隐藏
  */
@@ -793,25 +742,40 @@ public Builder setSwitchClicker(View.OnClickListener switchClicker)
 public Builder setCheckboxDrawable(String checkboxDrawable)
 
 /**
- * 设置切换方式按钮相对于屏幕左侧X偏移
- */
-public Builder setSwitchOffsetX(int switchOffsetX)
+* 设置切换方式按钮相对于屏幕位置
+*
+* @param switchOffsetX 相对于屏幕左侧X偏移
+* @param switchOffsetY 相对于屏幕顶部Y偏移
+* @param switchOffsetRightX 相对于屏幕右侧X偏移
+* @param switchOffsetBottomY 相对于屏幕底部Y偏移
+*/
+public Builder setSwitchOffset(Integer switchOffsetX, Integer switchOffsetY, Integer switchOffsetRightX, Integer switchOffsetBottomY) 
 
 /**
- * 设置切换方式按钮相对于标题栏Y偏移
+ * 设置是否以Dialog方式显示
  */
-public Builder setSwitchOffsetY(int switchOffsetY)
+public Builder setShowDialog(boolean isDialog) 
 
 /**
- * 设置切换方式按钮相对于屏幕右侧X偏移
+ * 设置Dialog大小
  */
-public Builder setSwitchOffsetRightX(int switchOffsetRightX)
+public Builder setDialogSize(Integer dialogWidth, Integer dialogHeight)
 
 /**
- * 设置切换方式按钮相对于屏幕底部Y偏移
+ * 设置Dialog透明度
  */
-public Builder setSwitchOffsetBottomY(int switchOffsetBottomY)
+public Builder setDialogDimAmount(float dialogDimAmount) 
 
+/**
+ * 设置Dialog相对位置
+ */
+public Builder setDialogGravity(int dialogGravity) 
+
+/**
+ * 设置Dialog偏移量
+ */
+public Builder setDialogOffset(Integer dialogOffsetX, Integer dialogOffsetY)
+        
 /**
  * 添加自定义视图
  */
