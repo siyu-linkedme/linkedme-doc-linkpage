@@ -568,7 +568,7 @@ public Builder setLogoHeight(int logoHeight)
  * @param logoOffsetBottomY 相对于屏幕底部Y偏移
  */
 public Builder setLogoOffset(Integer logoOffsetX, Integer logoOffsetY, Integer logoOffsetRightX, Integer logoOffsetBottomY) 
-        
+
 /**
  * 设置脱敏号码颜色
  */
@@ -688,7 +688,7 @@ public Builder setAppPrivacyColor(int baseColor, int privacyColor)
  * @param privacyOffsetBottomY 相对于屏幕底部Y偏移
  */
 public Builder setPrivacyOffset(Integer privacyOffsetX, Integer privacyOffsetY, Integer privacyOffsetRightX, Integer privacyOffsetBottomY) 
-        
+
 /**
  * 设置复选按钮是否隐藏
  */
@@ -775,7 +775,7 @@ public Builder setDialogGravity(int dialogGravity)
  * 设置Dialog偏移量
  */
 public Builder setDialogOffset(Integer dialogOffsetX, Integer dialogOffsetY)
-        
+
 /**
  * 添加自定义视图
  */
