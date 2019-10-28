@@ -420,7 +420,7 @@ LinkAccount.getInstance().setDebug(true);
 
 ## **一键登录授权页面修改**
 
-![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/android1.0.6.png)
+![&#x6388;&#x6743;&#x9875;&#x9762;&#x8BBE;&#x8BA1;&#x89C4;&#x8303;](../../.gitbook/assets/android.png)
 
 **接口**
 
