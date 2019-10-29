@@ -370,6 +370,34 @@ public void getMobileCode(int timeout)
 LinkAccount.getInstance().getMobileCode(5000);
 ```
 
+### **使用默认认证页面**
+
+**接口**
+
+```java
+/**
+* 设置是否使用默认认证页面 只针对白名单用户生效，非白名单用户默认为true
+*
+* @param useDefault true：使用 false：不使用
+*/
+public void useDefaultAuthActivity(boolean useDefault) 
+```
+
+**参数描述**
+
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| useDefault | boolean | 设置是否使用默认认证页面 只针对白名单用户生效，非白名单用户默认为true
+ |
+
+
+**示例代码**
+
+```java
+// 使用默认认证页面
+LinkAccount.getInstance().useDefaultAuthActivity(true);
+```
+
 ### **手动关闭授权页面**
 
 **接口**
